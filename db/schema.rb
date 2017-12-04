@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171204145934) do
+ActiveRecord::Schema.define(version: 20171204151122) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "registries", force: :cascade do |t|
+    t.integer  "guest"
+    t.boolean  "presence"
+    t.integer  "users_id"
+    t.integer  "weddings_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["users_id"], name: "index_registries_on_users_id", using: :btree
+    t.index ["weddings_id"], name: "index_registries_on_weddings_id", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -45,5 +56,7 @@ ActiveRecord::Schema.define(version: 20171204145934) do
     t.index ["users_id"], name: "index_weddings_on_users_id", using: :btree
   end
 
+  add_foreign_key "registries", "users", column: "users_id"
+  add_foreign_key "registries", "weddings", column: "weddings_id"
   add_foreign_key "weddings", "users", column: "users_id"
 end
