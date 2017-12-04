@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Weddings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Date</th>
+      <th>Location</th>
+      <th>Photo</th>
+      <th>Capacity</th>
+      <th>Users</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @weddings.each do |wedding| %>
+      <tr>
+        <td><%= wedding.title %></td>
+        <td><%= wedding.description %></td>
+        <td><%= wedding.date %></td>
+        <td><%= wedding.location %></td>
+        <td><%= wedding.photo %></td>
+        <td><%= wedding.capacity %></td>
+        <td><%= wedding.users %></td>
+        <td><%= link_to 'Show', wedding %></td>
+        <td><%= link_to 'Edit', edit_wedding_path(wedding) %></td>
+        <td><%= link_to 'Destroy', wedding, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Wedding', new_wedding_path %>
