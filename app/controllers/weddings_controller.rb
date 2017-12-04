@@ -10,6 +10,12 @@ class WeddingsController < ApplicationController
   # GET /weddings/1
   # GET /weddings/1.json
   def show
+    @markers = Gmaps4rails.build_markers(@wedding) do |marker|
+
+      marker.lat @wedding.lattitude
+      marker.lng @wedding.longitude
+    end
+
   end
 
   # GET /weddings/new

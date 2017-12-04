@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20171204151349) do
     t.datetime "updated_at",  null: false
     t.float    "latitude"
     t.float    "longitude"
-    t.index ["users_id"], name: "index_weddings_on_users_id", using: :btree
+    # t.index ["users_id"], name: "index_weddings_on_users_id", using: :btree
   end
 
   add_foreign_key "weddings", "users", column: "users_id"
