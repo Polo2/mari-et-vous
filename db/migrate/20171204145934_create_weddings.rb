@@ -7,7 +7,7 @@ class CreateWeddings < ActiveRecord::Migration[5.0]
       t.string :location
       t.string :photo
       t.integer :capacity
-      t.references :users, foreign_key: true
+      t.references :user, foreign_key: true
 
       t.timestamps
     end
