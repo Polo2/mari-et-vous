@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20171204151122) do
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_registries_on_user_id", using: :btree
     t.index ["wedding_id"], name: "index_registries_on_wedding_id", using: :btree
+
   end
 
   create_table "users", force: :cascade do |t|
@@ -56,7 +57,9 @@ ActiveRecord::Schema.define(version: 20171204151122) do
     t.index ["user_id"], name: "index_weddings_on_user_id", using: :btree
   end
 
-  add_foreign_key "registries", "users"
-  add_foreign_key "registries", "weddings"
-  add_foreign_key "weddings", "users"
+
+  add_foreign_key "registries", "user", column: "user_id"
+  add_foreign_key "registries", "wedding", column: "wedding_id"
+  add_foreign_key "weddings", "user", column: "user_id"
+
 end
