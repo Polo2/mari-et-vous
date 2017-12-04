@@ -12,7 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20171204151349) do
 
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -25,7 +24,6 @@ ActiveRecord::Schema.define(version: 20171204151349) do
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_registries_on_user_id", using: :btree
     t.index ["wedding_id"], name: "index_registries_on_wedding_id", using: :btree
-
   end
 
   create_table "users", force: :cascade do |t|
@@ -52,19 +50,15 @@ ActiveRecord::Schema.define(version: 20171204151349) do
     t.string   "location"
     t.string   "photo"
     t.integer  "capacity"
-    t.integer  "user_id"
+    t.integer  "users_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-
     t.float    "latitude"
     t.float    "longitude"
-    t.index ["user_id"], name: "index_weddings_on_user_id", using: :btree
-
+    t.index ["users_id"], name: "index_weddings_on_users_id", using: :btree
   end
 
-
-  add_foreign_key "registries", "user", column: "user_id"
-  add_foreign_key "registries", "wedding", column: "wedding_id"
-  add_foreign_key "weddings", "user", column: "user_id"
-
+  add_foreign_key "registries", "users"
+  add_foreign_key "registries", "weddings"
+  add_foreign_key "weddings", "users", column: "users_id"
 end
