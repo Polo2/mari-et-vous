@@ -17,6 +17,11 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 
+# attachinary
+gem 'cloudinary'
+gem 'attachinary', github: 'assembler/attachinary'
+gem 'jquery-fileupload-rails'
+
 # google Geocode
 gem 'geocoder'
 gem 'coffee-rails'

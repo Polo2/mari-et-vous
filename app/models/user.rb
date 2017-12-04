@@ -8,6 +8,6 @@ class User < ApplicationRecord
   has_many :registries
   # has_many :reviews
   # has_many :messages
-  # has_attachment :avatar
+  has_attachment :avatar
 
 end
