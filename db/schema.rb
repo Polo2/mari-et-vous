@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171204151349) do
+ActiveRecord::Schema.define(version: 20171204164738) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,11 @@ ActiveRecord::Schema.define(version: 20171204151349) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.date     "birthday"
+    t.string   "location"
+    t.string   "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
@@ -50,19 +55,15 @@ ActiveRecord::Schema.define(version: 20171204151349) do
     t.string   "location"
     t.string   "photo"
     t.integer  "capacity"
-    t.integer  "users_id"
+    t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.float    "latitude"
     t.float    "longitude"
-
     t.index ["user_id"], name: "index_weddings_on_user_id", using: :btree
-
   end
 
-  add_foreign_key "registries", "users", column: "user_id"
-  add_foreign_key "registries", "weddings", column: "wedding_id"
-
-  add_foreign_key "weddings", "users", column: "user_id"
-
+  add_foreign_key "registries", "users"
+  add_foreign_key "registries", "weddings"
+  add_foreign_key "weddings", "users"
 end
