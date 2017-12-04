@@ -5,6 +5,12 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  
+  has_many :weddings
+  has_many :registries
+  # has_many :reviews
+  # has_many :messages
+  # has_attachment :avatar
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)
@@ -26,4 +32,8 @@ class User < ApplicationRecord
 
     return user
   end
+
+  
+
+
 end
