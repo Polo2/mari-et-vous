@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20171204164738) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,8 +41,14 @@ ActiveRecord::Schema.define(version: 20171204164738) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "facebook_picture_url"
     t.string   "first_name"
     t.string   "last_name"
+    t.string   "token"
+    t.datetime "token_expiry"
     t.date     "birthday"
     t.string   "location"
     t.string   "avatar"
@@ -63,8 +71,8 @@ ActiveRecord::Schema.define(version: 20171204164738) do
     t.index ["user_id"], name: "index_weddings_on_user_id", using: :btree
   end
 
-  add_foreign_key "registries", "users", column: "user_id"
-  add_foreign_key "registries", "weddings", column: "wedding_id"
-  add_foreign_key "weddings", "users", column: "user_id"
+  add_foreign_key "registries", "users"
+  add_foreign_key "registries", "weddings"
+  add_foreign_key "weddings", "users"
 
 end
