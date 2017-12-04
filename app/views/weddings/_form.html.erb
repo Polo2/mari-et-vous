@@ -7,6 +7,7 @@
     <%= f.input :date,  start_year: Time.now.year, end_year: Time.now.year + 8, order: [:day, :month, :year], required: true, class: "inline" %>
     <%= f.input :location %>
     <%= f.input :capacity, numericality: { only_integer: true, greater_than: 0} %>
+
   </div>
 
   <div class="form-actions">
