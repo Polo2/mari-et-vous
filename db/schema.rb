@@ -50,15 +50,19 @@ ActiveRecord::Schema.define(version: 20171204151349) do
     t.string   "location"
     t.string   "photo"
     t.integer  "capacity"
-    t.integer  "user_id"
+    t.integer  "users_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.float    "latitude"
     t.float    "longitude"
+
     t.index ["user_id"], name: "index_weddings_on_user_id", using: :btree
+
   end
 
-  add_foreign_key "registries", "users"
-  add_foreign_key "registries", "weddings"
-  add_foreign_key "weddings", "users"
+  add_foreign_key "registries", "users", column: "user_id"
+  add_foreign_key "registries", "weddings", column: "wedding_id"
+
+  add_foreign_key "weddings", "users", column: "user_id"
+
 end
