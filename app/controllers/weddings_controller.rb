@@ -4,12 +4,13 @@ class WeddingsController < ApplicationController
   # GET /weddings
   # GET /weddings.json
   def index
-    @weddings = Wedding.all
+    @weddings = policy_scope(Wedding)
   end
 
   # GET /weddings/1
   # GET /weddings/1.json
   def show
+    authorize(@wedding)
      @markers = Gmaps4rails.build_markers([@wedding]) do |wedding, marker|
        marker.lat wedding.latitude
        marker.lng wedding.longitude
@@ -19,10 +20,12 @@ class WeddingsController < ApplicationController
   # GET /weddings/new
   def new
     @wedding = Wedding.new
+    authorize(@wedding)
   end
 
   # GET /weddings/1/edit
   def edit
+    authorize(@wedding)
   end
 
   # POST /weddings
@@ -30,6 +33,7 @@ class WeddingsController < ApplicationController
   def create
     @wedding = Wedding.new(wedding_params)
     @wedding.user = current_user
+    authorize(@wedding)
 
     respond_to do |format|
       if @wedding.save
@@ -45,6 +49,7 @@ class WeddingsController < ApplicationController
   # PATCH/PUT /weddings/1
   # PATCH/PUT /weddings/1.json
   def update
+    authorize(@wedding)
     respond_to do |format|
       if @wedding.update(wedding_params)
         format.html { redirect_to @wedding, notice: 'Wedding was successfully updated.' }
@@ -59,6 +64,7 @@ class WeddingsController < ApplicationController
   # DELETE /weddings/1
   # DELETE /weddings/1.json
   def destroy
+    authorize(@wedding)
     @wedding.destroy
     respond_to do |format|
       format.html { redirect_to weddings_url, notice: 'Wedding was successfully destroyed.' }
@@ -70,7 +76,10 @@ class WeddingsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_wedding
       @wedding = Wedding.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+        redirect_to weddings_path, notice: "The wedding you're looking for does not exist"
     end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def wedding_params
