@@ -4,7 +4,11 @@ Rails.application.routes.draw do
 
   resources :weddings do
     resources :registries
+    resources :tasks do
+      resources :messages, only: [:create, :index, :new, :destroy]
+    end
   end
+end
 
   mount Attachinary::Engine => "/attachinary"
 
