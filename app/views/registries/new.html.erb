@@ -1,0 +1,6 @@
+<h4>Can you confirm your presence and your family's</h4>
+
+<%= simple_form_for([@wedding, @registry]) do |f| %>
+  <%= f.input :presence, as: :radio_buttons %>
+  <%= f.submit :submit %>
+<% end %>
