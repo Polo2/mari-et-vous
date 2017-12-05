@@ -7,6 +7,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 200px;
+  height: 100vh;
+  background-position: 50% 50%;
 }
 
 .banner h3 {
@@ -27,6 +30,7 @@
   color: #40A798;
   text-decoration: none;
 }
+
 // .banner p {
 //   font-size: 25px;
 //   font-weight: lighter;

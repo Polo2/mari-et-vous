@@ -1,64 +1,106 @@
-<%= render 'layouts/banner' %>
 
-<div class="features py-4 mb-4">
-          <div class="container">
-            <div class="row">
-              <div class="feature py-4 col-md-6 d-flex">
-                <%= link_to new_user_registration_path, class: "icon text-primary mr-3" do %>
-                  <i class="fa fa-heart-o"></i>
-                <% end %>
-                <div class="px-4">
-                    <h2>SOON TO BE WED</h2>
-                    <p>Quisque mollis mi ac aliquet accumsan. Sed sed dapibus libero.</p>
-                </div>
+  <%= render 'layouts/banner' %>
+
+
+<!----------- MARIES / GUEST -------------->
+<div class="home-page">
+  <div class="py-4 mb-4">
+    <div class="container">
+      <div class="row">
+        <div class="feature py-4 col-xs-12 col-md-6 d-flex">
+          <div class="px-4">
+            <div class="flexrow">
+              <%= link_to new_user_registration_path, class: "icon text-primary mr-3" do %>
+                <i class="fa fa-heart-o"></i>
+              <% end %>
+              <div class="title" >
+                <h4>SOON TO BE WED</h4>
               </div>
-
-              <div class="feature py-4 col-md-6 d-flex">
-               <%= link_to new_user_registration_path, class: "icon text-primary mr-3" do %>
-                  <i class="fa fa-envelope-o"></i>
-                <% end %>
-                <div class="px-4">
-                  <h2>SOON TO BE WED</h2>
-                    <p>Quisque mollis mi ac aliquet accumsan. Sed sed dapibus libero..</p>
-                </div>
+            </div>
+            <div class="row">
+            <div class="description">
+                <p>Quisque mollis mi ac aliquet accumsan. Sed sed dapibus libero. Quisque mollis mi ac aliquet accumsan. Sed sed dapibus libero. Quisque mollis mi ac aliquet accumsan. Sed sed dapibus libero</p>
               </div>
             </div>
           </div>
         </div>
-
-<!----------- Contact us form -------------->
-
-<div class="contact section-invert py-4">
-  <h3 class="section-title text-center m-5">Contactez nous</h3>
-  <div class="container py-4">
-    <div class="row justify-content-md-center px-4">
-      <div class="contact-form col-sm-12 col-md-10 col-lg-7 p-4 mb-4 card">
-        <form>
-          <div class="row">
-            <div class="col-md-6 col-sm-12">
-              <div class="form-group">
-                <label for="contactFormFullName">Nom</label>
-                <input type="email" class="form-control" id="contactFormFullName" placeholder="Entrez votre nom">
+        <div class="feature py-4 col-xs-12 col-md-6 d-flex">
+          <div class="px-4">
+            <div class="flexrow">
+              <%= link_to new_user_registration_path, class: "icon text-primary mr-3" do %>
+                <i class="fa fa-envelope-o"></i>
+              <% end %>
+              <div class="title" >
+                <h4>GUEST</h4>
               </div>
             </div>
-            <div class="col-md-6 col-sm-12">
-              <div class="form-group">
-                <label for="contactFormEmail">Email</label>
-                <input type="email" class="form-control" id="contactFormEmail" placeholder="Entrez votre email">
+            <div class="row">
+            <div class="description">
+                <p>Quisque mollis mi ac aliquet accumsan. Sed sed dapibus libero. Quisque mollis mi ac aliquet accumsan. Sed sed dapibus libero. Quisque mollis mi ac aliquet accumsan. Sed sed dapibus libero</p>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-6 col-sm-12">
-              <div class="form-group">
-                  <label for="exampleInputMessage1">Message</label>
-                  <textarea id="exampleInputMessage1" class="form-control mb-4" rows="10" placeholder="Ecrivez ici..." name="message"></textarea>
-              </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+  <!----------- Ils nous font confiance -------------->
+
+  <div class="py-4 mb-4 testimonials">
+    <div class="container">
+      <h3><span class="section-title text-center">They trust us</span></h3>
+      <div class="row ">
+        <div class="col-xs-12 col-sm-4">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+            <div class="card-description">
+              <h2>Le Wagon Shanghai</h2>
             </div>
+            <a class="card-link" href="#" ></a>
           </div>
-          <input class="btn btn-primary btn-pill d-flex ml-auto mr-auto" type="submit" value="Envoyer">
-        </form>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+            <div class="card-description">
+              <h2>Le Wagon Shanghai</h2>
+            </div>
+            <a class="card-link" href="#" ></a>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+            <div class="card-description">
+              <h2>Le Wagon Shanghai</h2>
+            </div>
+            <a class="card-link" href="#" ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!----------- Contact us form -------------->
+
+  <div class="contact">
+    <div class="container">
+      <h3><span class="section-title">Contact us</span></h3>
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <label for="contactFormFullName">Full Name</label>
+            <input type="email" class="form-control" id="contactFormFullName" placeholder="Enter your full name">
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <label for="contactFormEmail">Email address</label>
+            <input type="email" class="form-control" id="contactFormEmail" placeholder="Enter your email address">
+          </div>
+        </div>
+          <label>Message</label>
+          <textarea id="exampleInputMessage1" class="form-control mb-4" rows="10" placeholder="Enter your message..." name="message"></textarea>
+        <input class="btn btn-primary btn-pill d-flex ml-auto mr-auto" type="submit" value="Send Your Message">
       </div>
     </div>
   </div>
 </div>
+
+
