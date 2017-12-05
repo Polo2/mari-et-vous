@@ -1,38 +1,28 @@
 <p id="notice"><%= notice %></p>
 
 <%= render "layouts/banner" %>
-<p>
-  <strong>Title:</strong>
-  <%= @wedding.title %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @wedding.description %>
-</p>
+<div class="row">
+  <div class="col-xs-12 col-sm-6">
+    <div class="info-wedding-description">
+      <p>
+        <strong>Description:</strong>
+        <%= @wedding.description %>
+      </p>
+  <%= link_to 'Edit', edit_wedding_path(@wedding) %> |
+<%= link_to 'Back', weddings_path %>
+    </div>
+  </div>
 
-<p>
-  <strong>Date:</strong>
-  <%= @wedding.date %>
-</p>
+  <div class="col-xs-12 col-sm-6">
+    <div class="info-wedding-location">
+      <h4>The place to be on <strong><%= @wedding.date %></strong>:</h4>
+      <h5><%= @wedding.location %></h5>
+      <div id="map" style="width: 300px; height: 400px;"></div>
+    </div>
+  </div>
 
-<p>
-  <strong>Location:</strong>
-  <%= @wedding.location %>
-</p>
-
-<p>
-  <strong>Photo:</strong>
-  <%= @wedding.photo %>
-</p>
-
-<p>
-  <strong>Capacity:</strong>
-  <%= @wedding.capacity %>
-</p>
-
-<div id="map" style="width: 100%; height: 600px;"></div>
-
+</div>
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
     var handler = Gmaps.build('Google');
@@ -43,16 +33,9 @@
       if (markers.length == 0) {
         handler.getMap().setZoom(2);
       } else if (markers.length == 1) {
-        handler.getMap().setZoom(14);
+        handler.getMap().setZoom(10);
       }
     });
   <% end %>
 <% end %>
 
-<!-- <p> -->
-<!--   <strong>Users:</strong>
-  <%= @wedding.user %>
-</p> -->
-
-<%= link_to 'Edit', edit_wedding_path(@wedding) %> |
-<%= link_to 'Back', weddings_path %>
