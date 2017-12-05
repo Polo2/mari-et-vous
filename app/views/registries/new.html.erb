@@ -2,5 +2,6 @@
 
 <%= simple_form_for([@wedding, @registry]) do |f| %>
   <%= f.input :presence, as: :radio_buttons %>
+  <%= f.input :guest %>
   <%= f.submit :submit %>
 <% end %>

@@ -1,23 +1,22 @@
 class RegistriesController < ApplicationController
   before_action :set_registry, only: [:show, :edit, :update, :destroy]
+  before_action :set_wedding
 
   def index
-    @registries = Registry.all
+    @registries = Registry.where('wedding_id = ?', @wedding.id )
   end
 
   def show
-    @wedding = Wedding.find(params[:wedding_id])
   end
 
   def new
-    @wedding = Wedding.find(params[:wedding_id])
     @registry = Registry.new
   end
 
   def create
     @registry = Registry.new(registry_params)
     @registry.user = current_user
-    @registry.wedding = Wedding.find(params[:wedding_id])
+    @registry.wedding = @wedding
     @registry.save
     redirect_to wedding_path(@registry.wedding)
   end
@@ -43,6 +42,10 @@ class RegistriesController < ApplicationController
   end
 
   def registry_params
-    params.require(:registry).permit(:presence)
+    params.require(:registry).permit(:presence, :guest)
+  end
+
+  def set_wedding
+    @wedding = Wedding.find(params[:wedding_id])
   end
 end
