@@ -12,7 +12,6 @@ class WeddingPolicy < ApplicationPolicy
     user == record.user
   end
 
-
   def update?
     edit?
   end
