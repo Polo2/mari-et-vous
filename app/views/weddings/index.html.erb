@@ -36,4 +36,6 @@
 
 <br>
 
-<%= link_to 'Nouveau mariage', new_wedding_path %>
+<% if policy(Wedding).new? %>
+  <%= link_to 'New wedding', new_wedding_path %>
+<% end %>
