@@ -7,12 +7,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 200px;
-  height: 100vh;
-  background-position: 50% 50%;
 }
 
-
+.banner h3 {
+  font-size: 40px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  color: #ccc;
+}
 
 #create, #attend{
   padding: 10px;
@@ -25,7 +27,6 @@
   color: #40A798;
   text-decoration: none;
 }
-
 // .banner p {
 //   font-size: 25px;
 //   font-weight: lighter;
@@ -33,4 +34,3 @@
 //   opacity: 0.6;
 //   margin-bottom: 30px;
 // }
-
