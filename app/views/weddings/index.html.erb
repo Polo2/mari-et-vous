@@ -1,18 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Weddings</h1>
+<h1>Les mariages</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Title</th>
+      <th>Titre</th>
       <th>Description</th>
       <th>Date</th>
-      <th>Location</th>
+      <th>Lieu</th>
       <th>Photo</th>
-      <th>Capacity</th>
-      <th>Users</th>
-      <th colspan="3"></th>
+      <th>Nombre d'invités</th>
+      <th>Organasiteurs</th>
+      <th colspan="3">Options</th>
     </tr>
   </thead>
 
@@ -25,7 +25,7 @@
         <td><%= wedding.location %></td>
         <td><%= wedding.photo %></td>
         <td><%= wedding.capacity %></td>
-        <td><%= wedding.users %></td>
+        <td><%= wedding.user.first_name.capitalize %> <%= wedding.user.last_name.capitalize %></td>
         <td><%= link_to 'Show', wedding %></td>
         <td><%= link_to 'Edit', edit_wedding_path(wedding) %></td>
         <td><%= link_to 'Destroy', wedding, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -36,4 +36,4 @@
 
 <br>
 
-<%= link_to 'New Wedding', new_wedding_path %>
+<%= link_to 'Nouveau mariage', new_wedding_path %>
