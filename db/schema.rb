@@ -31,6 +31,10 @@ ActiveRecord::Schema.define(version: 20171205100930) do
   end
 
   create_table "messages", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "user_id"
+    t.integer  "task_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -47,6 +51,9 @@ ActiveRecord::Schema.define(version: 20171205100930) do
   end
 
   create_table "tasks", force: :cascade do |t|
+    t.string   "name"
+    t.string   "wedding_id"
+    t.json     "details"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
