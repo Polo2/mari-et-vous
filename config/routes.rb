@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
-  resources :weddings
+  resources :weddings do
+    resources :tasks do
+      resources :messages, only: [:create, :index, :new, :destroy]
+    end
+end
 
   mount Attachinary::Engine => "/attachinary"
 
