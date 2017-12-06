@@ -11,7 +11,9 @@
     width: 70px;
     height: 65px;
     line-height: 65px;
-    margin-right: 15px;
+    margin-right: 60px !important;
+    background-color: #B0B0B0;
+
   }
 
   h3{
@@ -55,6 +57,18 @@
   .description {
     margin-top: 30px;
     font-size: 14px;
+    width: 92%;
+  }
+
+  .title {
+
+    font-size: 22px;
+  }
+
+  .wedders {
+    background-color: #F4F4F4;
+     padding-top: 90px !important;
+    padding-bottom: 90px !important;
   }
 
   // ---------> TESTIMONIAL <--------------
@@ -63,8 +77,9 @@
     background-color: white;
     padding: 50px;
     background-size: auto;
-    padding-top: 100px;
-    padding-bottom: 170px;
+    padding-top: 90px !important;
+    padding-bottom: 90px !important;
+
     }
 
   .section-title {
@@ -83,7 +98,8 @@
     padding: 50px;
     background-size: auto;
     padding-top: 100px;
-    padding-bottom: 170px
+    padding-bottom: 170px;
+    font-size: 20px !important;
     }
 
   .card {
@@ -103,4 +119,5 @@
     margin: auto;
     margin-top: 20px;
   }
+
 }

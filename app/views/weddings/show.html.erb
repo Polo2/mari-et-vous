@@ -9,8 +9,19 @@
         <strong>Description:</strong>
         <%= @wedding.description %>
       </p>
-  <%= link_to 'Edit', edit_wedding_path(@wedding) %> |
-<%= link_to 'Back', weddings_path %>
+    <p>
+      <% if policy(@wedding).edit? %>
+        <%= link_to 'Edit', edit_wedding_path(@wedding) %>
+      |
+      <% end %>
+      <% if policy(@wedding).destroy? %>
+        <%= link_to 'Destroy', @wedding, method: :delete, data: { confirm: 'Are you sure?' } %>
+      |
+      <% end %>
+      <%= link_to 'Register', new_wedding_registry_path(@wedding) %>
+      |
+      <%= link_to 'Back', root_path %>
+    </p>
     </div>
   </div>
 
