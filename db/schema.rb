@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171206110038) do
+ActiveRecord::Schema.define(version: 20171206131132) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,12 +42,13 @@ ActiveRecord::Schema.define(version: 20171206110038) do
   end
 
   create_table "registries", force: :cascade do |t|
-    t.string   "presence"
     t.integer  "user_id"
     t.integer  "wedding_id"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
     t.text     "guests",     default: [],              array: true
+    t.string   "email"
+    t.integer  "total"
     t.index ["user_id"], name: "index_registries_on_user_id", using: :btree
     t.index ["wedding_id"], name: "index_registries_on_wedding_id", using: :btree
   end
@@ -81,7 +82,6 @@ ActiveRecord::Schema.define(version: 20171206110038) do
     t.string   "last_name"
     t.string   "token"
     t.datetime "token_expiry"
-    t.date     "birthday"
     t.string   "location"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
@@ -95,12 +95,14 @@ ActiveRecord::Schema.define(version: 20171206110038) do
     t.string   "photo"
     t.integer  "capacity"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.float    "latitude"
     t.float    "longitude"
     t.string   "token"
     t.string   "avatar"
+    t.string   "spouse_first_name"
+    t.string   "spouse_last_name"
     t.index ["user_id"], name: "index_weddings_on_user_id", using: :btree
   end
 
