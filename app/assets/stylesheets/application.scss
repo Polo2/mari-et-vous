@@ -13,3 +13,11 @@
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
+
+// weddings/:wedding_id/registries/new
+#new_registry span {
+  display: block;
+}
+.registry_guest {
+  display: none;
+}

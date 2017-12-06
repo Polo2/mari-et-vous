@@ -1,7 +1,9 @@
 <h4>Can you confirm your presence and your family's</h4>
 
 <%= simple_form_for([@wedding, @registry]) do |f| %>
-  <%= f.input :presence, as: :radio_buttons %>
-  <%= f.input :guest %>
-  <%= f.submit :submit %>
+  <%= f.collection_radio_buttons :presence, [["pending", "Waiting for confirmation"] ,["coming", "Yes, we're coming"],["rejected", "No, we can't. Have fun!"]], :first, :last %>
+    <%= f.input :guest %>
+    <%= f.submit :submit %>
+
 <% end %>
+
