@@ -1,0 +1,12 @@
+
+  <div>
+    <ul>
+    <% @registry.guest_names.each do |name| %>
+      <li>
+        <%= name %>
+        <%= @registry.guests[0][:presence] %>
+      </li>
+    <% end %>
+    </ul>
+  </div>
+

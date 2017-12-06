@@ -18,7 +18,8 @@ class RegistriesController < ApplicationController
     @registry.user = current_user
     @registry.wedding = @wedding
     @registry.save
-    redirect_to wedding_path(@registry.wedding)
+    # redirect_to wedding_path(@registry.wedding)
+    redirect_to wedding_registry_path(@wedding, @registry)
   end
 
   def edit
@@ -42,7 +43,7 @@ class RegistriesController < ApplicationController
   end
 
   def registry_params
-    params.require(:registry).permit(:presence, :guest)
+    params.require(:registry).permit(:email, guest_names: [])
   end
 
   def set_wedding
