@@ -11,8 +11,6 @@
         <%= f.input :email, required: true, autofocus: true %>
         <%= f.input :password, label: "Mot de passe", required: true, hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length) %>
         <%= f.input :password_confirmation, label: "Confirmation du mot de passe", required: true %>
-        <%= f.input :avatar, as: :attachinary %>
-
       </div>
 
       <div class="form-actions">
