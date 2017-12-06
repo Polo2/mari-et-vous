@@ -46,9 +46,9 @@ ActiveRecord::Schema.define(version: 20171206131132) do
     t.integer  "wedding_id"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
-    t.text     "guests",     default: [],              array: true
     t.string   "email"
     t.integer  "total"
+    t.text     "guests",     default: [],              array: true
     t.index ["user_id"], name: "index_registries_on_user_id", using: :btree
     t.index ["wedding_id"], name: "index_registries_on_wedding_id", using: :btree
   end

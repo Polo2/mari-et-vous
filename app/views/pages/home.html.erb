@@ -1,7 +1,7 @@
 <%= render 'layouts/home_banner' %>
 <!-- Test de lien direct du marié vers SON mariage -->
 
-<p>
+
 <% if user_signed_in? %>
   <% unless current_user.weddings.empty? %>
     <%= "Hello, #{current_user.first_name.capitalize} :  " %>
@@ -9,7 +9,7 @@
     <%= link_to 'Your wedding', wedding_path(current_user.weddings.last) %>
   <% end %>
 <% end %>
-</p>
+
 
 
 <!----------- MARIES / GUEST -------------->
@@ -50,7 +50,8 @@
                   <i class="fa fa-envelope-o"></i>
                 <% end %>
               <% end %>
-              <div class="title" >GUEST</div>
+              <% end %>
+              <div class="" >GUEST</div>
             </div>
             <div class="row">
               <div class="description">
