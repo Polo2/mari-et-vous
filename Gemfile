@@ -18,6 +18,7 @@ gem 'jquery-rails'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
+gem 'awesome_print'
 
 # attachinary
 gem 'cloudinary'

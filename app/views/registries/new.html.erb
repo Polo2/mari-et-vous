@@ -1,31 +1,37 @@
 <!--=====WEDDER=====-->
-<% if current_user[:id] == @wedding[:user_id] %>
 
+<% if current_user[:id] == @wedding[:user_id] %>
   <h4>Create a new registry</h4>
 
   <%= simple_form_for([@wedding, @registry]) do |f| %>
     <%= f.error_notification %>
+
     <div class="form-inputs">
-      <% f.input :email %>
-      <% f.collection_input :guests %>
+      <%= f.input :email %>
     </div>
+
+
+    <div class="form-group string optional registry_guest_names">
+      <label class="control-label string optional" for="registry_guest_names">Guest names</label>
+      <input class="form-control string optional" type="text" value="" name="registry[guest_names][]" />
+      <input class="form-control string optional" type="text" value="" name="registry[guest_names][]" />
+    </div>
+
+
     <div class="form-actions">
       <%= f.button :submit %>
     </div>
-  <% end %>
-
-
-<!-- @registry.total = @registry.guest.count -->
-
+<% end %>
+<%= @registry.total = @registry.guests.count %>
 
 
 <% else %>
+<!--=====GUEST=====-->
   <h4>Can you confirm your presence and your family's</h4>
 
   <%= simple_form_for([@wedding, @registry]) do |f| %>
-    <%= f.collection_radio_buttons :presence, [["pending", "Waiting for confirmation"] ,["coming", "Yes, we're coming"],["rejected", "No, we can't. Have fun!"]], :first, :last %>
-      <%= f.input :guests %>
-      <%= f.submit :submit %>
+
+    <%= f.submit :submit %>
 
   <% end %>
 <% end %>
