@@ -1,0 +1,29 @@
+<% if @wedding.user == current_user %>
+
+<h1>Hello, <%= @wedding.user.first_name%> <%= @wedding.user.last_name %> </h1>
+
+<p>Here is the list of the registries you did received for your wedding : </p>
+
+<% guest_sum = 0 %>
+<ul>
+<% @registries.each do |reg| %>
+
+<li> <%= reg.user.first_name %> <%= reg.user.last_name %>, answered for <%= reg.guest %>
+  <% guest_sum += reg.guest %>
+</li>
+<% end %>
+</ul>
+
+<p> Today, <%= guest_sum %> peoples answered "Yes" for your wedding </p>
+
+<% else %>
+
+<h1>This is not a wedding that your organize</h1>
+<p>Consequently, you won't see the list of registries</p>
+
+<%= link_to "Back to the wedding", wedding_path(@wedding) %>
+
+<% end %>
+
+
+

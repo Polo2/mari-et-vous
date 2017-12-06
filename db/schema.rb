@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171205100930) do
+ActiveRecord::Schema.define(version: 20171205161813) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,13 +31,19 @@ ActiveRecord::Schema.define(version: 20171205100930) do
   end
 
   create_table "messages", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "task_id"
+    t.index ["task_id"], name: "index_messages_on_task_id", using: :btree
+    t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
   end
 
   create_table "registries", force: :cascade do |t|
     t.integer  "guest"
-    t.boolean  "presence"
+    t.string   "presence"
     t.integer  "user_id"
     t.integer  "wedding_id"
     t.datetime "created_at", null: false
@@ -47,8 +53,12 @@ ActiveRecord::Schema.define(version: 20171205100930) do
   end
 
   create_table "tasks", force: :cascade do |t|
+    t.string   "name"
+    t.json     "details"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "wedding_id"
+    t.index ["wedding_id"], name: "index_tasks_on_wedding_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -93,7 +103,10 @@ ActiveRecord::Schema.define(version: 20171205100930) do
     t.index ["user_id"], name: "index_weddings_on_user_id", using: :btree
   end
 
+  add_foreign_key "messages", "tasks"
+  add_foreign_key "messages", "users"
   add_foreign_key "registries", "users"
   add_foreign_key "registries", "weddings"
+  add_foreign_key "tasks", "weddings"
   add_foreign_key "weddings", "users"
 end
