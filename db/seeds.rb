@@ -27,8 +27,6 @@ puts "Création des 3 users"
 new_user_polo = User.create({
     first_name: "Paul",
     last_name: "de Bodi",
-    birthday: Date.new(1986,3,4),
-    location: "Lyon",
     email: "polo@bodi.fr",
     password: "333333",
     password_confirmation: "333333",
@@ -39,8 +37,6 @@ new_user_polo = User.create({
 new_user_aurel = User.create({
     first_name: "Aurelie",
     last_name: "Dubs",
-    birthday: Date.new(1983,1,31),
-    location: "Venissieux",
     email: "aure@lie.fr",
     password: "222222",
     password_confirmation: "222222",
@@ -51,8 +47,6 @@ new_user_aurel = User.create({
 new_user_horti = User.create({
     first_name: "Hor",
     last_name: "Titi",
-    birthday: Date.new(1992,3,30),
-    location: "Bourg-en-Bresse",
     email: "hor@titi.fr",
     password: "111111",
     password_confirmation: "111111",
@@ -82,7 +76,7 @@ wedding1_polo = Wedding.create({
 
 wedding2_polo = Wedding.create({
   title: "Old school",
-  description: "CLet's play Gotham'style",
+  description: "Let's play Gotham'style",
   capacity: 33,
   user_id: new_user_polo.id,
   date: Date.new(2017,1,27),
@@ -94,7 +88,7 @@ wedding2_polo = Wedding.create({
 
 wedding3_horti = Wedding.create({
   title: "Lightful",
-  description: "CéLet's get married like Louis XIV",
+  description: "Let's get married like Louis XIV",
   capacity: 78,
   user_id: new_user_horti.id,
   date: Date.new(2018,7,7),
@@ -118,7 +112,7 @@ wedding4_horti = Wedding.create({
 
 wedding5_aurel = Wedding.create({
   title: "Trinquons !",
-  description: "Quand certains font les trains, nous on fait ...",
+  description: "Parce que la vie, c'est la joie.",
   capacity: 132,
   user_id: new_user_aurel.id,
   date: Date.new(2018,12,31),
