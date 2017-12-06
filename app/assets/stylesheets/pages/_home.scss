@@ -12,7 +12,7 @@
     height: 65px;
     line-height: 65px;
     margin-right: 60px !important;
-    background-color: #B0B0B0;
+    background-color: #FEFEFE;
 
   }
 
@@ -39,6 +39,7 @@
     padding-bottom: 170px;
     display: flex !important;
     text-align: center;
+
   }
 
   .mb-4 {
@@ -51,8 +52,15 @@
     padding-bottom: 2.5px;
     margin-left: 12px;
     font-size: 20px;
+    text-align: center;
+
     }
 
+  .feature {
+    border: 1px solid $blue;
+    border-radius: 3px;
+    box-shadow: 2px 2px 0px #aaa;
+  }
 
   .description {
     margin-top: 30px;
@@ -94,7 +102,7 @@
   // ---------> CONTACT <-------------------
 
   .contact {
-    background-color: #F4F4F4;
+    background-color: #F4F4F4 !important;
     padding: 50px;
     background-size: auto;
     padding-top: 100px;

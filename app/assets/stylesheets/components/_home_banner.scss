@@ -1,10 +1,10 @@
 #banner {
   color: white;
   text-align: center;
-      padding: 200px;
-    height: 100vh;
-    width: 100%; //fallback
-   width: 100vw;
+  padding: 200px;
+  height: 100vh;
+  width: 100%; //fallback
+  width: 100vw;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
@@ -48,13 +48,30 @@ width: 100vw;
   display: center!important;
   height: 100%;
   width: 100%;
-  opacity: 0.85;
+  opacity: 0.75;
 }
 
 .presentation {
   margin-top: 70px;
   margin-bottom: 70px;
 }
+
+.carousel-caption {
+ font-family: 'Dancing Script', cursive;
+ padding-bottom: 80px !important;
+}
+
+
+.carousel-font1 {
+  font-size: 30px !important;
+  margin-bottom: 10px;
+}
+
+.carousel-font2 {
+  font-size: 20px !important;
+
+}
+
 // .banner p {
 //   font-size: 25px;
 //   font-weight: lighter;

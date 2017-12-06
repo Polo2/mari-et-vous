@@ -1,43 +1,31 @@
-<!-- <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 100%), url('http://photodesign.nu/wp-content/uploads/2017/08/photodesign_jn_018.jpg' )">
-    <div class="banner-content">
-      <h3>Because wedding is sharing</h3>
-
-      <% unless user_signed_in? %>
-        <p>
-          <%= link_to "I already have an account", new_user_session_path, id: "already_signed" %>
-        </p>
-      <% end %>
-
-    </div>
-</div> -->
-
+<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
 
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
   <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    <div class="item active">
-      <img src="http://photodesign.nu/wp-content/uploads/2017/08/photodesign_jn_018.jpg" id="imagechange" alt="...">
+  <div class="carousel-inner" >
+    <div class="item active" id="imagechange">
+      <%= image_tag "https://assets.vogue.com/photos/587712a82022f93907cd7107/master/pass/35-kyly-zakheim-and-ryan-rabin-wedding.jpg", height: 1000, width: 2000 %>
       <div class="carousel-caption">
-        <h3>Paul et Odile</h3>
-        <h4>2018</h4>
+        <div class="carousel-font1">Paul et Odile</div>
+        <div class="carousel-font2">2018</div>
       </div>
     </div>
-    <div class="item">
-      <img src="http://photodesign.nu/wp-content/uploads/2017/08/photodesign_jn_018.jpg" id="imagechange" alt="...">
+    <div class="item" id="imagechange">
+      <%= image_tag "Wedding.jpg", height: 1000, width: 2000 %>
       <div class="carousel-caption">
-        <h3>Claire et Arthur, 2015</h3>
-        <h4>2016</h4>
+        <div class="carousel-font1">Thibault et Jessica</div>
+        <div class="carousel-font2">2015</div>
       </div>
     </div>
-    <div class="item">
-      <img src="http://photodesign.nu/wp-content/uploads/2017/08/photodesign_jn_018.jpg" id="imagechange" alt="...">
-      <div class="carousel-caption">
-        <h3>Tom et Shanna</h3>
-        <h4>2015</h4>
+    <div class="item" id="imagechange">
+      <%= image_tag "weddind2.jpg", height: 1000, width: 2000 %>
+        <div class="carousel-caption">
+          <div class="carousel-font1">Claire et Arthur</div>
+          <div class="carousel-font2">2016</div>
+        </div>
       </div>
     </div>
-  </div>
+
 
   <!-- Controls -->
   <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
@@ -46,5 +34,6 @@
   <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
     <span class="glyphicon glyphicon-chevron-right"></span>
   </a>
+  </div>
 </div> <!-- Carousel -->
 
