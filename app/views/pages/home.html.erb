@@ -12,12 +12,12 @@
 </p>
 
 
-
 <!----------- MARIES / GUEST -------------->
 <div class="home-page">
+ <div class="wedders">
   <div class="py-4 mb-4">
     <div class="container">
-      <div class="row">
+      <div class="row presentation">
         <div class="feature py-4 col-xs-12 col-md-6 d-flex">
           <div class="px-4">
             <div class="flexrow">
@@ -28,14 +28,11 @@
             <% else %>
               <%= link_to new_user_registration_path, class: "icon text-primary mr-3" do %>
                 <i class="fa fa-heart-o"></i>
-              <% end %>
             <% end %>
-              <div class="title" >
-                <h4>SOON TO BE WED</h4>
-              </div>
+              <div class="title" >SOON TO BE WED</div>
             </div>
             <div class="row">
-            <div class="description">
+              <div class="description">
                 <p>It's the best website for you to organize your wedding. Here, you'll create a dedicated server for your website, where you can share invitations, informations, registries with your invites... And of course, you can ask them for help, by offering them to participate to a dedicated extra-job !</p>
               </div>
             </div>
@@ -53,12 +50,10 @@
                   <i class="fa fa-envelope-o"></i>
                 <% end %>
               <% end %>
-              <div class="title" >
-                <h4>GUEST</h4>
-              </div>
+              <div class="title" >GUEST</div>
             </div>
             <div class="row">
-            <div class="description">
+              <div class="description">
                 <p>Quisque mollis mi ac aliquet accumsan. Sed sed dapibus libero. Quisque mollis mi ac aliquet accumsan. Sed sed dapibus libero. Quisque mollis mi ac aliquet accumsan. Sed sed dapibus libero</p>
               </div>
             </div>
@@ -66,7 +61,9 @@
         </div>
       </div>
     </div>
-    </div>
+  </div>
+  </div>
+
 
   <!----------- Ils nous font confiance -------------->
 
@@ -108,22 +105,22 @@
   <div class="contact">
     <div class="container">
       <h3><span class="section-title">Contact us</span></h3>
-        <div class="row">
-          <div class="col-md-6 col-sm-12">
-            <label for="contactFormFullName">Full Name</label>
-            <input type="email" class="form-control" id="contactFormFullName" placeholder="Enter your full name">
-          </div>
-          <div class="col-md-6 col-sm-12">
-            <label for="contactFormEmail">Email address</label>
-            <input type="email" class="form-control" id="contactFormEmail" placeholder="Enter your email address">
-          </div>
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <label for="contactFormFullName">Full Name</label>
+          <input type="email" class="form-control" id="contactFormFullName" placeholder="Enter your full name">
         </div>
-          <label>Message</label>
-          <textarea id="exampleInputMessage1" class="form-control mb-4" rows="10" placeholder="Enter your message..." name="message"></textarea>
-        <input class="btn btn-primary btn-pill d-flex ml-auto mr-auto" type="submit" value="Send Your Message">
+        <div class="col-md-6 col-sm-12">
+          <label for="contactFormEmail">Email address</label>
+          <input type="email" class="form-control" id="contactFormEmail" placeholder="Enter your email address">
+        </div>
       </div>
+      <label>Message</label>
+      <textarea id="exampleInputMessage1" class="form-control mb-4" rows="10" placeholder="Enter your message..." name="message"></textarea>
+      <input class="btn btn-primary btn-pill d-flex ml-auto mr-auto" type="submit" value="Send Your Message">
     </div>
   </div>
 </div>
+
 
 
