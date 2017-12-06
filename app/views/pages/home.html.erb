@@ -18,18 +18,18 @@
   <div class="py-4 mb-4">
     <div class="container">
       <div class="row presentation">
-        <div class="feature py-4 col-xs-12 col-md-6 d-flex">
+        <div class="feature py-4 col-xs-12 col-md-5 offset-md-1 d-flex">
           <div class="px-4">
             <div class="flexrow">
-            <% if user_signed_in? %>
-              <%= link_to new_wedding_path, class: "icon text-primary mr-3" do %>
-                <i class="fa fa-heart-o"></i>
-              <% end %>
-            <% else %>
-              <%= link_to new_user_registration_path, class: "icon text-primary mr-3" do %>
-                <i class="fa fa-heart-o"></i>
-              <% end %>
-            <% end %>
+              <% if user_signed_in? %>
+                <%= link_to new_wedding_path, class: "icon text-primary mr-3" do %>
+                  <i class="fa fa-heart-o"></i>
+                <% end %>
+              <% else %>
+                <%= link_to new_user_registration_path, class: "icon text-primary mr-3" do %>
+                  <i class="fa fa-heart-o"></i>
+                <% end %>
+             <% end %>
               <div class="title" >SOON TO BE WED</div>
             </div>
             <div class="row">
@@ -39,18 +39,19 @@
             </div>
           </div>
         </div>
-        <div class="feature py-4 col-xs-12 col-md-6 d-flex">
-          <div class="px-4">
-            <div class="flexrow">
-              <% if user_signed_in? %>
-                <%= link_to root_path, class: "icon text-primary mr-3" do %>
-                  <i class="fa fa-envelope-o"></i>
-                <% end %>
-              <% else %>
-                <%= link_to new_user_registration_path, class: "icon text-primary mr-3" do %>
-                  <i class="fa fa-envelope-o"></i>
-                <% end %>
-              <% end %>
+
+        <div class="feature py-4 col-xs-12 col-md-5 offset-md-1 d-flex">
+            <div class="px-4 square">
+              <div class="flexrow">
+                <% if user_signed_in? %>
+                  <%= link_to root_path, class: "icon text-primary mr-3" do %>
+                    <i class="fa fa-envelope-o"></i>
+                  <% end %>
+                <% else %>
+                  <%= link_to new_user_registration_path, class: "icon text-primary mr-3" do %>
+                    <i class="fa fa-envelope-o"></i>
+                    <% end %>
+                 <% end %>
               <div class="" >GUEST</div>
             </div>
             <div class="row">
@@ -63,7 +64,7 @@
       </div>
     </div>
   </div>
-  </div>
+
 
 
   <!----------- Ils nous font confiance -------------->
