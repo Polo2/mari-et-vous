@@ -46,8 +46,8 @@ width: 100vw;
 
 #imagechange {
   display: center!important;
-  height: 100%;
-  width: 100%;
+  height: 600px !important;
+
   opacity: 0.75;
 }
 
@@ -58,7 +58,8 @@ width: 100vw;
 
 .carousel-caption {
  font-family: 'Dancing Script', cursive;
- padding-bottom: 80px !important;
+ color: white;
+ padding-bottom: 50px !important;
 }
 
 

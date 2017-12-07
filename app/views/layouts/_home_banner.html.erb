@@ -1,39 +1,38 @@
 <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
 
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" >
-    <div class="item active" id="imagechange">
-      <%= image_tag "https://assets.vogue.com/photos/587712a82022f93907cd7107/master/pass/35-kyly-zakheim-and-ryan-rabin-wedding.jpg", height: 1000, width: 2000 %>
-      <div class="carousel-caption">
-        <div class="carousel-font1">Paul et Odile</div>
-        <div class="carousel-font2">2018</div>
-      </div>
-    </div>
-    <div class="item" id="imagechange">
-      <%= image_tag "Wedding.jpg", height: 1000, width: 2000 %>
-      <div class="carousel-caption">
-        <div class="carousel-font1">Thibault et Jessica</div>
-        <div class="carousel-font2">2015</div>
-      </div>
-    </div>
-    <div class="item" id="imagechange">
-      <%= image_tag "weddind2.jpg", height: 1000, width: 2000 %>
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" >
+      <div class="item active" id="imagechange">
+        <%= image_tag "https://assets.vogue.com/photos/587712a82022f93907cd7107/master/pass/35-kyly-zakheim-and-ryan-rabin-wedding.jpg" %>
         <div class="carousel-caption">
-          <div class="carousel-font1">Claire et Arthur</div>
-          <div class="carousel-font2">2016</div>
+          <div class="carousel-font1">Paul et Odile</div>
+          <div class="carousel-font2">2018</div>
         </div>
       </div>
+      <div class="item" id="imagechange">
+        <%= image_tag "Wedding.jpg" %>
+        <div class="carousel-caption">
+          <div class="carousel-font1">Claire et Arthur</div>
+          <div class="carousel-font2">2015</div>
+        </div>
+      </div>
+      <div class="item" id="imagechange">
+        <%= image_tag "weddind2.jpg" %>
+          <div class="carousel-caption">
+            <div class="carousel-font1">Clémentine et Maxime</div>
+            <div class="carousel-font2">2016</div>
+          </div>
+        </div>
+      </div>
+
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
     </div>
-
-
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-  </a>
-  </div>
-</div> <!-- Carousel -->
-
+  </div> <!-- Carousel -->
