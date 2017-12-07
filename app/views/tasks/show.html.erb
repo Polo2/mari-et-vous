@@ -1,0 +1,18 @@
+<h1><%= "Task n° #{@task.id}"%></h1>
+
+<h2> <%= @task.name %> </h2>
+
+<% liste = @details["#{@task.name}"]["prive"] %>
+
+<ul>
+
+  <% liste.each do |list| %>
+    <li>
+      <%= list[0] %>
+    </li>
+
+  <% end %>
+
+
+</ul>
+

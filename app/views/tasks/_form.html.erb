@@ -1,0 +1,11 @@
+<h2>New task</h2>
+
+<p> Pour test : on veut voir le Json </p>
+<p></p>
+
+<%= simple_form_for([@wedding, @task]) do |f| %>
+  <%= f.input :name  %>
+
+  <%= f.submit "Create this new task" %>
+<% end %>
+

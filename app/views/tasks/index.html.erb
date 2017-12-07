@@ -1,0 +1,10 @@
+<p>Liste de toutes les taches ici</p>
+
+<ul>
+  <% @tasks.each_with_index do |task, index| %>
+
+  <li><%= "Task n°#{index + 1} : #{task.name}" %> </li>
+
+  <% end %>
+
+</ul>
