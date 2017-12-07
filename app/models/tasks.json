@@ -1,0 +1,22 @@
+{ "musica": {
+  "prive": {
+    "instrument": ["guitare"],
+    "playlist": ["greg", "bono"],
+    "autre": []
+  }, "public" : {
+    "instrument": [],
+    "playlist": [],
+    "autre": []
+  }
+}, "cuccina": {
+   "prive": {
+      "cocktail": [],
+      "diner": [],
+      "dessert": [],
+      "brunch": [] },
+    "public" : {
+      "cocktail": [],
+      "diner": [],
+      "dessert": [],
+      "brunch": [] }
+}}

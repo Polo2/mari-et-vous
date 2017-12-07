@@ -1,3 +1,5 @@
+require 'json'
+
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
   before_action :set_wedding
@@ -9,18 +11,23 @@ class TasksController < ApplicationController
 
 
   def show
+    @details = parsing_json
   end
 
 
   def new
     @task = Task.new
+    @details = parsing_json
+
   end
 
   def create
     @task = Task.new(task_params)
+    @details = parsing_json
     @task.wedding_id = @wedding.id
+    @task.details = @details[@task.name]
     if @task.save
-      redirect_to wedding_path(@wedding)
+      redirect_to wedding_task_path(@wedding, @task)
     else
       render :new
     end
@@ -50,5 +57,10 @@ private
     params.require(:task).permit(:name)
   end
 
+  def parsing_json
+    file = File.read "app/models/tasks.json"
+    datas = JSON.parse(file)
+    return datas
+  end
 
 end
