@@ -1,3 +1,91 @@
-<h1>Registries#edit</h1>
-<p>Find me in app/views/registries/edit.html.erb</p>
+<% if current_user[:id] == @wedding[:user_id] %>
+  <h4>Create a new registry</h4>
 
+  <%= simple_form_for([@wedding, @registry]) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :email %>
+
+      <div class="form-group string optional registry_guest_names">
+        <label class="control-label string optional" for="registry_guest_names">Guest names</label>
+        <div id="champs">
+          <% @registry.guests.each_with_index do |guest, i| %>
+            <input type="checkbox" name="registry[guest_names][i]" <%= "checked" if guest[:presence] %> />
+            <input class="guest_field form-control string optional" type="text" value="<%= guest[:name] %>" name="registry[guest_names][]" />
+          <% end %>
+
+        </div>
+      </div>
+
+      <button id="add_field_button" type="button" >+</button>
+
+      <div class="form-actions">
+        <%= f.button :submit %>
+      </div>
+    </div>
+  <% end %>
+
+<% else %>
+
+  <% if @registry.email == current_user.email %>
+
+    <%= simple_form_for([@wedding, @registry]) do |f| %>
+      <%= f.error_notification %>
+
+      <%= f.label "Confirm your presence" %><br />
+      <% @registry.guests.each do |guest| %>
+        <input type="checkbox" name="registry[guest_names][presence]" <%= "checked" if guest[:presence] %> />
+        <%= guest[:name] %>
+
+      <% end %>
+
+      <input type="submit" onClick="gBox('check1'); return true;" />
+
+    <% end %>
+  <% end %>
+<% end %>
+
+
+
+
+
+<script type="text/javascript">
+
+var div = document.getElementById('champs');
+console.log(div);
+function addInput(name){
+  var input = document.createElement("input");
+  input.className = "guest_field form-control string optional";
+  input.name = name;
+  div.appendChild(input);
+}
+function addField() {
+  addInput("registry[guest_names][]");
+  div.appendChild(document.createElement("br"));
+}
+var addFieldButton = document.getElementById('add_field_button');
+
+var champs = document.getElementsByClassName('guest_field');
+console.log(addFieldButton);
+
+function inputsEmpty() {
+  for (var champ of champs) {
+      if(champ.value == "")
+        {
+          return true;
+        }
+  }
+  return false;
+}
+
+addFieldButton.addEventListener('click', function() {
+    if(inputsEmpty())
+    {
+      console.log("y en a un de vide!!");
+      return;
+    }
+    addField();
+});
+
+</script>

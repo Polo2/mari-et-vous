@@ -18,7 +18,6 @@ class RegistriesController < ApplicationController
     @registry.user = current_user
     @registry.wedding = @wedding
     @registry.save
-    # redirect_to wedding_path(@registry.wedding)
     redirect_to wedding_registry_path(@wedding, @registry)
   end
 
@@ -26,14 +25,17 @@ class RegistriesController < ApplicationController
   end
 
   def update
-    current_user.registries.find(params[:user_id])
+    # current_user.registries.find(params[:registry_id])
     @registry.update(registry_params)
-    redirect_to registry_path
+    @registry.user = current_user
+    @registry.wedding = @wedding
+    @registry.save
+    redirect_to wedding_registry_path(@wedding, @registry)
   end
 
   def destroy
     @registry.destroy
-    redirect_to registries_path
+    redirect_to wedding_registries_path(@wedding, @registry)
   end
 
   private
@@ -49,4 +51,5 @@ class RegistriesController < ApplicationController
   def set_wedding
     @wedding = Wedding.find(params[:wedding_id])
   end
+
 end
