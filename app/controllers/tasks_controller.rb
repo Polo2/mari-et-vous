@@ -1,8 +1,10 @@
 class TasksController < ApplicationController
+  before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_wedding
 
 
   def index
-    @tasks = Task.all
+    @tasks = Task.where('wedding_id = ?', @wedding.id)
   end
 
 
@@ -14,10 +16,18 @@ class TasksController < ApplicationController
     @task = Task.new
   end
 
-  def edit
+  def create
+    @task = Task.new(task_params)
+    @task.wedding_id = @wedding.id
+    if @task.save
+      redirect_to wedding_path(@wedding)
+    else
+      render :new
+    end
+
   end
 
-  def create
+  def edit
   end
 
   def update
@@ -29,11 +39,15 @@ class TasksController < ApplicationController
 private
 
   def set_task
-
+    @task = Task.find(params[:id])
   end
 
+  def set_wedding
+    @wedding = Wedding.find(params[:wedding_id])
+  end
 
   def task_params
+    params.require(:task).permit(:name)
   end
 
 

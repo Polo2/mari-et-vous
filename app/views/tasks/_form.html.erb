@@ -1,0 +1,7 @@
+<h2>New task</h2>
+
+<%= simple_form_for([@wedding, @task]) do |f| %>
+  <%= f.input :name %>
+  <%= f.submit "Create this new task" %>
+<% end %>
+
