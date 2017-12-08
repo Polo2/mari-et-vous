@@ -2,7 +2,7 @@
     <p><%= @registry.email %></p>
     <div class="guest_details">
       <ul>
-      <% @registry.guest_names.each do |name, presence = false| %>
+      <% @registry.guest_names.each do |name, presence| %>
         <li>
           <%= name %>
           <div id="presence_status"><%= presence %></div>
