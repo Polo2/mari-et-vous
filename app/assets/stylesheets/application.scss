@@ -14,25 +14,9 @@
 @import "components/index";
 @import "pages/index";
 
-// weddings/:wedding_id/registries/new
-#new_registry span {
-  display: block;
-}
-.registry_guest {
+
+
+
+abbr {
   display: none;
-}
-
-// span#add_a_guest {
-//   background-color: pink;
-//   height: 12px;
-//   width: 12px;
-//   color: black;
-//   border-radius: 50%;
-//   text-align: center;
-//   line-height: 11px;
-//   font-size: 18px;
-// }
-
-.guest_details {
-  color: red;
 }
