@@ -1,30 +1,14 @@
-<% if current_user[:id] == @wedding[:user_id] %>
-  <h4>Create a new registry</h4>
+<div class="container">
+  <% if current_user[:id] == @wedding[:user_id] %>
+    <h4>Create a new registry</h4>
 
-  <%= simple_form_for([@wedding, @registry]) do |f| %>
-    <%= f.error_notification %>
+    <%= render 'form' %>
+    <%= link_to "Back to the wedding", wedding_path(@wedding) %>
+  <% else %>
 
-    <div class="form-inputs">
-      <%= f.input :email %>
+    <h1>This is not a wedding that your organize</h1>
+    <p>Consequently, you won't create a new registry</p>
 
-      <div class="form-group string optional registry_guest_names">
-        <label class="control-label string optional" for="registry_guest_names">Guest names</label>
-        <div id="champs">
-          <input class="guest_field form-control string optional" type="text" value="" name="registry[guest_names][]" />
-        </div>
-      </div>
-
-      <button id="add_field_button" type="button" >+</button>
-
-      <div class="form-actions">
-        <%= f.button :submit %>
-      </div>
-    </div>
+    <%= link_to "Back to the wedding", wedding_path(@wedding) %>
   <% end %>
-<% else %>
-
-  <h1>This is not a wedding that your organize</h1>
-  <p>Consequently, you won't create a new registry</p>
-
-  <%= link_to "Back to the wedding", wedding_path(@wedding) %>
-<% end %>
+</div>

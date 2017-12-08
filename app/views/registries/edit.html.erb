@@ -1,28 +1,4 @@
 <div class="container">
   <h4>Create a new registry</h4>
-
-  <%= simple_form_for([@wedding, @registry]) do |f| %>
-    <%= f.error_notification %>
-
-    <div class="form-inputs">
-      <%= f.input :email %>
-
-      <div class="form-group string optional registry_guest_names">
-        <label class="control-label string optional" for="registry_guest_names">Guest names</label>
-        <div id="champs">
-          <% @registry.guests.each_with_index do |guest, i| %>
-            <input type="checkbox" name="registry[guest_names][<%= i %>][presence]" <%= "checked" if guest[:presence] %> />
-            <input class="guest_field form-control string optional" type="text" value="<%= guest[:name] %>" name="registry[guest_names][<%= i %>][name]" />
-          <% end %>
-
-        </div>
-      </div>
-
-      <button id="add_field_button" type="button" >+</button>
-
-      <div class="form-actions">
-        <%= f.button :submit %>
-      </div>
-    </div>
-  <% end %>
+  <%= render 'form' %>
 </div>
