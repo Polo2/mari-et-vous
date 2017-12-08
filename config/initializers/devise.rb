@@ -3,6 +3,11 @@
 Devise.setup do |config|
 
 # -------> Facebook Login <-----------
+
+  puts "-----------------"
+  puts ENV["FB_ID"]
+  puts ENV["FB_SECRET"]
+
   config.omniauth :facebook, ENV["FB_ID"], ENV["FB_SECRET"],
     scope: 'email',
     info_fields: 'email, first_name, last_name',
