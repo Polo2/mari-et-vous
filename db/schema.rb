@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171206162613) do
+ActiveRecord::Schema.define(version: 20171208112430) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,15 @@ ActiveRecord::Schema.define(version: 20171206162613) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent", using: :btree
+  end
+
+  create_table "guests", force: :cascade do |t|
+    t.integer  "registry_id",                 null: false
+    t.string   "name",                        null: false
+    t.boolean  "presence",    default: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.index ["registry_id"], name: "index_guests_on_registry_id", using: :btree
   end
 
   create_table "messages", force: :cascade do |t|
@@ -48,7 +57,6 @@ ActiveRecord::Schema.define(version: 20171206162613) do
     t.datetime "updated_at", null: false
     t.string   "email"
     t.integer  "total"
-    t.text     "guests"
     t.index ["user_id"], name: "index_registries_on_user_id", using: :btree
     t.index ["wedding_id"], name: "index_registries_on_wedding_id", using: :btree
   end

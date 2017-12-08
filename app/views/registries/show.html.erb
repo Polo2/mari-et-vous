@@ -2,10 +2,10 @@
     <p><%= @registry.email %></p>
     <div class="guest_details">
       <ul>
-      <% @registry.guest_names.each do |name, presence = false| %>
+      <% @registry.guests.each do |guest| %>
         <li>
-          <%= name %>
-          <div id="presence_status"><%= presence %></div>
+          <%= guest.name %>
+          <div id="presence_status"><%= guest.presence %></div>
         </li>
       <% end %>
     </ul>

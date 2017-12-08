@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  
+
   has_many :weddings
   has_many :registries
   # has_many :reviews
@@ -33,7 +33,7 @@ class User < ApplicationRecord
     return user
   end
 
-  
+
 
 
 end
