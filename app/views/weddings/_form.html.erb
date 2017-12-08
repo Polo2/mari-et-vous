@@ -8,7 +8,7 @@
     <%= f.input :location, required: true %>
     <%= f.input :capacity, numericality: { only_integer: true, greater_than: 0}, required: true %>
     <%= f.input :photo, as: :attachinary, required: true %>
-    <%= f.input :avatar, as: :attachinary, required: true %>
+    <%= f.input :spouse_photo, as: :attachinary, required: true %>
     <%= f.input :spouse_first_name, required: true %>
     <%= f.input :spouse_last_name, required: true %>
 
