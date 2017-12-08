@@ -29,6 +29,7 @@ class RegistriesController < ApplicationController
   end
 
   def update
+    binding.pry
     # current_user.registries.find(params[:registry_id])
     @registry.update(registry_params)
     redirect_to wedding_registry_path(@wedding, @registry)
