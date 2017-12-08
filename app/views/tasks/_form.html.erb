@@ -1,11 +1,37 @@
-<h2>New task</h2>
+<h2>1st Choice of the new tasks</h2>
 
-<p> Pour test : on veut voir le Json </p>
-<p></p>
+
+<!-- @details est de la classe Hash.
+Je créé le tableau task_list en selectionnant toutes les "key" de ce hash : -->
+<% task_list = @details.keys %>
+
+<!-- simple_form : quelles "task vont être créés ? le resultat de la selection des input de class "category-choice" qui vont être coché (check_box) -->
 
 <%= simple_form_for([@wedding, @task]) do |f| %>
-  <%= f.input :name  %>
+
+  <div class="form-group">
+
+    <input type="hidden" name="task[name][]" value="">
+
+    <input class="hidden" type="checkbox" value=" " >
+
+    <div class="category-choices">
+
+      <% task_list.each_with_index do |task, index| %>
+
+        <input class="hidden" type="checkbox" name="name" value="name_<%= index %>_value", checked id="task_list_id_<%=index%>" checked >
+        <label class="category-choice" for="task_list_id_<%=index%>"> <%= task %>
+        <i class="fa fa-check"></i>
+        </label>
+      <% end %>
+    </div>
+  </div>
 
   <%= f.submit "Create this new task" %>
+
 <% end %>
+
+<% @task_list_checked %>
+
+<!-- en sortie, j'espère récupérer un tableau @task_list_checked, avec la selection des task.name qui a été choisie avec check-box -->
 

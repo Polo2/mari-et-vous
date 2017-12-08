@@ -22,15 +22,17 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(task_params)
-    @details = parsing_json
-    @task.wedding_id = @wedding.id
-    @task.details = @details[@task.name]
-    if @task.save
-      redirect_to wedding_task_path(@wedding, @task)
-    else
-      render :new
-    end
+    @tableau_pour_voir = params[:name]
+    # <-- Objectif : créer chacune des tache en itérant sur le tableau @task_list_checked  -->
+      # @task = Task.new(task_params)
+      # @details = parsing_json
+      # @task.wedding_id = @wedding.id
+      # @task.details = @details[@task.name]
+      # if @task.save
+      #   redirect_to wedding_task_path(@wedding, @task)
+      # else
+      #   render :new
+      # end
 
   end
 
@@ -56,6 +58,7 @@ private
   def task_params
     params.require(:task).permit(:name)
   end
+
 
   def parsing_json
     file = File.read "app/models/tasks.json"
