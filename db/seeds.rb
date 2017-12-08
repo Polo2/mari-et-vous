@@ -62,8 +62,10 @@ wedding1_polo = Wedding.create({
   user_id: new_user_polo.id,
   date: Date.new(2018, 5, 19),
   location: "Abbaye de Pontigny",
-  photo_url: 'https://www.le-pigeonnier-colbert.fr/wp-content/uploads/Abbaye-de-Pontigny-1040x559.jpg'
-  avatar_url: "https://avatars1.githubusercontent.com/u/32060402?s=400&u=33d0f8f8d6ac9979437727646e169c3173784a42&v=4"
+  photo_url: 'https://www.le-pigeonnier-colbert.fr/wp-content/uploads/Abbaye-de-Pontigny-1040x559.jpg',
+  spouse_photo_url: "https://avatars1.githubusercontent.com/u/32060402?s=400&u=33d0f8f8d6ac9979437727646e169c3173784a42&v=4",
+  spouse_first_name: "Odile",
+  spouse_last_name: "Monseu"
   })
 
 wedding2_polo = Wedding.create({
@@ -74,7 +76,9 @@ wedding2_polo = Wedding.create({
   date: Date.new(2017,1,27),
   location: "Villeurbanne",
   photo_url: 'http://ekladata.com/iFXMrulEPn1hJsuM-eAZtYl9Mzk.jpg',
-  avatar_url: "https://avatars1.githubusercontent.com/u/32060402?s=400&u=33d0f8f8d6ac9979437727646e169c3173784a42&v=4"
+  spouse_photo_url: "https://avatars1.githubusercontent.com/u/32060402?s=400&u=33d0f8f8d6ac9979437727646e169c3173784a42&v=4",
+  spouse_first_name: "Jacqueline",
+  spouse_last_name: "Pouet"
   })
 
 wedding3_horti = Wedding.create({
@@ -85,7 +89,9 @@ wedding3_horti = Wedding.create({
   date: Date.new(2018,7,7),
   location: "Versailles",
   photo_url: 'http://www.chateauversailles-spectacles.fr/sites/default/files/styles/largeur_page/public/en-tete-site-festival2016-nuits-orangerie-version.jpg?itok=Zkq2UlQd',
-  avatar_url: "https://avatars0.githubusercontent.com/u/32671308?s=400&v=4"
+  spouse_photo_url: "https://avatars0.githubusercontent.com/u/32671308?s=400&v=4",
+  spouse_first_name: "Ben",
+  spouse_last_name: "Trobeau"
   })
 
 wedding4_horti = Wedding.create({
@@ -95,8 +101,10 @@ wedding4_horti = Wedding.create({
   user_id: new_user_horti.id,
   date: Date.new(2020,6,29),
   location: "Megeve",
-  photo_url: 'http://cdn1.greatfon.com/uploads/picture/452/129/129452/sunset-wateksuite-exterior.jpg'
-  avatar_url: "https://avatars0.githubusercontent.com/u/32671308?s=400&v=4"
+  photo_url: 'http://cdn1.greatfon.com/uploads/picture/452/129/129452/sunset-wateksuite-exterior.jpg',
+  spouse_photo_url: "https://avatars0.githubusercontent.com/u/32671308?s=400&v=4",
+  spouse_first_name: "Norbert",
+  spouse_last_name: "Pouet"
   })
 
 wedding5_aurel = Wedding.create({
@@ -106,8 +114,10 @@ wedding5_aurel = Wedding.create({
   user_id: new_user_aurel.id,
   date: Date.new(2018,12,31),
   location: "Valence, France",
-  photo_url: 'https://www.theknot.com/assets/topic_pages/wedding-vows-ceremony-de390170d87b481e073afef3e03a2c7b4a5d7e0b1de1036a40816f80fa85a6cd.jpg'
-  avatar_url: "https://avatars0.githubusercontent.com/u/32846131?s=400&v=4"
+  photo_url: 'https://www.theknot.com/assets/topic_pages/wedding-vows-ceremony-de390170d87b481e073afef3e03a2c7b4a5d7e0b1de1036a40816f80fa85a6cd.jpg',
+  spouse_photo_url: "https://avatars0.githubusercontent.com/u/32846131?s=400&v=4",
+  spouse_first_name: "Sylvain",
+  spouse_last_name: "Chêne"
   })
 
 wedding6_aurel = Wedding.create({
@@ -117,8 +127,10 @@ wedding6_aurel = Wedding.create({
   user_id: new_user_aurel.id,
   date: Date.new(2018,2,14),
   location: "Los Angeles",
-  photo_url: 'https://astroglide.media.zestyio.com/keep-relationship-hot.49951c8c20b5646bb5a2b150b922df1f.H1bkMLN50e.jpg'
-  avatar_url: "https://avatars0.githubusercontent.com/u/32846131?s=400&v=4"
+  photo_url: 'https://astroglide.media.zestyio.com/keep-relationship-hot.49951c8c20b5646bb5a2b150b922df1f.H1bkMLN50e.jpg',
+  spouse_photo_url: "https://avatars0.githubusercontent.com/u/32846131?s=400&v=4",
+  spouse_first_name: "Morgan",
+  spouse_last_name: "Pouet"
   })
 
 # puts "Création de 6 messages"

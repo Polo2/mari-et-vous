@@ -1,78 +1,78 @@
 <%= render "layouts/banner" %>
 
-<div class="row">
-  <div class="col-xs-12 col-sm-6">
-    <div class="info-wedding-description">
-      <p>
-        <strong>Description:</strong>
-        <%= @wedding.description %>
-      </p>
-    <p>
-      <% if policy(@wedding).edit? %>
-        <%= link_to 'Edit', edit_wedding_path(@wedding) %>
-      |
-      <% end %>
-      <% if policy(@wedding).destroy? %>
-        <%= link_to 'Destroy', @wedding, method: :delete, data: { confirm: 'Are you sure?' } %>
-      |
-      <% end %>
-      <%= link_to 'Register', new_wedding_registry_path(@wedding) %>
-      |
-      <%= link_to 'Back', root_path %>
-      |
-      <%= link_to "See all my registries", wedding_registries_path(@wedding) %>
-    </p>
+<div class="container">
 
-    <% if policy(@wedding).edit? %>
-    <% end %>
-    </div>
-  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div class="info-wedding-description">
+        <strong><%= @wedding.title %></strong>
+        <p>
+          <%= @wedding.description %>
+        </p>
+        <p>
+          <% if policy(@wedding).edit? %>
+            <%= link_to 'Edit', edit_wedding_path(@wedding) %> |
+          <% end %>
+          <% if policy(@wedding).destroy? %>
+            <%= link_to 'Destroy', @wedding, method: :delete, data: { confirm: 'Are you sure?' } %> |
+          <% end %>
+          <%= link_to 'Back', root_path %>
+        </p>
 
-  <div class="col-xs-12 col-sm-6">
-    <div class="info-wedding-location">
-      <h4>The place to be on <strong><%= @wedding.date %></strong>:</h4>
-      <h5><%= @wedding.location %></h5>
-      <div id="map" style="width: 300px; height: 400px;"></div>
-    </div>
-  </div>
-</div>
-
-
-<div id="task-container">
-  <% if policy(@wedding).edit? %>
-
-    <% if @wedding.tasks.empty? %>
-      <%= link_to "Create your first task", new_wedding_task_path(@wedding) %>
-    <% else %>
-      <% nb_tasks = @wedding.tasks.size %>
-      <p> They are <%= nb_tasks %> tasks for your wedding ! Here is the list :</p>
-      <ul>
-        <% @wedding.tasks.each_with_index do |t, ind| %>
-          <li><%= "Task n°#{ind + 1} : #{t.name}" %> </li>
+        <% if policy(@wedding).edit? %>
+          <div class="col-xs-6">
+            <%= link_to "Create a registry", new_wedding_registry_path(@wedding), class: "btn btn-primary" %>
+          </div>
+          <div class="col-xs-6">
+            <%= link_to "See all my registries", wedding_registries_path(@wedding), class: "btn btn-primary" %>
+          </div>
         <% end %>
-      </ul>
-      <p>
-        <%= link_to "Add a new task", new_wedding_task_path(@wedding) %>
-      </p>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6">
+      <div class="info-wedding-location">
+        <h4>The place to be on <strong><%= @wedding.date %></strong>:</h4>
+        <h5><%= @wedding.location %></h5>
+        <div id="map" style="width: 300px; height: 400px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="task-container">
+    <% if policy(@wedding).edit? %>
+
+      <% if @wedding.tasks.empty? %>
+        <%= link_to "Create your first task", new_wedding_task_path(@wedding) %>
+      <% else %>
+        <% nb_tasks = @wedding.tasks.size %>
+        <p> They are <%= nb_tasks %> tasks for your wedding ! Here is the list :</p>
+        <ul>
+          <% @wedding.tasks.each_with_index do |t, ind| %>
+            <li><%= "Task n°#{ind + 1} : #{t.name}" %> </li>
+          <% end %>
+        </ul>
+        <p>
+          <%= link_to "Add a new task", new_wedding_task_path(@wedding) %>
+        </p>
+      <% end %>
+    <% end %>
+  </div>
+
+  <% content_for(:after_js) do %>
+    <%= javascript_tag do %>
+      var handler = Gmaps.build('Google');
+      handler.buildMap({ internal: { id: 'map' } }, function() {
+        markers = handler.addMarkers(<%= raw @markers.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        if (markers.length == 0) {
+          handler.getMap().setZoom(2);
+        } else if (markers.length == 1) {
+          handler.getMap().setZoom(10);
+        }
+      });
     <% end %>
   <% end %>
+
 </div>
-
-
-
-<% content_for(:after_js) do %>
-  <%= javascript_tag do %>
-    var handler = Gmaps.build('Google');
-    handler.buildMap({ internal: { id: 'map' } }, function() {
-      markers = handler.addMarkers(<%= raw @markers.to_json %>);
-      handler.bounds.extendWith(markers);
-      handler.fitMapToBounds();
-      if (markers.length == 0) {
-        handler.getMap().setZoom(2);
-      } else if (markers.length == 1) {
-        handler.getMap().setZoom(10);
-      }
-    });
-  <% end %>
-<% end %>
-
