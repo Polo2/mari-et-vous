@@ -102,6 +102,35 @@
     text-align: center;
     }
 
+  .avatar-large {
+    width: 50px;
+    border-radius: 50%;
+    margin: -214px;
+    margin-top: -145px;
+}
+
+  .card-description {
+position: relative;
+
+
+  h2 {
+  margin-top: 56px !important;
+  margin-bottom: 12.5px !important;
+  font-family: 'Montserrat', sans-serif;
+  color: #726e6e;
+  }
+
+  p {
+      margin: 20px;
+}
+ }
+
+.card-testi {
+  color: #828080;
+  font-family: 'Dancing Script', cursive;
+  }
+
+
   // ---------> CONTACT <-------------------
 
   .contact {
@@ -113,11 +142,11 @@
     }
 
   .card {
-    background-color: #fff;
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: 4px;
-    margin-top: 15px;
-    color: white;
+    background-color: #F4F4F4;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 20px;
+    margin-top: 10px;
+    color: #F4F4F4;
   }
 
 
