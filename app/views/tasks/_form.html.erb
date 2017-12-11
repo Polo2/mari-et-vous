@@ -1,11 +1,14 @@
-<h2>New task</h2>
-
-<p> Pour test : on veut voir le Json </p>
-<p></p>
+<h2>1st Choice of the new tasks</h2>
 
 <%= simple_form_for([@wedding, @task]) do |f| %>
-  <%= f.input :name  %>
+
+  <%= f.input :name, collection: @tasks_name_list, as: :radio_buttons %>
 
   <%= f.submit "Create this new task" %>
+
 <% end %>
+
+<% @task_list_checked %>
+
+<!-- en sortie, j'espère récupérer un tableau @task_list_checked, avec la selection des task.name qui a été choisie avec check-box -->
 

@@ -1,9 +1,13 @@
 // Import Google fonts
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,300,700|Raleway:400,100,300,700,500");
+@import url('https://fonts.googleapis.com/css?family=Tenor+Sans'); // --> font-family: 'Tenor Sans', sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Chivo');
+@import url('https://fonts.googleapis.com/css?family=Chivo:300i');
 
 // Define fonts for body and headers
-$body-font: "Montserrat", "Helvetica", "sans-serif";
-$headers-font: "Raleway", "Helvetica", "sans-serif";
+$body-font: 'Tenor Sans', sans-serif;
+$headers-font:'Chivo', sans-serif;
+
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
