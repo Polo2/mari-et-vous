@@ -10,10 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20171208131954) do
-
-
+ActiveRecord::Schema.define(version: 20171211112949) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,18 +30,11 @@ ActiveRecord::Schema.define(version: 20171208131954) do
     t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent", using: :btree
   end
 
-
-  create_table "categories", force: :cascade do |t|
-    t.string  "name"
-    t.integer "task_id"
-    t.index ["task_id"], name: "index_categories_on_task_id", using: :btree
-  end
-
   create_table "elements", force: :cascade do |t|
-    t.integer "category_id"
     t.text    "content"
     t.boolean "public"
-    t.index ["category_id"], name: "index_elements_on_category_id", using: :btree
+    t.integer "task_id"
+    t.index ["task_id"], name: "index_elements_on_task_id", using: :btree
   end
 
   create_table "guests", force: :cascade do |t|
@@ -130,8 +120,6 @@ ActiveRecord::Schema.define(version: 20171208131954) do
     t.index ["user_id"], name: "index_weddings_on_user_id", using: :btree
   end
 
-  add_foreign_key "categories", "tasks"
-  add_foreign_key "elements", "categories"
   add_foreign_key "messages", "tasks"
   add_foreign_key "messages", "users"
   add_foreign_key "registries", "users"

@@ -1,3 +1,6 @@
 class Element < ApplicationController
-  belongs_to :category
+  belongs_to :task
+
+  validates :public, presence: true
+
 end
