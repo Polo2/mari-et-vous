@@ -31,7 +31,7 @@
                   <i class="fa fa-heart-o"></i><% end %>
               <% end %>
             </div>
-            <div class="title">SOON TO BE WED</div>
+            <div class="title"><h3>SOON TO BE WED</h3></div>
               <div class="description">It's the best website for you to organize your wedding. Here, you'll create a dedicated server for your website, where you can share invitations, informations, registries with your invites... And of course, you can ask them for help, by offering them to participate to a dedicated extra-job !
               </div>
             </div>
@@ -47,7 +47,7 @@
                   <i class="fa fa-envelope-o"></i><% end %>
                 <% end %>
               </div>
-                <div class="title">GUEST</div>
+                <div class="title"><h3>GUEST</div>
               <div class="description">Quisque mollis zefH dg gkggfghjkl mi ac aliquet accumsan. Sed sed dapibus libero. Quisque mollis mi ac aliquet accumsan. Sed sed dapibus libero. Quisque mollis mi ac aliquet accumsan. Sed sed dapibus libero
               </div>
             </div>
@@ -65,45 +65,47 @@
     <div class="container">
       <h3><span class="section-title text-center">They trust us</span></h3>
       <div class="row">
-         <div class="col-xs-12 col-sm-4">
-              <div class="card card-description">
-                <div class="photo">
-                  <%= image_tag "couple.jpg", class:"avatar-large" %>
-                </div>
-                  <h2>Camille.C</h2>
-                  <div class="card-testi">
-                    <p>What an easy and incredible website, helped me a lot to prepare everything dor D-DAY. My husband and I loved it.</p>
+        <div class="trust">
+           <div class="col-xs-12 col-sm-4">
+                <div class="card card-description">
+                  <div class="photo">
+                    <%= image_tag "couple.jpg", class:"avatar-large" %>
                   </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-4">
-              <div class="card card-description">
-                <div class="photo">
-                  <%= image_tag "couple2.jpg", class:"avatar-large" %>
-                </div>
-                  <h2>Benjamin.B</h2>
-                  <div class="card-testi">
-                    <p>What an incredible way to organizz a wedding! Made my life so much easier.</p>
+                    <h2>Camille.C</h2>
+                    <div class="card-testi">
+                      <p>What an easy and incredible website, helped me a lot to prepare everything dor D-DAY. My husband and I loved it.</p>
+                    </div>
                   </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-4">
-              <div class="card card-description">
-                <div class="photo">
-                  <%= image_tag "couple3.jpg", class:"avatar-large" %>
-                </div>
-                  <h2>Claire.T</h2>
-                  <div class="card-testi">
-                    <p>I had nothing to think about, every thing in Mari&moi is well thought and simple. You have to try it yourself !</p>
+              </div>
+              <div class="col-xs-12 col-sm-4">
+                <div class="card card-description">
+                  <div class="photo">
+                    <%= image_tag "couple2.jpg", class:"avatar-large" %>
                   </div>
-                </div>
+                    <h2>Benjamin.B</h2>
+                    <div class="card-testi">
+                      <p>What an incredible way to organizz a wedding! Made my life so much easier.</p>
+                    </div>
+                  </div>
+              </div>
+              <div class="col-xs-12 col-sm-4">
+                <div class="card card-description">
+                  <div class="photo">
+                    <%= image_tag "couple3.jpg", class:"avatar-large" %>
+                  </div>
+                    <h2>Claire.T</h2>
+                    <div class="card-testi">
+                      <p>I had nothing to think about, every thing in Mari&moi is well thought and simple. You have to try it yourself !</p>
+                    </div>
+                  </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
   <!----------- Contact us form -------------->
-
+<div class="contact-form">
   <div class="contact">
     <div class="container">
       <div class="col-xs-12 col-md-6 col-md-offset-3">
@@ -111,19 +113,20 @@
         <div class="row">
           <div class="col-md-6 col-sm-12">
             <label for="contactFormFullName">Full Name</label>
-            <input type="email" class="form-control" id="contactFormFullName" placeholder="Enter your full name">
+            <input type="email" class="form-control" id="contactFormFullName" placeholder="Enter full name">
           </div>
           <div class="col-md-6 col-sm-12">
             <label for="contactFormEmail">Email address</label>
-            <input type="email" class="form-control" id="contactFormEmail" placeholder="Enter your email address">
+            <input type="email" class="form-control" id="contactFormEmail" placeholder="Enter email address">
           </div>
         </div>
           <label>Message</label>
-          <id="exampleInputMessage1" class="form-control mb-4" rows="10" placeholder="Enter your message..." name="message">
-        <input class="btn btn-primary btn-pill d-flex ml-auto mr-auto" type="submit" value="Send Your Message">
+          <input id="exampleInputMessage1" placeholder="Type here" class="form-control mb-4" rows="10" name="message">
+        <input class="btn btn-cta btn-pill d-flex ml-auto mr-auto" type="submit" value="Send">
       </div>
       </div>
   </div>
+</div>
 </div>
 
 
