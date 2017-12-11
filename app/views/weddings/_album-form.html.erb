@@ -1,5 +1,5 @@
 <div class="wedding-memories">
-  <% if @wedding.passed?(@wedding) %>
+  <% if @wedding.passed? %>
     <div id="photo-memories">
       <%= simple_form_for(@wedding, @reviews) do |f| %>
           <%= f.input :photos, as: :attachinary %>

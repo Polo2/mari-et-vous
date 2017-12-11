@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :weddings
   has_many :registries
   has_many :reviews
+
+  after_create :link_registries
   # has_many :messages
   has_attachment :avatar
 
@@ -33,7 +35,12 @@ class User < ApplicationRecord
     return user
   end
 
+  def link_registries
+    registries = Registry.where(email: email.downcase)
 
-
-
+    registries.each do |registry|
+      registry.user = self
+      registry.save
+    end
+  end
 end

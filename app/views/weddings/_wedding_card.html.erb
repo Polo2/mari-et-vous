@@ -1,0 +1,19 @@
+<div class="card-details">
+  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('<%= cl_image_path @wedding.photo.path %>' )">
+    <div class="card-category"><%= @wedding.user.first_name %> & <%= @wedding.spouse_first_name %></div>
+    <div class="card-description">
+      <p class="card-date"><%= @wedding.date %></p>
+      <p class="card-location"><%= @wedding.location %></p>
+    </div>
+    <%= cl_image_tag @wedding.spouse_photo.path, class: "card-user" %>
+    <a class="card-link" href="<%= wedding_path %>" ></a>
+  </div>
+  <div class="card-info">
+    <strong><%= @wedding.title %></strong>
+    <p>
+      <%= @wedding.description %>
+    </p>
+  </div>
+</div>
+
+
