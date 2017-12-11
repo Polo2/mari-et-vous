@@ -1,0 +1,5 @@
+{
+  "music": [ "instrument", "playlist", "autre" ],
+  "food": ["cocktail", "dinner", "dessert", "brunch"],
+  "alcool": ["vine", "beer", "champaign"]
+}

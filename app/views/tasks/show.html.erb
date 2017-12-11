@@ -1,18 +1,42 @@
-<h1><%= "Task n° #{@task.id}"%></h1>
-
 <h2> <%= @task.name %> </h2>
 
-<% liste = @details["#{@task.name}"]["prive"] %>
+
+<% @task.categories.each do |category| %>
+  <div class="category_container">
+    <div class="col-xs-4">
+    <h2><%= category.name %></h2>
+    </div>
+    <div class="col-xs-8">
+
+      <div class="private_elements">
+        <p> Private </p>
+      </div>
+
+      <div class="public_elements">
+        <p> Public </p>
+      </div>
+
+      <%= link_to "modify elements for #{category.name}", wedding_task_category_path(@wedding, @task, category) %>
+
+    </div>
+
+  </div>
+
+<% end %>
+
+<h2>Useless ...</h2>
+
+<h2>Categories de cette tache</h2>
 
 <ul>
-
-  <% liste.each do |list| %>
+  <% @task.categories.each do |category| %>
     <li>
-      <%= list[0] %>
+      <%= category.name %>
     </li>
 
   <% end %>
 
-
 </ul>
+
+<%= link_to "Edit Task", edit_wedding_task_path(@wedding, @task) %>
 

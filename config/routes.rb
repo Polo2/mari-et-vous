@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :weddings do
     resources :registries
     resources :tasks do
+      resources :categories do
+        resources :elements, only: [:index, :show, :edit]
+      end
       resources :messages, only: [:create, :index, :new, :destroy]
     end
   end
