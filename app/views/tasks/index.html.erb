@@ -1,10 +1,21 @@
-<p>Liste de toutes les taches ici</p>
+<div id="task-container">
+    <% if policy(@wedding).edit? %>
 
-<ul>
-  <% @tasks.each_with_index do |task, index| %>
-
-  <li><%= "Task n°#{index + 1} : #{task.name}" %> </li>
-
-  <% end %>
-
-</ul>
+      <% if @wedding.tasks.empty? %>
+        <%= link_to "Create your first task", new_wedding_task_path(@wedding) %>
+      <% else %>
+        <% nb_tasks = @wedding.tasks.size %>
+        <p> They are <%= nb_tasks %> tasks for your wedding ! Here is the list :</p>
+        <ul>
+          <% @wedding.tasks.each_with_index do |t, ind| %>
+            <li><%= "Task n°#{ind + 1} : #{t.name}" %> </li>
+            <%= link_to "show this task", wedding_task_path(@wedding, t) %>
+          <% end %>
+        </ul>
+        <p>
+          <%= link_to "Add a new task", new_wedding_task_path(@wedding) %>
+        </p>
+      <% end %>
+    <% end %>
+  <%= link_to "Back to wedding", wedding_path(@wedding) %>
+  </div>

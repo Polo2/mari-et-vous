@@ -1,5 +1,5 @@
 {
-  "music": [ "instrument", "playlist", "autre" ],
-  "food": ["cocktail", "dinner", "dessert", "brunch"],
-  "alcool": ["vine", "beer", "champaign"]
+  "music": [ "Trouver materiel de sono", "valider un DJ"],
+  "dinner": ["choix menus", "choix du vin", "choix traiteur pour cocktail"],
+  "administrative procedure": ["dossier mairie", "contrat de mariage"]
 }

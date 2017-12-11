@@ -1,6 +1,6 @@
-class Element < ApplicationController
+class Element < ApplicationRecord
   belongs_to :task
 
-  validates :public, presence: true
+  validates :public, inclusion: [true, false]
 
 end

@@ -1,10 +1,7 @@
 require 'json'
 
 class Task < ApplicationRecord
-  NAMES = %w(
-    music
-    food
-  )
+
 
   belongs_to :wedding
   has_many :elements, dependent: :destroy
@@ -16,10 +13,10 @@ class Task < ApplicationRecord
 
   def create_default_categories
     file = File.read("#{Rails.root}/lib/tasks_details/details.json")
-    categories_details = JSON.parse(file)
+    defaults_elements = JSON.parse(file)
 
-    categories_details[name].each do |category|
-      Category.create(task: self, name: category)
+    defaults_elements[name].each do |text|
+      Element.create(task: self, content: text, public: false)
     end
   end
 end
