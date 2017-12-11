@@ -1,19 +1,22 @@
 <div class="tasks-container">
   <div class="row">
-    <div class="col-xs-12 col-md-3">
-      <ul class="tasks" id="tasks-list">
-        <% wedding.tasks.each do |task| %>
-          <li class="task <%= 'active' if task.id == active_task.id %>"> <%= link_to task.name, wedding_task_path(wedding, task) %></li>
-        <% end %>
-          <li class="task active"> <%= link_to "New task", new_wedding_task_path(wedding) %> </li>
-      </ul>
-    </div>
+    <ul class="tasks" id="tasks-list">
+      <% wedding.tasks.each do |task| %>
+        <div class="col-xs-6 col-md-2 .offset-md-1">
+          <%= link_to wedding_task_path(wedding, task) do %>
+            <li class="task"><%= task.name  %></li>
+          <% end %>
+        </div>
+      <% end %>
+    </ul>
+  </div>
 
-    <div class="col-xs-12 col-md-9">
-
-      <%= render 'tasks/task', task: active_task %>
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <p> <%= link_to "New task", new_wedding_task_path(wedding) %> </p>
     </div>
   </div>
+
 </div>
 
 <!--
