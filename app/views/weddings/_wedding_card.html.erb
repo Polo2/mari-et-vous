@@ -1,5 +1,5 @@
 <div class="card-details">
-  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('<%= cl_image_path @wedding.photo.path %>' )">
+  <div class="card" style="background-image: url('<%= cl_image_path @wedding.photo.path %>' )">
     <div class="card-category"><%= @wedding.user.first_name %> & <%= @wedding.spouse_first_name %></div>
     <div class="card-description">
       <p class="card-date"><%= @wedding.date %></p>
