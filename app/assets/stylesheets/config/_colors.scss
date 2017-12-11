@@ -1,6 +1,6 @@
 // Define variables for your color scheme
 
-// For example:
+// TO DELETE:
 $red: #EE5F5B;
 $blue: #469AE0;
 $yellow: #FDB631;
@@ -8,9 +8,13 @@ $orange: #E67E22;
 $green: #32B796;
 $gray: #000000;
 $light-gray: #F4F4F4;
-$background: #c5d5cb;
+
+// TO KEEP:
+$header-grey: #726e6e;
+$p-grey: #828080;
 $text: #3b3a36;
 $white: #FFFFFF;
+$green-background: #c5d5cb;
 
 .btn-cta {
   background-color: #8ad88a;
@@ -31,74 +35,5 @@ label {
     color: #726e6e !important;
      }
 
-// BUTTON SUBMIT/SEND
 
-$green: #1ECD97;
-$gray: #bbbbbb;
 
-.container-button {
-  position: absolute;
-  top:50%;
-  left:50%;
-  margin-left: -65px;
-  margin-top: -20px;
-  width: 130px;
-  height: 40px;
-  text-align: center;
-}
-button {
-  outline:none;
-  height: 40px;
-  text-align: center;
-  width: 130px;
-  border-radius:15px;
-  background: #c5d5cb;
-  border: 2px solid white;
-
-  letter-spacing:2px;
-  text-shadow:0;
-  font-size:20px;
-  font-weight:bold;
-  color: #726e6e !important;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  font-family: "Chivo", sans-serif !important;
-  &:hover {
-    color: white;
-  }
-  &:active {
-    //letter-spacing: 2px;
-    letter-spacing: 2px ;
-  }
-
-}
-.onclic {
-  width: 40px;
-  border-color:$gray;
-  border-width:3px;
-  font-size:0;
-  border-left-color:$green;
-  animation: rotating 2s 0.25s linear infinite;
-
-  &:hover {
-    color:$green;
-  }
-}
-.validate {
-  font-size:13px;
-  color: white;
-  background: $green;
-  &:after {
-    font-family:'FontAwesome';
-    content:"\f00c";
-  }
-}
-
-@keyframes rotating {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
