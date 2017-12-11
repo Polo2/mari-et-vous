@@ -7,7 +7,7 @@ class Task < ApplicationRecord
   )
 
   belongs_to :wedding
-  has_many :categories
+  has_many :elements, dependent: :destroy
   has_many :messages
 
   after_create :create_default_categories

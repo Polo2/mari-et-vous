@@ -5,7 +5,7 @@ before_action :set_category, only: [:show, :edit, :upate, :destroy]
 
 
   def index
-    @categories = Category.all
+    @categories = Category.where('wedding_id = ? AND task_id = ? ', @wedding.id, @task.id)
   end
 
   def show

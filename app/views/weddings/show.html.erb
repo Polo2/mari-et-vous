@@ -50,6 +50,7 @@
         <ul>
           <% @wedding.tasks.each_with_index do |t, ind| %>
             <li><%= "Task n°#{ind + 1} : #{t.name}" %> </li>
+            <%= link_to "show this task (bientot en mode render)" %>
           <% end %>
         </ul>
         <p>
@@ -57,6 +58,9 @@
         </p>
       <% end %>
     <% end %>
+
+<!--   AJOUTER RENDER VERS PAGE TASK_SHOW QUAND LA TACHE EST SELECTIONNEE -->
+
   </div>
 
   <% content_for(:after_js) do %>
