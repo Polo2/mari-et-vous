@@ -1,0 +1,35 @@
+<div class="tasks-container">
+  <div class="row">
+    <div class="col-xs-12 col-md-3">
+      <ul class="tasks" id="tasks-list">
+        <% wedding.tasks.each do |task| %>
+          <li class="task <%= 'active' if task.id == active_task.id %>"> <%= link_to task.name, wedding_task_path(wedding, task) %></li>
+        <% end %>
+          <li class="task active"> <%= link_to "New task", new_wedding_task_path(wedding) %> </li>
+      </ul>
+    </div>
+
+    <div class="col-xs-12 col-md-9">
+
+      <%= render 'tasks/task', task: active_task %>
+    </div>
+  </div>
+</div>
+
+<!--
+<script>
+
+
+
+
+const list = document.getElementById("tasks-list")
+const taskItems = list.querySelectorAll("l")
+
+console.log(taskItems);
+
+taskItems.addEventListener("click", (event) => {
+  event.currentTarget.toggleClass("active")
+});
+
+</script>
+ -->
