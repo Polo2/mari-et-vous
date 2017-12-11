@@ -1,0 +1,21 @@
+<% if current_user[:id] == @wedding[:user_id] %>
+  <%= link_to 'Edit', edit_wedding_reviews_path(@wedding) %> |
+  <%= link_to 'Destroy', @wedding, method: :delete, data: { confirm: 'Are you sure?' } %> |
+  <%= link_to 'Back', weddings_path %>
+
+<% else %>
+
+  <div class="wedding-registry-form">
+
+    <% if @wedding.passed?(@wedding) %>
+      <%= link_to 'Back', weddings_path %>
+      <div id="reviews">
+        <% if @wedding.reviews.blank? %>
+        <p>Be the first to leave a review for <%= @wedding.title %></p>
+        <% else %>
+          <% @wedding.reviews.each do |review| %>
+            <%= render 'reviews/show', review: review %>
+          <% end %>
+        <% end %>
+        <%= render 'reviews/form', wedding: @wedding, review: @review %>
+      </div>

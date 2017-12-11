@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171211112949) do
+
+ActiveRecord::Schema.define(version: 20171211113727) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +70,14 @@ ActiveRecord::Schema.define(version: 20171211112949) do
     t.index ["wedding_id"], name: "index_registries_on_wedding_id", using: :btree
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.string   "content"
+    t.integer  "wedding_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["wedding_id"], name: "index_reviews_on_wedding_id", using: :btree
+  end
+
   create_table "tasks", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -97,6 +107,7 @@ ActiveRecord::Schema.define(version: 20171211112949) do
     t.string   "token"
     t.datetime "token_expiry"
     t.string   "location"
+    t.string   "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
@@ -114,9 +125,10 @@ ActiveRecord::Schema.define(version: 20171211112949) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "token"
-    t.string   "avatar"
+    t.string   "spouse_photo"
     t.string   "spouse_first_name"
     t.string   "spouse_last_name"
+    t.string   "album_photos"
     t.index ["user_id"], name: "index_weddings_on_user_id", using: :btree
   end
 
@@ -124,6 +136,7 @@ ActiveRecord::Schema.define(version: 20171211112949) do
   add_foreign_key "messages", "users"
   add_foreign_key "registries", "users"
   add_foreign_key "registries", "weddings"
+  add_foreign_key "reviews", "weddings"
   add_foreign_key "tasks", "weddings"
   add_foreign_key "weddings", "users"
 end

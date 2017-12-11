@@ -34,7 +34,7 @@ class WeddingsController < ApplicationController
     @wedding = Wedding.new(wedding_params)
     @wedding.user = current_user
     authorize(@wedding)
-
+    @wedding.save
     respond_to do |format|
       if @wedding.save
         format.html { redirect_to @wedding, notice: 'Wedding was successfully created.' }
@@ -83,6 +83,6 @@ class WeddingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def wedding_params
-      params.require(:wedding).permit(:title, :description, :date, :location, :capacity, :photo, :spouse_avatar)
+      params.require(:wedding).permit(:title, :description, :date, :location, :capacity, :photo, :spouse_photo, :spouse_first_name, :spouse_last_name, :album_photos)
     end
 end

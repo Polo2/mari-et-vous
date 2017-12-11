@@ -1,0 +1,32 @@
+<div class="wedding-memories">
+  <% if @wedding.passed?(@wedding) %>
+
+    <% if current_user[:id] == @wedding[:user_id] %>
+      <div id="photo-memories">
+        <%= simple_form_for(@wedding, @reviews) do |f| %>
+            <%= f.input :photos, as: :attachinary %>
+            <%= f.input :content %>
+        <% end %>
+      </div>
+
+    <% elsif current_user[:email] == @registries.includes?registry[:email] %>
+      <div id="reviews">
+        <% if @wedding.reviews.blank? %>
+        <p>Be the first to leave a review for <%= @wedding.title %></p>
+         <div id="photo-memories">
+            <%= simple_form_for(@wedding, @reviews) do |f| %>
+                <%= f.input :photos, as: :attachinary %>
+                <%= f.input :content %>
+            <% end %>
+          </div>
+        <% else %>
+          <% @wedding.reviews.each do |review| %>
+            <%= render 'reviews/show', review: review %>
+          <% end %>
+        <% end %>
+        <%= render 'reviews/form', wedding: @wedding, review: @review %>
+      </div>
+
+    <% else %>
+      <p>You don't participate to this wedding, you can't put a review or see content of this page</p>
+    <% end %>
