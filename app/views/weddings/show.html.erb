@@ -1,14 +1,9 @@
-
-
 <div class="container">
-<%= render "layouts/wedding_card" %>
+
   <div class="row">
     <div class="col-xs-12 col-sm-6">
       <div class="info-wedding-description">
-        <strong><%= @wedding.title %></strong>
-        <p>
-          <%= @wedding.description %>
-        </p>
+        <%= render "wedding_card" %>
         <p>
           <% if policy(@wedding).edit? %>
             <%= link_to 'Edit', edit_wedding_path(@wedding) %> |

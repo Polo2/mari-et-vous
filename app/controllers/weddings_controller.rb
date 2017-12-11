@@ -34,7 +34,6 @@ class WeddingsController < ApplicationController
     @wedding = Wedding.new(wedding_params)
     @wedding.user = current_user
     authorize(@wedding)
-    @wedding.save
     respond_to do |format|
       if @wedding.save
         format.html { redirect_to @wedding, notice: 'Wedding was successfully created.' }
