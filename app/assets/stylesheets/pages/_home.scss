@@ -2,6 +2,27 @@
 
 .home-page{
 
+.phrase {
+  font-family: 'Chivo', sans-serif;
+  color: white;
+  text-align: center;
+  padding: 135px;
+  font-size: 25px;
+}
+
+.parallax {
+    /* The image used */
+    background-image: url("wedding3.jpg");
+
+    /* Set a specific height */
+    height: 500px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
   // ---------> SOON TO BE WED / GUEST <--------------
   .icon {
     border-radius: 50%;
@@ -12,7 +33,7 @@
     height: 65px;
     line-height: 65px;
     background-color: white;
-    color: #3b3a36;
+    color: #959A97;;
 
   }
 
@@ -23,12 +44,12 @@
   h3{
     text-align: center;
     margin-bottom: 21px;
+    color: #726e6e;
 
   }
 
   .flexrow {
     display: flex;
-
     align-items: center;
     justify-content: center;
 
@@ -40,7 +61,7 @@
   }
 
   .py-4 {
-    padding-top: 70px;
+    padding-top: 37px;
     padding-bottom: 70px;
 
     text-align: center;
@@ -61,12 +82,12 @@
     }
 
   .feature {
-    border: 1px solid white;
+    border: 2px solid #c5d5cb;
     border-radius: 31px;
     box-shadow: 2px 2px 0px #F5F5F5;
     margin-left: 189px;
     max-width: 300px;
-    max-height: 415px;
+    max-height: 429px;
   }
 
   .feature:hover {
@@ -75,6 +96,7 @@
 
   .description {
     font-size: 12px;
+    color: #959A97;
   }
 
   .title {
@@ -84,15 +106,29 @@
   }
 
   .wedders {
-    background-color: $background;
+    background-color: white;
     padding-top: 10px !important;
-    padding-bottom: 10px !important;
+    padding-bottom: 25px !important;
   }
+
+  #button2 {
+    margin: 45px;
+    border-radius: 15px;
+    font-size: 20px;
+  }
+
+  #button3 {
+    margin: 74px;
+    border-radius: 15px;
+    margin-top: 109px;
+    font-size: 20px;
+  }
+
 
   // ---------> TESTIMONIAL <--------------
 
   .testimonials {
-    background-color: white;
+    background-color: $background;
     padding: 50px;
     background-size: auto;
     padding-top: 60px !important;
@@ -103,7 +139,6 @@
     font-size: 31px;
     margin: 0px !important;
     border-bottom-width:2px;
-    border-bottom-color: black;
     border-bottom-style: solid;
     text-align: center;
     }
@@ -128,9 +163,10 @@ position: relative;
   }
 
   p {
-      margin: 15px;
-      font-family: 'Chivo', sans-serif;
-  font-style: italic;
+    margin: 15px;
+    font-family: 'Chivo', sans-serif;
+    font-style: italic;
+    font-size: 16.5px;
 }
  }
 
@@ -146,10 +182,11 @@ position: relative;
   // ---------> CONTACT <-------------------
 .contact-form {
   .contact {
-    background-color: $background !important;
+    background-color: white !important;
     padding: 74px;
     background-size: auto;
     padding-top: 60px;
+    padding-bottom: 147px;
     font-size: 20px !important;
     }
 
@@ -165,11 +202,16 @@ position: relative;
   .btn {
     margin: auto;
     margin-top: 60px;
+
   }
 
   h3 {
     margin-bottom: 54px !important;
-}
+  }
+
+  button {
+    margin-top: 200px !important;
+  }
 }
 
 }
