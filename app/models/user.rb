@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   has_many :weddings
   has_many :registries
-  # has_many :reviews
+  has_many :reviews
   # has_many :messages
   has_attachment :avatar
 

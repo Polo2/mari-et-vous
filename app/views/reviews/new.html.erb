@@ -1,0 +1,15 @@
+<div class="container">
+  <% if current_user[:id] == @wedding[:user_id] %>
+    <h4>Create your album photo memories/h4>
+
+    <%= render 'weddings/album-form' %>
+    <%= link_to "Back to my profile", profile_path(current_user) %>
+  <% else %>
+
+    <h1>This is not a wedding that you organize</h1>
+    <p>Consequently, you won't create an album photo memories</p>
+
+    <%= link_to "Back to my profile", profile_path(current_user) %>
+  <% end %>
+</div>
+

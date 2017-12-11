@@ -1,0 +1,5 @@
+<% if @wedding.passed?(@wedding) %>
+  <h4>Do you want to create and share your album photos memories of your wedding?</h4>
+  <%= link_to "My memories", new_wedding_review_path(@wedding) %>
+<% end %>
+
