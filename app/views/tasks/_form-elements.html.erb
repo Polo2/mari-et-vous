@@ -1,7 +1,0 @@
-<%= simple_form_for([ wedding, task, category, element ], remote: true) do |form| %>
-
-  <%= form.input :content, as: :text %>
-  <%= form.input :public, collection: ['true', 'false'] %>
-  <%= form.button :submit %>
-
-<% end %>

@@ -39,29 +39,10 @@
     </div>
   </div>
 
-  <div id="task-container">
-    <% if policy(@wedding).edit? %>
 
-      <% if @wedding.tasks.empty? %>
-        <%= link_to "Create your first task", new_wedding_task_path(@wedding) %>
-      <% else %>
-        <% nb_tasks = @wedding.tasks.size %>
-        <p> They are <%= nb_tasks %> tasks for your wedding ! Here is the list :</p>
-        <ul>
-          <% @wedding.tasks.each_with_index do |t, ind| %>
-            <li><%= "Task n°#{ind + 1} : #{t.name}" %> </li>
-            <%= link_to "show this task (bientot en mode render)" %>
-          <% end %>
-        </ul>
-        <p>
-          <%= link_to "Add a new task", new_wedding_task_path(@wedding) %>
-        </p>
-      <% end %>
-    <% end %>
 
-<!--   AJOUTER RENDER VERS PAGE TASK_SHOW QUAND LA TACHE EST SELECTIONNEE -->
+  <%= link_to "Task's block here", wedding_tasks_path(@wedding) %>
 
-  </div>
 
   <% content_for(:after_js) do %>
     <%= javascript_tag do %>

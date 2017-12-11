@@ -1,53 +1,60 @@
 <h2> <%= @task.name %> </h2>
-<p> Mode lecture </p>
-<p>Lien clickable vers mode edition ?</p>
+<p> Mode lecture  / <a href="#">Mode edition ?</a></p>
+
 
 <div class="container">
 
   <div class="row">
-    <div class="col-xs-2">
-      <h2>Categories</h2>
-    </div>
-    <div class="col-xs-5">
+
+    <div class="col-xs-8">
       <h2>To do list</h2>
     </div>
-    <div class="col-xs-5">
+
+    <div class="col-xs-4">
       <h2>Discussions about</h2>
     </div>
+
   </div>
 
-
-  <% @task.categories.each do |category| %>
-    <% private_elements = category.elements.where('public = ?', false) %>
-    <% public_elements = category.elements.where('public = ?', true) %>
-    <div class="row">
-      <div class="col-xs-2">
-        <h2><%= category.name %></h2>
-     </div>
-
-      <div class="col-xs-5">
-        <h3>Private</h3>
-        <ul>
-          <% private_elements.each do |element| %>
-            <li><%= element.content %></li>
-          <% end %>
-        </ul>
-        <h3>Public</h3>
-        <ul>
-          <% public_elements.each do |element| %>
-            <li><%= element.content %></li>
-          <% end %>
-        </ul>
-      </div>
-
-
-      <div class="col-xs-5">
-        <p>Gros bloc de discussion</p>
-      </div>
+  <div class="row">
+    <div class="col-xs-4">
+      <h3>Private</h3>
+      <ul>
+        <% @private_elements.each do |element| %>
+          <li>
+            <%= element.content %>
+            <%= link_to edit_wedding_task_element_path(@wedding, @task, element) do %><i class="fa fa-pencil"></i><% end %>
+          </li>
+        <% end %>
+      </ul>
     </div>
 
-    <%= link_to "edit this category", edit_wedding_task_category_path(@wedding, @task, category) %>
-  <% end %>
+    <div class="col-xs-4">
+      <h3>Public</h3>
+      <ul>
+        <% @public_elements.each do |element| %>
+          <li>
+            <%= element.content %>
+            <%= link_to edit_wedding_task_element_path(@wedding, @task, element) do %><i class="fa fa-pencil"></i><% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+
+    <div class="col-xs-4">
+      <p>Gros bloc de discussion</p>
+    </div>
+
+
+
+  </div>
+
+<div>
+  <h3>New element : </h3>
+  <%= render 'elements/form-new', wedding: @wedding, task: @task, element: @element %>
+</div>
+<%= link_to "Back to Task-list", wedding_tasks_path(@wedding) %>
 
 </div>
 
