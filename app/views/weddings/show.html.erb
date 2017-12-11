@@ -1,14 +1,9 @@
-<%= render "layouts/banner" %>
-
 <div class="container">
 
   <div class="row">
     <div class="col-xs-12 col-sm-6">
       <div class="info-wedding-description">
-        <strong><%= @wedding.title %></strong>
-        <p>
-          <%= @wedding.description %>
-        </p>
+        <%= render "wedding_card" %>
         <p>
           <% if policy(@wedding).edit? %>
             <%= link_to 'Edit', edit_wedding_path(@wedding) %> |
@@ -43,6 +38,7 @@
 
   <%= link_to "Task's block here", wedding_tasks_path(@wedding) %>
 
+  <%= render 'tasks/tasks', wedding: @wedding, active_task: @wedding.tasks.last %>
 
   <% content_for(:after_js) do %>
     <%= javascript_tag do %>
