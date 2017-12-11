@@ -1,12 +1,18 @@
-
-  <div>
-    <ul>
-    <% @registry.guest_names.each do |name| %>
-      <li>
-        <%= name %>
-        <%= @registry.guests[0][:presence] %>
-      </li>
-    <% end %>
+<div class="container">
+    <p><%= @registry.email %></p>
+    <div class="guest_details">
+      <ul>
+      <% @registry.guests.each do |guest| %>
+        <li>
+          <%= guest.name %>
+          <div id="presence_status"><%= guest.presence %></div>
+        </li>
+      <% end %>
     </ul>
   </div>
+<%= link_to "See all my registries", wedding_registries_path(@wedding) %>
+<%= link_to "Edit", edit_wedding_registry_path(@wedding, @registry) %>
+<%= link_to "Back to my wedding", wedding_path(@wedding) %>
+</div>
+
 

@@ -1,29 +1,26 @@
-<% if @wedding.user == current_user %>
+<div class="container">
+  <% if @wedding.user == current_user %>
 
-<h1>Hello, <%= @wedding.user.first_name%> <%= @wedding.user.last_name %> </h1>
+  <h1>Hello, <%= @wedding.user.first_name%> <%= @wedding.user.last_name %> </h1>
 
-<p>Here is the list of the registries you did received for your wedding : </p>
+  <p>Here is the list of the registries for your wedding : </p>
 
-<% guest_sum = 0 %>
-<ul>
-<% @registries.each do |reg| %>
+  <% @registries.each do |reg| %>
 
-<li> <%= reg.user.first_name %> <%= reg.user.last_name %>, answered for <%= reg.guest %>
-  <% guest_sum += reg.guest %>
-</li>
-<% end %>
-</ul>
+    <li>
+      total guests : <%= reg.guests.length %> persons
+      <%= link_to 'Show', wedding_registry_path(@wedding, reg) %>
+      <%= link_to 'Edit', edit_wedding_registry_path(@wedding, reg) %>
+      <%= link_to 'Destroy', wedding_registry_path(@wedding, reg), method: :delete, data: { confirm: 'Are you sure?' } %>
+  </li>
+  <% end %>
+  </ul>
+  <%= link_to "Back to my wedding", wedding_path(@wedding) %>
 
-<p> Today, <%= guest_sum %> peoples answered "Yes" for your wedding </p>
 
-<% else %>
+  <p> Today,  peoples answered "Yes" for your wedding </p>
 
-<h1>This is not a wedding that your organize</h1>
-<p>Consequently, you won't see the list of registries</p>
-
-<%= link_to "Back to the wedding", wedding_path(@wedding) %>
-
-<% end %>
-
+  <% end %>
+</div>
 
 
