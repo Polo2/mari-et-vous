@@ -1,7 +1,4 @@
-<div class="container">
-<% if current_user[:id] == @wedding[:user_id] %>
-
-  <div class="guest-content">
+<div class="guest-content">
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
         <div class="guest-email">
@@ -16,7 +13,9 @@
             <% @registry.guests.each do |guest| %>
               <tr>
                 <td><%= guest.name %></td>
-                <td><%= presence_for(guest.presence) %></td>
+                <td>
+                  <%= presence_for(guest.presence) %>
+                </td>
               </tr>
             <% end %>
           </table>
@@ -29,27 +28,3 @@
       </div>
     </div>
   </div>
-
-<% else %>
-  <p><%= @registry.email %></p>
-    <div class="guest_details">
-
-      <%= simple_form_for ([@wedding, @registry]) do |f| %>
-        <%= f.simple_fields_for :guests do |guest_f|  %>
-          <%= guest_f.object.name %>
-          <%= guest_f.input :presence %>
-        <% end %>
-        <%= f.submit %>
-      <% end %>
-
-  </div>
-  <%= link_to "See all my registries", wedding_registries_path(@wedding) %>
-  <%= link_to "Edit", edit_wedding_registry_path(@wedding, @registry) %>
-  <%= link_to "Back to my wedding", wedding_path(@wedding) %>
-
-<% end %>
-</div>
-
-
-
-

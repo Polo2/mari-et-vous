@@ -1,0 +1,52 @@
+.form-group.string.required.registry_guests_name {
+  display: flex;
+  align-items: center;
+}
+
+label.control-label.string.required {
+  padding: 0 10px 0 0;
+}
+
+.form-group.boolean.optional.registry_guests_presence {
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+div.nested-fields {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+a.remove_fields.dynamic {
+  position: absolute;
+  right: 10px;
+  top: 2px;
+}
+.form-control.string.required {
+  width: 100%;
+}
+
+.fa {
+  color: #c5d5cb;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+}
+// .fa.plus-circle {
+//   position: absolute;
+// }
+
+.fa.fa-plus-circle {
+  margin-left: 18px;
+}
+input.boolean.optional {
+  margin-right: 5px;
+}
+a.back-link {
+  padding: 0;
+}
+
+.form-group.email.required.registry_email {
+  margin-bottom: 30px;
+}
