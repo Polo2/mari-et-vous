@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :registries
     resources :reviews
     resources :tasks do
-      resources :elements, only: [:index, :create, :show, :edit, :update ]
+      resources :elements, only: [:index, :create, :show, :edit, :update, :destroy ]
       resources :messages, only: [:create, :index, :new, :destroy]
     end
   end

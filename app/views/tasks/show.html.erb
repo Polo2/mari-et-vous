@@ -1,9 +1,5 @@
-<h2> <%= @task.name %> </h2>
-<p> Mode lecture  / <a href="#">Mode edition ?</a></p>
-
-
 <div class="container">
-
+<h2> <%= @task.name %> </h2>
   <div class="row">
 
     <div class="col-xs-8">
@@ -17,25 +13,27 @@
   </div>
 
   <div class="row">
-    <div class="col-xs-4">
+    <div class="col-xs-4 task-details">
       <h3>Private</h3>
       <ul>
         <% @private_elements.each do |element| %>
           <li>
-            <%= element.content %>
             <%= link_to edit_wedding_task_element_path(@wedding, @task, element) do %><i class="fa fa-pencil"></i><% end %>
+            <%= link_to wedding_task_element_path(@wedding, @task, element), method: :delete, data: { confirm: 'Sure?' } do %><i class="fa fa-trash"></i><% end %>
+            <%= element.content %>
           </li>
         <% end %>
       </ul>
     </div>
 
-    <div class="col-xs-4">
+    <div class="col-xs-4 task-details">
       <h3>Public</h3>
       <ul>
         <% @public_elements.each do |element| %>
           <li>
-            <%= element.content %>
             <%= link_to edit_wedding_task_element_path(@wedding, @task, element) do %><i class="fa fa-pencil"></i><% end %>
+            <%= link_to wedding_task_element_path(@wedding, @task, element), method: :delete, data: { confirm: 'Sure?' } do %><i class="fa fa-trash"></i><% end %>
+            <%= element.content %>
           </li>
         <% end %>
       </ul>
