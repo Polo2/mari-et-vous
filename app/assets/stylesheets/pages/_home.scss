@@ -137,7 +137,6 @@
 
   .section-title {
     font-size: 31px;
-    margin: 0px !important;
     border-bottom-width:2px;
     border-bottom-style: solid;
     text-align: center;
@@ -198,20 +197,13 @@ position: relative;
     color: #F4F4F4;
   }
 
-
-  .btn {
-    margin: auto;
-    margin-top: 60px;
-
+  .auth {
+    width: 100%;
+    margin-top: 30px;
   }
 
-  h3 {
-    margin-bottom: 54px !important;
-  }
 
-  button {
-    margin-top: 200px !important;
-  }
+
 }
 
 }
