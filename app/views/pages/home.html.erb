@@ -41,7 +41,7 @@
             <%= link_to 'CREATE', new_wedding_path, class: 'button' %>
           </div>
         </div>
-        <div class="col-xs-12 col-md-4 col-md-offset-1">
+        <div class="col-xs-12 col-md-4 col-md-offset-2">
           <div class="feature">
             <div class="feature-icon">
               <i class="fa fa-envelope-o"></i>
@@ -104,29 +104,30 @@
   </div>
 
   <!----------- Contact us form -------------->
-<div class="contact-form">
   <div class="contact">
     <div class="container">
-      <div class="col-xs-12 col-md-6 col-md-offset-3">
-        <h3><span class="section-title">Contact us</span></h3>
-        <div class="row">
-          <div class="col-md-6 col-sm-12">
-            <label for="contactFormFullName">Full Name</label>
-            <input type="email" class="form-control" id="contactFormFullName" placeholder="Enter full name">
+      <div class="row">
+        <div class="col-xs-12 col-md-6 col-md-offset-3">
+          <h3><span class="section-title">Contact us</span></h3>
+          <div class="row">
+            <div class="col-md-6 col-sm-12">
+              <label for="contactFormFullName">Full Name</label>
+              <input type="email" class="form-control" id="contactFormFullName" placeholder="Enter full name">
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <label for="contactFormEmail">Email address</label>
+              <input type="email" class="form-control" id="contactFormEmail" placeholder="Enter email address">
+            </div>
           </div>
-          <div class="col-md-6 col-sm-12">
-            <label for="contactFormEmail">Email address</label>
-            <input type="email" class="form-control" id="contactFormEmail" placeholder="Enter email address">
+          <div class="row marged-top">
+            <div class="col-xs-12">
+              <label>Message</label>
+              <input id="exampleInputMessage1" placeholder="Type here" class="form-control mb-4" rows="10" name="message">
+              <button id="button" class="marged-top" placeholder="Send">SEND</button>
+            </div>
           </div>
-        </div>
-          <label>Message</label>
-          <input id="exampleInputMessage1" placeholder="Type here" class="form-control mb-4" rows="10" name="message">
-        <div class="container-button">
-          <button class="auth" id="button" placeholder="Send">SEND</button>
-        </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </div>

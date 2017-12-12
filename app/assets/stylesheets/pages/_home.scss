@@ -1,200 +1,182 @@
 // Specific CSS for your home-page
 
-.home-page{
+.home-page {
 
-.phrase {
-  font-family: 'Chivo', sans-serif;
-  color: white;
-  text-align: center;
-  padding: 135px;
-  font-size: 25px;
-}
+  .phrase {
+    font-family: 'Chivo', sans-serif;
+    color: white;
+    text-align: center;
+    padding: 135px;
+    font-size: 25px;
+  }
 
-.parallax {
-    /* The image used */
-  background-image: url("wedding3.jpg");
+  .parallax {
+      /* The image used */
+    background-image: url("wedding3.jpg");
 
-  /* Set a specific height */
-  height: 500px;
+    /* Set a specific height */
+    height: 500px;
 
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
-// ---------> SOON TO BE WED / GUEST <--------------
-h3{
-  text-align: center;
-  margin-bottom: 21px;
-  color: #726e6e;
+  // ---------> SOON TO BE WED / GUEST <--------------
+  h3{
+    text-align: center;
+    margin-bottom: 21px;
+    color: #726e6e;
 
-}
+  }
 
-.py-4 {
-  padding-top: 37px;
-  padding-bottom: 70px;
+  .py-4 {
+    padding-top: 37px;
+    padding-bottom: 70px;
 
-  text-align: center;
+    text-align: center;
 
-}
+  }
 
-.mb-4 {
-  padding-top: 2.5px;
-  padding-bottom: 2.5px;
-}
-
-.feature {
-  border: 2px solid #c5d5cb;
-  border-radius: 5px;
-  padding: 20px;
-
-  .description {
-    margin-bottom: 25px;
-    font-size: 15px;
-    color: #959A97;
-    text-align: left;
-    height: 170px;
+  .mb-4 {
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
   }
 
   .button {
     display: block;
   }
-}
 
-.paddded-tb {
-  padding-top: 80px;
-  padding-bottom: 80px;
-}
 
-.feature:hover {
-  box-shadow: 0px 0px 10px #E0E0E0;
-}
+  .feature {
+    border: 2px solid #c5d5cb;
+    border-radius: 5px;
+    padding: 20px;
 
-.feature-icon {
-  display: flex;
-  justify-content: center;
+    .description {
+      margin-bottom: 25px;
+      font-size: 15px;
+      color: #959A97;
+      text-align: left;
+      height: 170px;
+    }
+  }
 
-  i {
+  .feature:hover {
+    box-shadow: 0px 0px 10px #E0E0E0;
+
+    .feature-icon i {
+      color: #c5d5cb;
+    }
+  }
+
+  .feature-icon {
     display: flex;
-    align-items: center;
     justify-content: center;
-    width: 70px;
-    height: 70px;
-    font-size: 27px;
-    border-radius: 50%;
-    box-shadow: 0 2px 4px rgba(33,37,41,.1), 0 7px 14px rgba(33,37,41,.1);
-    background-color: white;
-    color: #959A97;
-  }
-}
 
-.feature-icon:hover {
-  color: #c5d5cb;
-}
-
-.title {
-  padding: 10px;
-  font-size: 22px;
-  padding-top: 20px;
-}
-
-.wedders {
-  background-color: white;
-  padding-top: 10px !important;
-  padding-bottom: 25px !important;
-}
-
-#button2 {
-  margin: 45px;
-  border-radius: 15px;
-  font-size: 20px;
-}
-
-#button3 {
-  margin: 74px;
-  border-radius: 15px;
-  margin-top: 109px;
-  font-size: 20px;
-}
-
-.section-title {
-  font-size: 31px;
-  border-bottom-width:2px;
-  border-bottom-style: solid;
-  text-align: center;
-}
-// ---------> TESTIMONIAL <--------------
-
-.testimonials {
-  background-color: $green-background;
-  padding: 50px;
-  background-size: auto;
-}
-
-.testimonial {
-  padding: 30px;
-
-  .avatar-large {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+    i {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 70px;
+      height: 70px;
+      font-size: 27px;
+      border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(33,37,41,.1), 0 7px 14px rgba(33,37,41,.1);
+      background-color: white;
+      color: #959A97;
+    }
   }
 
-  h2 {
-    font-family: 'Chivo', sans-serif;
-    font-style: italic;
-    color: #726e6e;
-    font-size: 24px;
+  .paddded-tb {
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 
-  p {
-    margin: 15px;
-    font-family: 'Chivo', sans-serif;
-    font-style: italic;
-    font-size: 16.5px;
+  .section-title {
+    font-size: 31px;
+    border-bottom-width:2px;
+    border-bottom-style: solid;
+    text-align: center;
   }
-}
+  // ---------> TESTIMONIAL <--------------
 
-.section-title {
-  font-size: 31px;
-  margin: 0px !important;
-  border-bottom-width:2px;
-  border-bottom-style: solid;
-}
-
-.card-testi {
-  color: #828080;
-  font-family: 'Dancing Script', cursive;
-}
-
-  // ---------> CONTACT <-------------------
-.contact-form {
-  .contact {
-    background-color: white !important;
-    padding: 74px;
+  .testimonials {
+    background-color: $green-background;
+    padding: 50px;
     background-size: auto;
-    padding-top: 60px;
-    padding-bottom: 147px;
-    font-size: 20px !important;
+  }
+
+  .title {
+    padding: 10px;
+    font-size: 22px;
+    padding-top: 20px;
+  }
+
+  .wedders {
+    background-color: white;
+    padding-top: 10px !important;
+    padding-bottom: 25px !important;
+  }
+
+  // ---------> TESTIMONIAL <--------------
+  .testimonials {
+    background-color: $green-background;
+    padding: 50px;
+    background-size: auto;
+  }
+
+  .testimonial {
+    padding: 30px;
+
+    .avatar-large {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
     }
 
-  .card {
-    background-color: #F4F4F4;
-    border: 1px solid rgba(0, 0, 0, 0.125);
-    border-radius: 10px;
-    margin-top: 40px;
-    color: #F4F4F4;
+    h2 {
+      font-family: 'Chivo', sans-serif;
+      font-style: italic;
+      color: #726e6e;
+      font-size: 24px;
+    }
+
+    p {
+      margin: 15px;
+      font-family: 'Chivo', sans-serif;
+      font-style: italic;
+      font-size: 16.5px;
+    }
   }
 
-  .auth {
-    width: 100%;
-    margin-top: 30px;
+  .section-title {
+    font-size: 31px;
+    margin: 0px !important;
+    border-bottom-width:2px;
+    border-bottom-style: solid;
   }
 
+  .card-testi {
+    color: #828080;
+    font-family: 'Dancing Script', cursive;
+  }
 
-
+    // ---------> CONTACT <-------------------
+  .contact-form {
+    .contact {
+      background-color: white !important;
+      padding: 74px;
+      background-size: auto;
+      padding-top: 60px;
+      padding-bottom: 147px;
+      font-size: 20px !important;
+    }
+  }
 }
 
+.marged-top {
+  margin-top: 15px;
 }
