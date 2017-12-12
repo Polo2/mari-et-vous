@@ -38,7 +38,7 @@
 
   <%= link_to "Task's block here", wedding_tasks_path(@wedding) %>
 
-  <%= render 'tasks/tasks', wedding: @wedding, active_task: @wedding.tasks.last %>
+  <%= render 'tasks/tasks', wedding: @wedding %>
 
   <% content_for(:after_js) do %>
     <%= javascript_tag do %>
