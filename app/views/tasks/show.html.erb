@@ -1,5 +1,6 @@
 <div class="container">
-<h2> <%= @task.name %> </h2>
+<h2> <%= @task.name %></h2>
+<h3> <%= @task.statut ? "Task done" : "Pending Task" %> </h3>
   <div class="row">
 
     <div class="col-xs-8">
@@ -37,22 +38,27 @@
           </li>
         <% end %>
       </ul>
-    </div>
+    </div>t
     <div class="col-xs-4">
       <%= render 'elements/form-new', wedding: @wedding, task: @task, element: @element %>
     </div>
+  </div>
 
+  <div class="row">
+    <%= link_to "Back to Wedding", wedding_path(@wedding) %>
+    <% if @task.statut %>
+      <%= link_to "Unmark as done", edit_wedding_task_path(@wedding, @task) %>
+    <% else %>
+      <%= link_to "Mark as done", edit_wedding_task_path(@wedding, @task) %>
+    <% end %>
+  </div>
+
+  <div class="row">
     <div class="col-xs-8">
-      <h3>Block discussion</h3>
-    </div>
-
-    <div class="col-xs-4">
-      <%= link_to "Back to Task-list", wedding_path(@wedding), class: "btn btn-primary" %>
-      <%= %>
-
-
+      <h3>Discussion's Block</h3>
     </div>
   </div>
+
 
 
 </div>

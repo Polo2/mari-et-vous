@@ -39,3 +39,36 @@ button {
     content:"\f00c";
   }
 }
+
+
+//===== Registry form CSS added by Aurel =====//
+// .registry_guests_presence .checkbox {
+//   display: none;
+// }
+#new_registry .links {
+  padding: 0 0 10px 0;
+}
+a.back-link {
+  color: #726e6e;
+  text-decoration: none;
+  padding: 0 15px;
+}
+a.remove_fields.dynamic {
+  color: $green-background;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+}
+a.add_fields {
+  color: $green-background;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+}
+.form-center {
+  margin-top: 30px;
+}
+.edit_registry .links a {
+  padding-top: 0;
+}
+
