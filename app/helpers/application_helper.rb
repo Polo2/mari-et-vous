@@ -8,4 +8,12 @@ module ApplicationHelper
       image_tag 'avatar_general.png', options
     end
   end
+
+  def presence_for(presence)
+    if presence
+      "#{icon('check-square')} Confirmed".html_safe
+    else
+      "#{icon('times-circle')} Pending".html_safe
+    end
+  end
 end
