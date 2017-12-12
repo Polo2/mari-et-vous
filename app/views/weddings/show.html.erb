@@ -35,10 +35,9 @@
   </div>
 
 
-
-  <%= link_to "Task's block here", wedding_tasks_path(@wedding) %>
-
-  <%= render 'tasks/tasks', wedding: @wedding %>
+  <div class="task-block">
+    <%= render 'tasks/tasks', wedding: @wedding %>
+  </div>
 
   <% content_for(:after_js) do %>
     <%= javascript_tag do %>

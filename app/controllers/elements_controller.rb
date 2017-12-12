@@ -33,9 +33,9 @@ before_action :set_element, only: [:show, :edit, :update, :destroy]
   end
 
   def destroy
+    @element.destroy
+    redirect_to wedding_task_path(@wedding, @task)
   end
-
-
 
 
 private
