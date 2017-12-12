@@ -7,7 +7,7 @@
     </div>
 
     <div class="col-xs-4">
-      <h2>Discussions about</h2>
+      <h2>New Element</h2>
     </div>
 
   </div>
@@ -38,21 +38,22 @@
         <% end %>
       </ul>
     </div>
-
-
     <div class="col-xs-4">
-      <p>Gros bloc de discussion</p>
+      <%= render 'elements/form-new', wedding: @wedding, task: @task, element: @element %>
     </div>
 
+    <div class="col-xs-8">
+      <h3>Block discussion</h3>
+    </div>
+
+    <div class="col-xs-4">
+      <%= link_to "Back to Task-list", wedding_path(@wedding), class: "btn btn-primary" %>
+      <%= %>
 
 
+    </div>
   </div>
 
-<div>
-  <h3>New element : </h3>
-  <%= render 'elements/form-new', wedding: @wedding, task: @task, element: @element %>
-</div>
-<%= link_to "Back to Task-list", wedding_path(@wedding) %>
 
 </div>
 

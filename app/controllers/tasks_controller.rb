@@ -28,7 +28,7 @@ class TasksController< ApplicationController
   def create
     @task = Task.new(task_params)
     @task.wedding_id = @wedding.id
-
+    @task.statut = false
     if @task.save
       redirect_to wedding_task_path(@wedding, @task)
     else
