@@ -56,6 +56,16 @@
   <div class="row">
     <div class="col-xs-8">
       <h3>Discussion's Block</h3>
+      <ul>
+        <% @messages.each do |m| %>
+          <li>
+            <%= m.title %>
+            <%= m.content %>
+            <p>written by <%= m.user.first_name %></p>
+          </li>
+        <% end %>
+      </ul>
+      <%= render 'messages/form-new', wedding: @wedding, task: @task, message: @message %>
     </div>
   </div>
 

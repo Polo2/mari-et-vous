@@ -1,7 +1,9 @@
 <%= simple_form_for([@wedding, @task, @element]) do |f| %>
 
   <%= f.input :content, as: :text %>
-  <%= f.input :public, collection: [false, true], hint: ("false for private, true for public"), as: :radio_buttons %>
+  <%= f.input :public, collection: [public_for(false), public_for(true)], as: :radio_buttons %>
   <%= f.button :submit %>
 
 <% end %>
+
+

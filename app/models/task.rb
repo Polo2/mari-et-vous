@@ -5,7 +5,7 @@ class Task < ApplicationRecord
 
   belongs_to :wedding
   has_many :elements, dependent: :destroy
-  has_many :messages
+  has_many :messages, dependent: :destroy
 
 
   after_create :create_default_categories

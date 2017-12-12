@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :reviews
     resources :tasks do
       resources :elements, only: [:index, :create, :show, :edit, :update, :destroy ]
-      resources :messages, only: [:create, :index, :new, :destroy]
+      resources :messages, only: [:create, :index, :new, :destroy, :show]
     end
   end
   mount Attachinary::Engine => "/attachinary"

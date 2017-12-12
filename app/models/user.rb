@@ -9,9 +9,9 @@ class User < ApplicationRecord
   has_many :weddings
   has_many :registries
   has_many :reviews
+  has_many :messages
 
   after_create :link_registries
-  # has_many :messages
   has_attachment :avatar
 
   def self.find_for_facebook_oauth(auth)

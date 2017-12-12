@@ -9,6 +9,13 @@ module ApplicationHelper
     end
   end
 
+
+  def public_for(bool)
+    if bool
+      "Public"
+    else
+      "Private"
+
   def presence_for(presence)
     if presence
       "#{icon('check-square')} Confirmed".html_safe

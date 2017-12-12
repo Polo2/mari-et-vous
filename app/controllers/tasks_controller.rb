@@ -14,6 +14,9 @@ class TasksController< ApplicationController
     @private_elements = @task.elements.where('public = ?', false)
     @public_elements = @task.elements.where('public = ?', true)
     @element = Element.new
+
+    @messages = @task.messages.all
+    @message = Message.new
   end
 
 
