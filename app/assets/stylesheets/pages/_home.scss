@@ -44,14 +44,6 @@ h3{
   padding-top: 2.5px;
   padding-bottom: 2.5px;
 }
-//
-// .px-4 {
-//   width: 800px;
-//   font-size: 20px;
-//   text-align: center;
-//
-//
-//   }
 
 .feature {
   border: 2px solid #c5d5cb;
@@ -65,11 +57,15 @@ h3{
     text-align: left;
     height: 170px;
   }
+
+  .button {
+    display: block;
+  }
 }
 
-.marged {
-  margin-top: 80px;
-  margin-bottom: 80px;
+.paddded-tb {
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 .feature:hover {
@@ -97,71 +93,60 @@ h3{
 .feature-icon:hover {
   color: #c5d5cb;
 }
-  // .description {
-  //   font-size: 12px;
-  //   color: #959A97;
-  // }
 
-  .title {
-    padding: 10px;
-    font-size: 22px;
-    padding-top: 20px;
-  }
-
-  .wedders {
-    background-color: white;
-    padding-top: 10px !important;
-    padding-bottom: 25px !important;
-  }
-
-  #button2 {
-    margin: 45px;
-    border-radius: 15px;
-    font-size: 20px;
-  }
-
-  #button3 {
-    margin: 74px;
-    border-radius: 15px;
-    margin-top: 109px;
-    font-size: 20px;
-  }
-
-
-  // ---------> TESTIMONIAL <--------------
-
-  .testimonials {
-    background-color: $green-background;
-    padding: 50px;
-    background-size: auto;
-    padding-top: 60px !important;
-    padding-bottom: 100px !important;
-    }
-
-  .section-title {
-    font-size: 31px;
-    border-bottom-width:2px;
-    border-bottom-style: solid;
-    text-align: center;
-    }
-
-  .avatar-xlarge {
-    width: 50px;
-    border-radius: 50%;
-    margin: -214px;
-    margin-top: -145px;
+.title {
+  padding: 10px;
+  font-size: 22px;
+  padding-top: 20px;
 }
 
-  .card-description {
-position: relative;
+.wedders {
+  background-color: white;
+  padding-top: 10px !important;
+  padding-bottom: 25px !important;
+}
 
+#button2 {
+  margin: 45px;
+  border-radius: 15px;
+  font-size: 20px;
+}
+
+#button3 {
+  margin: 74px;
+  border-radius: 15px;
+  margin-top: 109px;
+  font-size: 20px;
+}
+
+.section-title {
+  font-size: 31px;
+  border-bottom-width:2px;
+  border-bottom-style: solid;
+  text-align: center;
+}
+// ---------> TESTIMONIAL <--------------
+
+.testimonials {
+  background-color: $green-background;
+  padding: 50px;
+  background-size: auto;
+}
+
+.testimonial {
+  padding: 30px;
+
+  .avatar-large {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
 
   h2 {
-  margin-top: 56px !important;
-  margin-bottom: 12.5px !important;
-  font-family: 'Chivo', sans-serif;
-  font-style: italic;
-  color: #726e6e;
+    font-family: 'Chivo', sans-serif;
+    font-style: italic;
+    color: #726e6e;
+    font-size: 24px;
   }
 
   p {
@@ -169,17 +154,20 @@ position: relative;
     font-family: 'Chivo', sans-serif;
     font-style: italic;
     font-size: 16.5px;
+  }
 }
- }
+
+.section-title {
+  font-size: 31px;
+  margin: 0px !important;
+  border-bottom-width:2px;
+  border-bottom-style: solid;
+}
 
 .card-testi {
   color: #828080;
   font-family: 'Dancing Script', cursive;
-  }
-
-.trust {
-  padding: 35px
-   }
+}
 
   // ---------> CONTACT <-------------------
 .contact-form {
