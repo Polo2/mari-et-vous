@@ -3,24 +3,24 @@
   padding: 0;
   margin: 0;
   margin-right: -0px;
+  display: flex;
   .task {
-    background-color: #e3e0cf;
-    padding: 20px 2px;
-    text-align: center;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
-    border: 2px solid #fefefe;
-    min-height: 100px;
-    vertical-align: middle;
-    margin: 25px auto;
-  }
-  a {
-    text-decoration: none;
-  }
-  &.active {
-    background-color: $blue;
-    color: #fefefe;
+    color: #726e6e;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    border: 1px solid white;
+    background-color: white;
   }
 
+  .taskimage {
+
+}
+  .taskname {
+}
+
+  .taskstatut {
+
+}
 }
 
 .task-details {
@@ -32,10 +32,8 @@
 }
 
 .tasks-container {
-  background-color: #fefefe;
-  border: 1px solid #dedede;
-  margin: 100px auto;
-
+  background-color: #c5d5cb;
+  margin-top: 100px;
 }
 
 
