@@ -4,23 +4,12 @@
 $green: #1ECD97;
 $gray: #bbbbbb;
 
-.container-button {
-  position: absolute;
-  top:50%;
-  left:50%;
-  margin-left: -65px;
-  margin-top: -20px;
-  width: 130px;
-  height: 40px;
-  text-align: center;
-}
 button {
-  margin-top: 70px;
   outline:none;
-  height: 40px;
+  padding: 5px 20px;
   text-align: center;
-  width: 130px;
-  border-radius:15px;
+  display: block;
+  border-radius: 5px;
   background: #c5d5cb;
   border: 2px solid white;
   letter-spacing:2px;
@@ -50,5 +39,4 @@ button {
     content:"\f00c";
   }
 }
-
 
