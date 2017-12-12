@@ -37,12 +37,16 @@ class TasksController< ApplicationController
   end
 
   def edit
+    new_bool = (@task.statut == false)
+    @task.update(:statut => new_bool)
+    redirect_to wedding_task_path(@wedding, @task)
   end
 
   def update
   end
 
   def destroy
+    redirect_to wedding_path(@wedding)
   end
 
 private
