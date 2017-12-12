@@ -35,9 +35,7 @@
   </div>
 
 
-  <div class="task-block">
-    <%= render 'tasks/tasks', wedding: @wedding %>
-  </div>
+
 
   <% content_for(:after_js) do %>
     <%= javascript_tag do %>
@@ -54,5 +52,8 @@
       });
     <% end %>
   <% end %>
+</div>
 
+<div class="task-block">
+ <%= render 'tasks/tasks', wedding: @wedding %>
 </div>
