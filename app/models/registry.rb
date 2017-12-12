@@ -8,6 +8,13 @@ class Registry < ApplicationRecord
 
   before_create :set_user_id
 
+  # def status
+  #   if @registry.guests.presence == true
+  #     return "Confirmed"
+  #   else
+  #     return "Pending"
+  #   end
+  # end
   private
 
   def set_user_id
@@ -17,4 +24,6 @@ class Registry < ApplicationRecord
       self.user_id = user.id
     end
   end
+
+
 end
