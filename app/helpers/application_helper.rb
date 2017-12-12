@@ -8,4 +8,12 @@ module ApplicationHelper
       image_tag 'avatar_general.png', options
     end
   end
+
+  def public_for(bool)
+    if bool
+      "Public"
+    else
+      "Private"
+    end
+  end
 end
