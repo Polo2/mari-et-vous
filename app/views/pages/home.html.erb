@@ -23,47 +23,36 @@
   <div class="parallax">
     <div class="phrase">Your collaborative wedding experience</div>
   </div>
- <div class="wedders">
-  <div class="py-4 mb-4">
+
+  <div class="marged">
     <div class="container">
-      <div class="row presentation">
-        <div class="feature py-4 col-xs-12 col-md-4 offset-md-1 d-flex">
-          <div class="px-4 ">
-            <div class="flexrow">
-              <% if user_signed_in? %>
-                <%= link_to new_wedding_path, class: "icon text-primary mr-3" do %>
-                  <i class="fa fa-heart-o"></i><% end %>
-              <% else %>
-                <%= link_to new_user_registration_path, class: "icon text-primary mr-3" do %>
-                  <i class="fa fa-heart-o"></i><% end %>
-              <% end %>
+      <div class="row">
+        <div class="col-xs-12 col-md-4 col-md-offset-1">
+          <div class="feature">
+            <div class="feature-icon">
+              <i class="fa fa-heart-o"></i>
             </div>
-            <div class="title"><h3>GETTING MARRIED</h3></div>
-              <div class="description">It's the best website for you to organize your wedding. Here, you'll create a dedicated server for your website, where you can share invitations, informations, registries with your invites... And of course, you can ask them for help, by offering them to participate to a dedicated extra-job !
-              </div>
-              <%= link_to new_wedding_path do %>
-                <button id="button2" placeholder="Create Wedding">CREATE</button>
-              <% end %>
+            <div class="title">
+              <h3>GETTING MARRIED</h3>
             </div>
+            <div class="description">
+              It's the best website for you to organize your wedding. Here, you'll create a dedicated server for your website, where you can share invitations, informations, registries with your invites... And of course, you can ask them for help, by offering them to participate to a dedicated extra-job !
+            </div>
+            <%= link_to 'CREATE', new_wedding_path, class: 'button' %>
           </div>
-          <div class="feature py-4 col-xs-12 col-md-4 offset-md-2 d-flex">
-            <div class="px-4">
-              <div class="flexrow">
-                <% if user_signed_in? %>
-                  <%= link_to root_path, class: "icon text-primary mr-3" do %>
-                  <i class="fa fa-envelope-o"></i><% end %>
-                <% else %>
-                  <%= link_to new_user_registration_path, class: "icon text-primary mr-3" do %>
-                  <i class="fa fa-envelope-o"></i><% end %>
-                <% end %>
-              </div>
-                <div class="title"><h3>GUEST</div>
-              <div class="description">Quisque mollis zefH dg gkggfghjkl mi ac aliquet accumsan. Sed sed dapibus libero. Quisque mollis mi ac aliquet accumsan. Sed sed dapibus libero. Quisque mollis mi ac aliquet accumsan. Sed sed dapibus libero
-              </div>
-              <%= link_to new_user_registration_path do %>
-                <button id="button3" placeholder="Create Wedding">FIND</button>
-              <% end %>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-offset-1">
+          <div class="feature">
+            <div class="feature-icon">
+              <i class="fa fa-envelope-o"></i>
             </div>
+            <div class="title">
+              <h3>GUEST</h3>
+            </div>
+            <div class="description">
+              Quisque mollis zefH dg gkggfghjkl mi ac aliquet accumsan. Sed sed dapibus libero. Quisque mollis mi ac aliquet accumsan. Sed sed dapibus libero. Quisque mollis mi ac aliquet accumsan. Sed sed dapibus libero
+            </div>
+            <%= link_to 'FIND', new_user_registration_path, class: 'button' %>
           </div>
         </div>
       </div>
@@ -144,6 +133,3 @@
   </div>
 </div>
 </div>
-
-
-
