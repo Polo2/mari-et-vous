@@ -1,4 +1,9 @@
 <div class="container">
-  <h4>Create a new registry</h4>
-  <%= render 'form' %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+      <h4>Edit your registry</h4>
+      <%= render 'form' %>
+      <%= link_to "Back", wedding_registry_path(@wedding, @registry) %>
+    </div>
+  </div>
 </div>
