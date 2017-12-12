@@ -1,11 +1,14 @@
 <div class="container">
   <%= render "tab" %>
+
   <div class="row">
     <div class="col-xs-12 col-sm-6">
+
       <div class="info-wedding-description">
         <%= render "wedding_card" %>
         <p>
           <% if policy(@wedding).edit? %>
+            <%= link_to 'Guests list', wedding_registries_path(@wedding)%> |
             <%= link_to 'Edit', edit_wedding_path(@wedding) %> |
           <% end %>
           <% if policy(@wedding).destroy? %>
@@ -15,27 +18,25 @@
         </p>
 
         <% if policy(@wedding).edit? %>
-          <div class="col-xs-6">
-            <%= link_to "Create a registry", new_wedding_registry_path(@wedding), class: "btn btn-primary" %>
-          </div>
-          <div class="col-xs-6">
-            <%= link_to "See all my registries", wedding_registries_path(@wedding), class: "btn btn-primary" %>
-          </div>
+          <%= link_to "New registry", new_wedding_registry_path(@wedding), class: "btn btn-primary"  %>
+          <%= link_to "New task", new_wedding_task_path(@wedding), class: "btn btn-primary"  %>
         <% end %>
       </div>
     </div>
 
+
     <div class="col-xs-12 col-sm-6">
+
       <div class="info-wedding-location">
-        <h4>The place to be on <strong><%= @wedding.date %></strong>:</h4>
-        <h5><%= @wedding.location %></h5>
         <div id="map" style="width: 300px; height: 400px;"></div>
       </div>
     </div>
   </div>
 
 
-
+  <div class="task-block">
+    <%= render 'tasks/tasks', wedding: @wedding %>
+  </div>
 
   <% content_for(:after_js) do %>
     <%= javascript_tag do %>
@@ -52,8 +53,5 @@
       });
     <% end %>
   <% end %>
-</div>
 
-<div class="task-block">
- <%= render 'tasks/tasks', wedding: @wedding %>
 </div>
