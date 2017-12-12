@@ -24,7 +24,19 @@ abbr {
   justify-content: center;
 }
 
-//===== registry show =====//
+
+.control-label {
+  font-size: 20px;
+  }
+
+.btn.btn-default {
+  width: 100%;
+  margin-top: 30px;
+  font-family: 'Chivo', sans-serif;
+  font-size: 20px;
+  }
+
+
 .guest-content {
   margin-top: 50px;
 }
@@ -73,3 +85,4 @@ abbr {
   border-left: 1px solid $p-grey;
   border-right: 1px solid $p-grey;
 }
+
