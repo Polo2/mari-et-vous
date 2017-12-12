@@ -18,8 +18,11 @@ class TasksController< ApplicationController
 
 
   def new
-    @task = Task.new
+    @tasks = Task.where('wedding_id = ?', @wedding.id)
     @tasks_name_list = parsing_json.keys
+    @tasks_existing_names_list = @tasks.map { |task| task.name }
+    @tasks_filtered_names_list = @tasks_name_list.select { |taskname|  !@tasks_existing_names_list.include?(taskname) }
+    @task = Task.new
   end
 
   def create

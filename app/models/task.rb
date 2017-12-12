@@ -7,6 +7,7 @@ class Task < ApplicationRecord
   has_many :elements, dependent: :destroy
   has_many :messages
 
+
   after_create :create_default_categories
 
   private
