@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171211113727) do
+ActiveRecord::Schema.define(version: 20171212144731) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(version: 20171211113727) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "wedding_id"
+    t.boolean  "statut"
     t.index ["wedding_id"], name: "index_tasks_on_wedding_id", using: :btree
   end
 

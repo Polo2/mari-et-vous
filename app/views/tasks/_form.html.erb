@@ -1,14 +1,14 @@
 <h2>Choose new task</h2>
 
+
 <%= simple_form_for([@wedding, @task]) do |f| %>
 
-  <%= f.input :name, collection: @tasks_name_list, as: :radio_buttons %>
+  <%= f.input :name, collection: @tasks_filtered_names_list, as: :radio_buttons %>
 
   <%= f.submit "Create this new task" %>
 
 <% end %>
 
-<% @task_list_checked %>
 
 <!-- en sortie, j'espère récupérer un tableau @task_list_checked, avec la selection des task.name qui a été choisie avec check-box -->
 
