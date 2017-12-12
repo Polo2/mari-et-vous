@@ -18,9 +18,9 @@ class TasksController< ApplicationController
 
 
   def new
-    @tasks = Task.where('wedding_id = ?', @wedding.id)
+    @tasks = @wedding.tasks
     @tasks_name_list = parsing_json.keys
-    @tasks_existing_names_list = @tasks.map { |task| task.name }
+    @tasks_existing_names_list = @tasks.pluck(:name)
     @tasks_filtered_names_list = @tasks_name_list.select { |taskname|  !@tasks_existing_names_list.include?(taskname) }
     @task = Task.new
   end
@@ -37,8 +37,7 @@ class TasksController< ApplicationController
   end
 
   def edit
-    new_bool = (@task.statut == false)
-    @task.update(:statut => new_bool)
+    @task.update(statut: !@task.statut)
     redirect_to wedding_task_path(@wedding, @task)
   end
 
