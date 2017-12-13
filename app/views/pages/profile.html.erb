@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+    <div class="profile-description">
+      <div class="profile-details">
+        <div class="profile-name">
+          <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
+        </div>
+        <div class="profile-weddings-infos">
+          <div class="profile-wedding-org">
+            <span><%= current_user.weddings.future.count %></span>
+            <p>wedding in preparation</p>
+          </div>
+          <div class="profile-memories">
+            <span><%= current_user.weddings.passed.count %></span>
+            <p>invitations</p>
+          </div>
+        </div>
+      </div>
+      <div class="profile-links">
+        <%= link_to "Home", root_path %><%= link_to "Edit my profile", edit_user_registration_path %>
+      </div>
+    </div>
+  </div>
+</div>

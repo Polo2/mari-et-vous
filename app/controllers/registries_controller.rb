@@ -7,6 +7,7 @@ class RegistriesController < ApplicationController
   end
 
   def show
+    @registry = @wedding.registries.find(params[:id])
   end
 
   def new
