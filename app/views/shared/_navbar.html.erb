@@ -12,9 +12,7 @@
       <!-- Links when logged in -->
       <% if current_user.weddings.empty? %>
         <%= link_to "Your wedding",  new_wedding_path , class: "navbar-wagon-item navbar-wagon-link" %>
-
       <% else %>
-
         <div class="dropdown">
           <a href="" class="navbar-wagon-link dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">Your wedding</a>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
@@ -35,25 +33,24 @@
         </div>
       <% end %>
 
-
-        <div class="dropdown">
-          <a href="" class="navbar-wagon-link dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">Invitations</a>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <% if current_user.registries.exists? %>
-              <li>
-                <% current_user.registries.each do |reg| %>
-                  <%= link_to wedding_path(reg.wedding) do %> <i class="fa fa-hourglass-half"></i>
-                    <%= reg.wedding.user.first_name %> & <%= reg.wedding.spouse_first_name %>
-                  <% end %>
+      <div class="dropdown">
+        <a href="" class="navbar-wagon-link dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">Invitations</a>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <% if current_user.registries.exists? %>
+            <li>
+              <% current_user.registries.each do |reg| %>
+                <%= link_to wedding_path(reg.wedding) do %> <i class="fa fa-hourglass-half"></i>
+                  <%= reg.wedding.user.first_name %> & <%= reg.wedding.spouse_first_name %>
                 <% end %>
-              </li>
-            <% else %>
-              <li>
-                You don't have any weddings
-              </li>
               <% end %>
-          </ul>
-        </div>
+            </li>
+          <% else %>
+            <li>
+              No wedding
+            </li>
+            <% end %>
+        </ul>
+      </div>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
@@ -75,6 +72,7 @@
           </ul>
         </div>
       </div>
+
     <% else %>
       <!-- Login link (when logged out) -->
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
