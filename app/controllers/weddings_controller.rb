@@ -5,6 +5,7 @@ class WeddingsController < ApplicationController
   # GET /weddings.json
   def index
     @weddings = policy_scope(Wedding)
+    @memories = Wedding.passed
   end
 
   # GET /weddings/1
