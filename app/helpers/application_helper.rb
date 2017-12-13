@@ -11,9 +11,9 @@ module ApplicationHelper
 
   def public_for(bool)
     if bool
-      "Yes"
+      "Public"
     else
-      "No"
+      "Private"
     end
   end
 
