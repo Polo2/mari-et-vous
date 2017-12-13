@@ -1,30 +1,28 @@
 <div class="guest-content">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
-        <div class="guest-email">
-          <p><%= @registry.email %></p>
-        </div>
-        <div class="guest_details">
-          <table>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="guest-email">
+        <p><%= @registry.email %></p>
+      </div>
+      <div class="guest_details">
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Status</th>
+          </tr>
+          <% @registry.guests.each do |guest| %>
             <tr>
-              <th>Name</th>
-              <th>Status</th>
+              <td><%= guest.name %></td>
+              <td><%= presence_for(guest.presence) %></td>
             </tr>
-            <% @registry.guests.each do |guest| %>
-              <tr>
-                <td><%= guest.name %></td>
-                <td>
-                  <%= presence_for(guest.presence) %>
-                </td>
-              </tr>
-            <% end %>
-          </table>
-        </div>
-        <div class="guest-link">
-          <%= link_to "Registries", wedding_registries_path(@wedding) %>
-          <%= link_to "Edit", edit_wedding_registry_path(@wedding, @registry) %>
-          <%= link_to "Back to my wedding", wedding_path(@wedding) %>
-        </div>
+          <% end %>
+        </table>
+      </div>
+      <div class="guest-link">
+        <%= link_to "Registries", wedding_registries_path(@wedding) %>
+        <%= link_to "Edit", edit_wedding_registry_path(@wedding, @registry) %>
+        <%= link_to "Back to my wedding", wedding_path(@wedding) %>
       </div>
     </div>
   </div>
+</div>

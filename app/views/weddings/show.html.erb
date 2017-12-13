@@ -55,6 +55,11 @@
       <% end %>
     </div>
    </div>
+
+   <% if @wedding.registries.where(user: current_user).present? %>
+   <% @registry = @wedding.registries.find_by(user: current_user) %>
+      <%= render "registries/presence", registry: @registry %>
+   <% end %>
    <hr>
 
   <% content_for(:after_js) do %>

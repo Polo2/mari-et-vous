@@ -1,15 +1,20 @@
-<div class="nested-fields">
-  <div class="row">
-    <div class="col-xs-9">
-      <div class="form-inline">
-        <%= f.input :name %>
-      </div>
-    </div>
-    <div class="col-xs-3">
-      <div class="form-inline">
-        <%= f.input :presence %>
-      </div>
-    </div>
+<%= simple_form_for([@wedding, @registry]) do |f| %>
+  <%= f.input :email, required: true %>
+
+  <h4>Add guests to your registry</h4>
+  <%= f.simple_fields_for :guests do |guest_f|  %>
+    <%= render 'guest_fields', f: guest_f %>
+  <% end %>
+  <div class="links">
+  <%= link_to_add_association f, :guests do %>
+    <% icon('plus-circle') %>
+  <% end %>
   </div>
-  <%= link_to_remove_association "remove guest", f %>
-</div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+
+

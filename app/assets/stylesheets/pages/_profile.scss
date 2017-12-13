@@ -1,0 +1,58 @@
+
+.profile-details {
+  border: 2px solid rgba(197,213,203,0.5);
+  // display: flex;
+  // justify-content: space-between;
+  padding: 25px;
+  border-radius: 5px;
+  position: relative;
+  margin: 40px 20px 20px;
+}
+
+.profile-name h3 {
+  margin: 0;
+  text-align: center;
+  padding: 10px;
+  color: $header-grey;
+  position: absolute;
+  top: -33px;
+  background-color: $white;
+}
+
+.profile-weddings-infos {
+  display: flex;
+  justify-content: space-around;
+}
+.profile-weddings-infos span {
+  color: $green-background;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 15px;
+}
+.profile-weddings-infos p {
+  color: $p-grey;
+}
+
+.profile-wedding-org, .profile-memories {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-links {
+  margin-left: 20px;
+}
+
+.profile-links a {
+  color: $green-background;
+  text-decoration: none;
+}
+
+.profile-links a:first-child {
+  border-right: 1px solid $p-grey;
+  padding-right: 10px;
+}
+
+.profile-links a:nth-child(2) {
+  padding-left: 10px;
+}
