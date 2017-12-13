@@ -72,4 +72,5 @@ private
     return categories_details
   end
 
+
 end
