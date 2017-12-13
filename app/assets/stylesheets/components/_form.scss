@@ -22,6 +22,7 @@ button, .button {
   font-family: "Chivo", sans-serif !important;
   &:hover {
     color: white;
+    background: darken(#c5d5cb, 5%);
   }
   &:active {
     //letter-spacing: 2px;
