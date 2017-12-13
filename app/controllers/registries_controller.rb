@@ -16,7 +16,6 @@ class RegistriesController < ApplicationController
 
   def create
     @registry = Registry.new(registry_params)
-    @registry.user = current_user
     @registry.wedding = @wedding
     if @registry.save
       redirect_to wedding_registry_path(@wedding, @registry)
