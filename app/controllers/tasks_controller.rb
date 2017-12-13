@@ -15,7 +15,7 @@ class TasksController< ApplicationController
     @public_elements = @task.elements.where('public = ?', true)
     @element = Element.new
 
-    @messages = @task.messages.all
+    @messages = @task.messages.all.order(:created_at)
     @messages.update_all(read: true) if @task.wedding.user == current_user
 
     @message = Message.new
