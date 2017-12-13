@@ -8,9 +8,7 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
-  <body>
- <!--    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p> -->
+  <body class="<%= params[:controller] %> <%= params[:action] %>">
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
 
