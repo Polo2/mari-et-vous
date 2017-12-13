@@ -1,75 +1,103 @@
 <div class="container">
 <h2> <%= @task.name %></h2>
-<h3> <%= @task.statut ? "Task done" : "Pending Task" %> </h3>
-  <div class="row">
+<p> <%= @task.statut ? "Task done" : "Pending Task" %> </p>
 
+ <p> <%=  @wedding.user == current_user ? "wedder" : "invited" %>
+</p>
+
+  <% if @wedding.user == current_user %>
+  <div class="row">
     <div class="col-xs-8">
-      <h2>To do list</h2>
+      <h2>What you have to do :</h2>
     </div>
 
     <div class="col-xs-4">
       <h2>New Element</h2>
     </div>
-
   </div>
+  <% end %>
 
   <div class="row">
-    <div class="col-xs-4 task-details">
-      <h3>Private</h3>
-      <ul>
-        <% @private_elements.each do |element| %>
-          <li>
-            <%= link_to edit_wedding_task_element_path(@wedding, @task, element) do %><i class="fa fa-pencil"></i><% end %>
-            <%= link_to wedding_task_element_path(@wedding, @task, element), method: :delete, data: { confirm: 'Sure?' } do %><i class="fa fa-trash"></i><% end %>
-            <%= element.content %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
+    <% if @wedding.user == current_user %>
+      <div class="col-xs-4 task-details">
+        <h3>Private</h3>
+        <ul>
+          <% @private_elements.each do |element| %>
+            <li>
+              <%= link_to edit_wedding_task_element_path(@wedding, @task, element) do %><i class="fa fa-pencil"></i><% end %>
+              <%= link_to wedding_task_element_path(@wedding, @task, element), method: :delete, data: { confirm: 'Sure?' } do %><i class="fa fa-trash"></i><% end %>
+              <%= element.content %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="col-xs-4 task-details">
+        <h3>Public</h3>
+        <ul>
+          <% @public_elements.each do |element| %>
+            <li>
+              <%= link_to edit_wedding_task_element_path(@wedding, @task, element) do %><i class="fa fa-pencil"></i><% end %>
+              <%= link_to wedding_task_element_path(@wedding, @task, element), method: :delete, data: { confirm: 'Sure?' } do %><i class="fa fa-trash"></i><% end %>
+              <%= element.content %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="col-xs-4">
+        <%= render 'elements/form-new', wedding: @wedding, task: @task, element: @element %>
+      </div>
+    <% else %>
+      <div class="col-xs-6 task-details">
+        <h3>Public</h3>
+        <ul>
+          <% @public_elements.each do |element| %>
+            <li><%= element.content %></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="col-xs-6 discussion">
+        <h3>Discussion's Block</h3>
+        <ul>
+          <% @messages.each do |m| %>
+            <li>
+              <%= m.content %>, written by <%= m.user.first_name %>, <%=m.created_at.strftime('%D at %H:%M.')%>
+            </li>
+          <% end %>
+        </ul>
+        <%= render 'messages/form-new', wedding: @wedding, task: @task, message: @message %>
+      </div>
+    <% end %>
 
-    <div class="col-xs-4 task-details">
-      <h3>Public</h3>
-      <ul>
-        <% @public_elements.each do |element| %>
-          <li>
-            <%= link_to edit_wedding_task_element_path(@wedding, @task, element) do %><i class="fa fa-pencil"></i><% end %>
-            <%= link_to wedding_task_element_path(@wedding, @task, element), method: :delete, data: { confirm: 'Sure?' } do %><i class="fa fa-trash"></i><% end %>
-            <%= element.content %>
-          </li>
-        <% end %>
-      </ul>
-    </div>t
-    <div class="col-xs-4">
-      <%= render 'elements/form-new', wedding: @wedding, task: @task, element: @element %>
-    </div>
+
   </div>
 
   <div class="row">
     <%= link_to "Back to Wedding", wedding_path(@wedding) %>
-    <% if @task.statut %>
-      <%= link_to "Unmark as done", edit_wedding_task_path(@wedding, @task) %>
-    <% else %>
-      <%= link_to "Mark as done", edit_wedding_task_path(@wedding, @task) %>
+    <% if @wedding.user == current_user %>
+      <% if @task.statut %>
+        <%= link_to "Unmark as done", edit_wedding_task_path(@wedding, @task) %>
+      <% else %>
+        <%= link_to "Mark as done", edit_wedding_task_path(@wedding, @task) %>
+      <% end %>
     <% end %>
   </div>
 
-  <div class="row">
-    <div class="col-xs-8">
-      <h3>Discussion's Block</h3>
-      <ul>
-        <% @messages.each do |m| %>
-          <li>
-            <%= m.title %>
-            <%= m.content %>
-            <p>written by <%= m.user.first_name %></p>
-          </li>
-        <% end %>
-      </ul>
-      <%= render 'messages/form-new', wedding: @wedding, task: @task, message: @message %>
+
+  <% if @wedding.user == current_user %>
+    <div class="row">
+      <div class="offset-xs-2 col-xs-8 discussion">
+        <h3>Discussion's Block</h3>
+        <ul>
+          <% @messages.each do |m| %>
+            <li>
+              <%= m.content %>, written by <%= m.user.first_name %>, <%=m.created_at.strftime('%D at %H:%M.')%>
+            </li>
+          <% end %>
+        </ul>
+        <%= render 'messages/form-new', wedding: @wedding, task: @task, message: @message %>
+      </div>
     </div>
-  </div>
-
-
+  <% end %>
 
 </div>
 
