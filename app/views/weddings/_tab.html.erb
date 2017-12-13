@@ -1,23 +1,29 @@
-  <div class="tabs">
+<div class="tabs-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="tabs">
+          <a class="tab active" href="<%= wedding_registries_path(@wedding) %>">
+            <h3><%= @wedding.guests.count %></h3>
+            <p>Guests</p>
+          </a>
 
-    <a class="tab active" href="<%= wedding_registries_path(@wedding) %>">
-      <h3><%= @wedding.guests.count %></h3>
-      <p>Guests</p>
-    </a>
+          <a class="tab" href="#">
+            <h3><%= @wedding.guests.where(presence: true).count %></h3>
+            <p>Answers</p>
+          </a>
 
-    <a class="tab" href="#">
-      <h3><%= @wedding.guests.where(presence: true).count %></h3>
-      <p>Answers</p>
-    </a>
+          <a class="tab" href="#">
+            <h3><%= @wedding.tasks.count %></h3>
+            <p>Pending tasks</p>
+          </a>
 
-
-    <a class="tab" href="#">
-      <h3><%= @wedding.tasks.count %></h3>
-      <p>Pending tasks</p>
-    </a>
-
-    <a class="tab" href="#">
-      <h3><%= @wedding.tasks.count %></h3>
-      <p>Tasks done</p>
-    </a>
+          <a class="tab" href="#">
+            <h3><%= @wedding.tasks.count %></h3>
+            <p>Tasks done</p>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
