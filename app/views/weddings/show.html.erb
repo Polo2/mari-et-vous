@@ -2,37 +2,58 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-6">
+    <div class="col-xs-12 col-sm-8">
+      <div class="wedding-informations">
+        <div class="spouse-photo">
+          <%= cl_image_tag @wedding.spouse_photo.path %>
+        </div>
+        <div class="details">
+          <ul>
+            <li class="primary"><%= icon('paw') %><%= @wedding.user.first_name %> & <%= @wedding.spouse_first_name %></li>
+            <li class="secondary"><%= icon('calendar') %><%= @wedding.date %></li>
+            <li class="secondary"><%= icon('map-marker') %><%= @wedding.location %></li>
+          </ul>
+        </div>
+      </div>
 
-      <div class="info-wedding-description">
-        <%= render "wedding_card" %>
-        <p>
-          <% if policy(@wedding).edit? %>
-            <%= link_to 'Guests list', wedding_registries_path(@wedding)%> |
-            <%= link_to 'Edit', edit_wedding_path(@wedding) %> |
-          <% end %>
-          <% if policy(@wedding).destroy? %>
-            <%= link_to 'Destroy', @wedding, method: :delete, data: { confirm: 'Are you sure?' } %> |
-          <% end %>
-          <%= link_to 'Back', root_path %>
-        </p>
+      <div class="wedding-description">
+        <blockquote>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique repudiandae quo aut architecto quos ab, nostrum, corporis corrupti aperiam, tempora cupiditate! Laboriosam voluptates eveniet culpa laborum, iusto soluta error unde.
 
-        <% if policy(@wedding).edit? %>
-          <%= link_to "New registry", new_wedding_registry_path(@wedding), class: "btn btn-primary"  %>
-          <%= link_to "New task", new_wedding_task_path(@wedding), class: "btn btn-primary"  %>
-        <% end %>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique repudiandae quo aut architecto quos ab, nostrum, corporis corrupti aperiam, tempora cupiditate! Laboriosam voluptates eveniet culpa laborum, iusto soluta error unde.
+        </blockquote>
       </div>
     </div>
 
-
-    <div class="col-xs-12 col-sm-6">
-
+    <div class="col-xs-12 col-sm-4">
       <div class="info-wedding-location">
-        <div id="map" style="width: 300px; height: 400px;"></div>
+        <div id="map" style="height: 400px;"></div>
       </div>
     </div>
   </div>
 
+  <hr>
+
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-8">
+      <p>
+        <% if policy(@wedding).edit? %>
+          <%= link_to 'Guests list', wedding_registries_path(@wedding)%> |
+          <%= link_to 'Edit', edit_wedding_path(@wedding) %> |
+        <% end %>
+        <% if policy(@wedding).destroy? %>
+          <%= link_to 'Destroy', @wedding, method: :delete, data: { confirm: 'Are you sure?' } %> |
+        <% end %>
+        <%= link_to 'Back', root_path %>
+      </p>
+
+      <% if policy(@wedding).edit? %>
+        <%= link_to "New registry", new_wedding_registry_path(@wedding), class: "btn btn-primary"  %>
+        <%= link_to "New task", new_wedding_task_path(@wedding), class: "btn btn-primary"  %>
+      <% end %>
+    </div>
+  </div>
 
   <div class="task-block">
     <%= render 'tasks/tasks', wedding: @wedding %>
