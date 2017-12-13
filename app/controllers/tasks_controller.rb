@@ -14,11 +14,10 @@ class TasksController< ApplicationController
     @private_elements = @task.elements.where('public = ?', false)
     @public_elements = @task.elements.where('public = ?', true)
     @element = Element.new
-    @messages = @task.messages.all
 
-    if @wedding.user == current_user
-      @messages.each { |m|  m.read = true }
-    end
+    @messages = @task.messages.all
+    @messages.update_all(read: true) if @task.wedding.user == current_user
+
     @message = Message.new
   end
 
