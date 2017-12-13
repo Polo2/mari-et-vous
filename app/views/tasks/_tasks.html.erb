@@ -1,31 +1,27 @@
+<h3 class="text-center">
+  <span class="section-title">My tasks</span>
+</h3>
+
 <div class= tasklist>
   <div class="container">
     <div class="row">
-      <h3 class="text-center">
-        <span class="section-title">My tasks</span>
-      </h3>
-
         <% wedding.tasks.each do |task| %>
-
         <div class="col-xs-6 col-md-3">
           <ul class="tasks">
             <%= link_to wedding_task_path(wedding, task) do %>
-            <div class="taskimage">
-              <%= image_tag "#{task.name.parameterize}.jpg" %>
-            </div>
             <li class="task">
-              <div class="taskname">
+              <div class="taskname button">
                 <strong> <%= task.name %> </strong>
-              </div>
               <div class="tasknotification">
                 6 new messages
-              </div>
               <div class= statut>
                 <% if task.statut %>
                   <i class="fa fa-check"></i>
                 <% else %>
                   <i class="fa fa-hourglass-half"></i>
                 <% end %>
+              </div>
+              </div>
               </div>
               <% end %>
             </li>
@@ -37,7 +33,9 @@
 
 
 
-<!--
+<!-- pour ajouter icons
+
+
 <script>
 
 

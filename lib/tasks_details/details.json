@@ -5,7 +5,7 @@
   "Guests": ["guests list validation", "registry list validation", "sending invitations"],
   "Gift list": ["gift list validation", "choice of the media", "gift list shared"],
   "Accommodation": ["find house for familys", "propose a partner hotel", "find camping place", "check married room"],
-  "Trip management": ["propose choice of trains journey", "propose choice of planes journey", "propose car sharing"],
+  "Trip": ["propose choice of trains journey", "propose choice of planes journey", "propose car sharing"],
   "Ceremony": ["find a church", "find a priest", "find ceremony's texts", "find animators"],
   "Decoration": ["find florist", "choice of the dress-code color", "choice of goodies"],
   "Honey moon": ["check trip tickets", "ask advices to friends", "keep it as a surprize"]

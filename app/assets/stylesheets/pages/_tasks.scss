@@ -1,14 +1,10 @@
 .tasklist {
-background-color: $green-background;
+
 padding: 23px;
-padding-bottom: 50px;
+padding-top: 30px;
 
   .tasks {
     list-style: none;
-    padding: 0;
-    margin: 0;
-    margin-right: -0px;
-    margin-top: 27px;
     display: flex;
 
     .task {
@@ -32,22 +28,31 @@ padding-bottom: 50px;
       border-radius: 3px;
   }
     .taskname {
-      color: white;
+      padding: 18px;
+      color: white !important;
       font-size: 20px;
       font-family: 'Chivo', sans-serif;
       letter-spacing: 3px;
+      border: 2px solid white;
 
   }
 
   .tasknotification {
       color: #726e6e;
-      font-size: 15px;
+      font-size: 13px;
+      padding-top:6px;
+
   }
 
+  .statut {
+    margin-top: 8px;
+  }
+
+
+
     .fa{
-      font-size: 15px;
+      font-size: 13px;
       color: #828080;
-      margin-top: 16px;
 
   }
   }
