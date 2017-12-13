@@ -23,47 +23,36 @@
   <div class="parallax">
     <div class="phrase">Your collaborative wedding experience</div>
   </div>
- <div class="wedders">
-  <div class="py-4 mb-4">
+
+  <div class="paddded-tb">
     <div class="container">
-      <div class="row presentation">
-        <div class="feature py-4 col-xs-12 col-md-4 offset-md-1 d-flex">
-          <div class="px-4 ">
-            <div class="flexrow">
-              <% if user_signed_in? %>
-                <%= link_to new_wedding_path, class: "icon text-primary mr-3" do %>
-                  <i class="fa fa-heart-o"></i><% end %>
-              <% else %>
-                <%= link_to new_user_registration_path, class: "icon text-primary mr-3" do %>
-                  <i class="fa fa-heart-o"></i><% end %>
-              <% end %>
+      <div class="row">
+        <div class="col-xs-12 col-md-4 col-md-offset-1">
+          <div class="feature">
+            <div class="feature-icon">
+              <i class="fa fa-heart-o"></i>
             </div>
-            <div class="title"><h3>GETTING MARRIED</h3></div>
-              <div class="description">It's the best website for you to organize your wedding. Here, you'll create a dedicated server for your website, where you can share invitations, informations, registries with your invites... And of course, you can ask them for help, by offering them to participate to a dedicated extra-job !
-              </div>
-              <%= link_to new_wedding_path do %>
-                <button id="button2" placeholder="Create Wedding">CREATE</button>
-              <% end %>
+            <div class="title">
+              <h3>GETTING MARRIED</h3>
             </div>
+            <div class="description">
+              It's the best website for you to organize your wedding. Here, you'll create a dedicated server for your website, where you can share invitations, informations, registries with your invites... And of course, you can ask them for help, by offering them to participate to a dedicated extra-job !
+            </div>
+            <%= link_to 'CREATE', new_wedding_path, class: 'button' %>
           </div>
-          <div class="feature py-4 col-xs-12 col-md-4 offset-md-2 d-flex">
-            <div class="px-4">
-              <div class="flexrow">
-                <% if user_signed_in? %>
-                  <%= link_to root_path, class: "icon text-primary mr-3" do %>
-                  <i class="fa fa-envelope-o"></i><% end %>
-                <% else %>
-                  <%= link_to new_user_registration_path, class: "icon text-primary mr-3" do %>
-                  <i class="fa fa-envelope-o"></i><% end %>
-                <% end %>
-              </div>
-                <div class="title"><h3>GUEST</div>
-              <div class="description">Quisque mollis zefH dg gkggfghjkl mi ac aliquet accumsan. Sed sed dapibus libero. Quisque mollis mi ac aliquet accumsan. Sed sed dapibus libero. Quisque mollis mi ac aliquet accumsan. Sed sed dapibus libero
-              </div>
-              <%= link_to new_user_registration_path do %>
-                <button id="button3" placeholder="Create Wedding">FIND</button>
-              <% end %>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-offset-2">
+          <div class="feature">
+            <div class="feature-icon">
+              <i class="fa fa-envelope-o"></i>
             </div>
+            <div class="title">
+              <h3>GUEST</h3>
+            </div>
+            <div class="description">
+              Quisque mollis zefH dg gkggfghjkl mi ac aliquet accumsan. Sed sed dapibus libero. Quisque mollis mi ac aliquet accumsan. Sed sed dapibus libero. Quisque mollis mi ac aliquet accumsan. Sed sed dapibus libero
+            </div>
+            <%= link_to 'FIND', new_user_registration_path, class: 'button' %>
           </div>
         </div>
       </div>
@@ -73,77 +62,72 @@
 
 
   <!----------- Ils nous font confiance -------------->
-
-  <div class="py-4 mb-4 testimonials">
+  <div class="testimonials paddded-tb">
     <div class="container">
-      <h3><span class="section-title text-center">They trust us</span></h3>
+      <h3 class="text-center"><span class="section-title">They trust us</span></h3>
       <div class="row">
-        <div class="trust">
-           <div class="col-xs-12 col-sm-4">
-                <div class="card card-description">
-                  <div class="photo">
-                    <%= image_tag "couple.jpg", class:"avatar-large" %>
-                  </div>
-                    <h2>Camille.C</h2>
-                    <div class="card-testi">
-                      <p>What an easy and incredible website, helped me a lot to prepare everything dor D-DAY. My husband and I loved it.</p>
-                    </div>
-                  </div>
-              </div>
-              <div class="col-xs-12 col-sm-4">
-                <div class="card card-description">
-                  <div class="photo">
-                    <%= image_tag "couple2.jpg", class:"avatar-large" %>
-                  </div>
-                    <h2>Benjamin.B</h2>
-                    <div class="card-testi">
-                      <p>What an incredible way to organize a wedding! Made my life so much easier.</p>
-                    </div>
-                  </div>
-              </div>
-              <div class="col-xs-12 col-sm-4">
-                <div class="card card-description">
-                  <div class="photo">
-                    <%= image_tag "couple3.jpg", class:"avatar-large" %>
-                  </div>
-                    <h2>Claire.T</h2>
-                    <div class="card-testi">
-                      <p>I had nothing to think about, every thing in Mari&moi is well thought and simple. You have to try it yourself !</p>
-                    </div>
-                  </div>
-              </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="testimonial">
+            <div class="text-center">
+              <%= image_tag "couple.jpg", class:"avatar-large" %>
+            </div>
+            <h2 class="text-center">Camille.C</h2>
+            <div class="card-testi">
+              <p>What an easy and incredible website, helped me a lot to prepare everything dor D-DAY. My husband and I loved it.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="testimonial">
+            <div class="text-center">
+              <%= image_tag "couple2.jpg", class:"avatar-large" %>
+            </div>
+            <h2 class="text-center">Benjamin.B</h2>
+            <div class="card-testi">
+              <p>What an incredible way to organize a wedding! Made my life so much easier.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="testimonial">
+            <div class="text-center">
+              <%= image_tag "couple3.jpg", class:"avatar-large" %>
+            </div>
+            <h2 class="text-center">Claire.T</h2>
+            <div class="card-testi">
+              <p>I had nothing to think about, every thing in Mari&moi is well thought and simple. You have to try it yourself !</p>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
 
   <!----------- Contact us form -------------->
-<div class="contact-form">
   <div class="contact">
     <div class="container">
-      <div class="col-xs-12 col-md-6 col-md-offset-3">
-        <h3><span class="section-title">Contact us</span></h3>
-        <div class="row">
-          <div class="col-md-6 col-sm-12">
-            <label for="contactFormFullName">Full Name</label>
-            <input type="email" class="form-control" id="contactFormFullName" placeholder="Enter full name">
+      <div class="row">
+        <div class="col-xs-12 col-md-6 col-md-offset-3">
+          <h3><span class="section-title">Contact us</span></h3>
+          <div class="row">
+            <div class="col-md-6 col-sm-12">
+              <label for="contactFormFullName">Full Name</label>
+              <input type="email" class="form-control" id="contactFormFullName" placeholder="Enter full name">
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <label for="contactFormEmail">Email address</label>
+              <input type="email" class="form-control" id="contactFormEmail" placeholder="Enter email address">
+            </div>
           </div>
-          <div class="col-md-6 col-sm-12">
-            <label for="contactFormEmail">Email address</label>
-            <input type="email" class="form-control" id="contactFormEmail" placeholder="Enter email address">
+          <div class="row marged-top">
+            <div class="col-xs-12">
+              <label>Message</label>
+              <input id="exampleInputMessage1" placeholder="Type here" class="form-control mb-4" rows="10" name="message">
+              <button id="button" class="marged-top" placeholder="Send">SEND</button>
+            </div>
           </div>
-        </div>
-          <label>Message</label>
-          <input id="exampleInputMessage1" placeholder="Type here" class="form-control mb-4" rows="10" name="message">
-        <div class="container-button">
-          <button class="auth" id="button" placeholder="Send">SEND</button>
-        </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-</div>
-
-
-

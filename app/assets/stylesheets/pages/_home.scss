@@ -1,17 +1,17 @@
 // Specific CSS for your home-page
 
-.home-page{
+.home-page {
 
-.phrase {
-  font-family: 'Chivo', sans-serif;
-  color: white;
-  text-align: center;
-  padding: 135px;
-  font-size: 25px;
-}
+  .phrase {
+    font-family: 'Chivo', sans-serif;
+    color: white;
+    text-align: center;
+    padding: 135px;
+    font-size: 25px;
+  }
 
-.parallax {
-    /* The image used */
+  .parallax {
+      /* The image used */
     background-image: url("wedding3.jpg");
 
     /* Set a specific height */
@@ -22,42 +22,14 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    }
-  // ---------> SOON TO BE WED / GUEST <--------------
-  .icon {
-    border-radius: 50%;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(33,37,41,.1), 0 7px 14px rgba(33,37,41,.1);
-    font-size: 27px;
-    width: 70px;
-    height: 65px;
-    line-height: 65px;
-    background-color: white;
-    color: #959A97;;
-
   }
 
-  .icon:hover {
-    color: #c5d5cb;
-}
-
+  // ---------> SOON TO BE WED / GUEST <--------------
   h3{
     text-align: center;
     margin-bottom: 21px;
     color: #726e6e;
 
-  }
-
-  .flexrow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    }
-
-
-  .d-flex {
-    display: flex !important;
   }
 
   .py-4 {
@@ -73,30 +45,68 @@
     padding-bottom: 2.5px;
   }
 
-  .px-4 {
-    width: 800px;
-    font-size: 20px;
-    text-align: center;
+  .button {
+    display: block;
+  }
 
-
-    }
 
   .feature {
     border: 2px solid #c5d5cb;
-    border-radius: 31px;
-    box-shadow: 2px 2px 0px #F5F5F5;
-    margin-left: 189px;
-    max-width: 300px;
-    max-height: 429px;
+    border-radius: 5px;
+    padding: 20px;
+
+    .description {
+      margin-bottom: 25px;
+      font-size: 15px;
+      color: #959A97;
+      text-align: left;
+      height: 170px;
+    }
   }
 
   .feature:hover {
-    box-shadow: 0 10px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-}
+    box-shadow: 0px 0px 10px #E0E0E0;
 
-  .description {
-    font-size: 12px;
-    color: #959A97;
+    .feature-icon i {
+      color: #c5d5cb;
+    }
+  }
+
+  .feature-icon {
+    display: flex;
+    justify-content: center;
+
+    i {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 70px;
+      height: 70px;
+      font-size: 27px;
+      border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(33,37,41,.1), 0 7px 14px rgba(33,37,41,.1);
+      background-color: white;
+      color: #959A97;
+    }
+  }
+
+  .paddded-tb {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .section-title {
+    font-size: 31px;
+    border-bottom-width:2px;
+    border-bottom-style: solid;
+    text-align: center;
+  }
+  // ---------> TESTIMONIAL <--------------
+
+  .testimonials {
+    background-color: $green-background;
+    padding: 50px;
+    background-size: auto;
   }
 
   .title {
@@ -111,99 +121,62 @@
     padding-bottom: 25px !important;
   }
 
-  #button2 {
-    margin: 45px;
-    border-radius: 15px;
-    font-size: 20px;
-  }
-
-  #button3 {
-    margin: 74px;
-    border-radius: 15px;
-    margin-top: 109px;
-    font-size: 20px;
-  }
-
-
   // ---------> TESTIMONIAL <--------------
-
   .testimonials {
     background-color: $green-background;
     padding: 50px;
     background-size: auto;
-    padding-top: 60px !important;
-    padding-bottom: 100px !important;
+  }
+
+  .testimonial {
+    padding: 30px;
+
+    .avatar-large {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
     }
+
+    h2 {
+      font-family: 'Chivo', sans-serif;
+      font-style: italic;
+      color: #726e6e;
+      font-size: 24px;
+    }
+
+    p {
+      margin: 15px;
+      font-family: 'Chivo', sans-serif;
+      font-style: italic;
+      font-size: 16.5px;
+    }
+  }
 
   .section-title {
     font-size: 31px;
+    margin: 0px !important;
     border-bottom-width:2px;
     border-bottom-style: solid;
-    text-align: center;
+  }
+
+  .card-testi {
+    color: #828080;
+    font-family: 'Dancing Script', cursive;
+  }
+
+    // ---------> CONTACT <-------------------
+  .contact-form {
+    .contact {
+      background-color: white !important;
+      padding: 74px;
+      background-size: auto;
+      padding-top: 60px;
+      padding-bottom: 147px;
+      font-size: 20px !important;
     }
-
-  .avatar-large {
-    width: 50px;
-    border-radius: 50%;
-    margin: -214px;
-    margin-top: -145px;
+  }
 }
 
-  .card-description {
-position: relative;
-
-
-  h2 {
-  margin-top: 56px !important;
-  margin-bottom: 12.5px !important;
-  font-family: 'Chivo', sans-serif;
-  font-style: italic;
-  color: #726e6e;
-  }
-
-  p {
-    margin: 15px;
-    font-family: 'Chivo', sans-serif;
-    font-style: italic;
-    font-size: 16.5px;
-}
- }
-
-.card-testi {
-  color: #828080;
-  font-family: 'Dancing Script', cursive;
-  }
-
-.trust {
-  padding: 35px
-   }
-
-  // ---------> CONTACT <-------------------
-.contact-form {
-  .contact {
-    background-color: white !important;
-    padding: 74px;
-    background-size: auto;
-    padding-top: 60px;
-    padding-bottom: 147px;
-    font-size: 20px !important;
-    }
-
-  .card {
-    background-color: #F4F4F4;
-    border: 1px solid rgba(0, 0, 0, 0.125);
-    border-radius: 10px;
-    margin-top: 40px;
-    color: #F4F4F4;
-  }
-
-  .auth {
-    width: 100%;
-    margin-top: 30px;
-  }
-
-
-
-}
-
+.marged-top {
+  margin-top: 15px;
 }
