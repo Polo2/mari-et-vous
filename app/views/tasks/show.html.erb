@@ -59,9 +59,8 @@
       <ul>
         <% @messages.each do |m| %>
           <li>
-            <%= m.title %>
             <%= m.content %>
-            <p>written by <%= m.user.first_name %></p>
+            <p>,written by <%= m.user.first_name %></p>
           </li>
         <% end %>
       </ul>
