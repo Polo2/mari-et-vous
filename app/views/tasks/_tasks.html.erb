@@ -12,16 +12,22 @@
             <li class="task">
               <div class="taskname button">
                 <strong> <%= task.name %> </strong>
-              <div class="tasknotification">
-                6 new messages
-              <div class= statut>
-                <% if task.statut %>
-                  <i class="fa fa-check"></i>
-                <% else %>
-                  <i class="fa fa-hourglass-half"></i>
-                <% end %>
-              </div>
-              </div>
+                <div class="tasknotification">
+                  <% if wedding.user == current_user %>
+                    <% unless task.messages.where(read: false).count == 0 %>
+                       <%= task.messages.where(read: false).count %> messages
+                    <% end %>
+                  <% else %>
+                    COME
+                  <% end %>
+                    <div class= statut>
+                      <% if task.statut %>
+                        <i class="fa fa-check"></i>
+                      <% else %>
+                        <i class="fa fa-hourglass-half"></i>
+                      <% end %>
+                    </div>
+                </div>
               </div>
               <% end %>
             </li>

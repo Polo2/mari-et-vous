@@ -16,6 +16,7 @@ class WeddingsController < ApplicationController
        marker.lat wedding.latitude
        marker.lng wedding.longitude
      end
+    @messages_count = nb_new_messages
   end
 
   # GET /weddings/new
@@ -84,5 +85,12 @@ class WeddingsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def wedding_params
       params.require(:wedding).permit(:title, :description, :date, :location, :capacity, :photo, :spouse_photo, :spouse_first_name, :spouse_last_name, album_photos: [])
+    end
+
+    def nb_new_messages
+      compteur = 0
+      set_wedding
+      @wedding.tasks.each { |t|  compteur += t.messages.where(read: false).count  }
+      return compteur
     end
 end
