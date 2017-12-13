@@ -19,6 +19,7 @@ before_action :set_message, only: [:show, :edit, :update, :destroy]
     @message = Message.new(message_params)
     @message.user = current_user
     @message.task = @task
+    @message.read = false
     if @message.save
       redirect_to wedding_task_path(@wedding, @task)
     end

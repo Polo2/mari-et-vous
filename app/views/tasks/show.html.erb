@@ -60,6 +60,7 @@
         <ul>
           <% @messages.each do |m| %>
             <li>
+              <%= m.read %> |
               <%= m.content %>, written by <%= m.user.first_name %>, <%=m.created_at.strftime('%D at %H:%M.')%>
             </li>
           <% end %>
@@ -90,6 +91,7 @@
         <ul>
           <% @messages.each do |m| %>
             <li>
+              <%= m.read %> |
               <%= m.content %>, written by <%= m.user.first_name %>, <%=m.created_at.strftime('%D at %H:%M.')%>
             </li>
           <% end %>
