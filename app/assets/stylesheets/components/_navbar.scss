@@ -52,6 +52,7 @@
   box-shadow: 1px 1px 4px #E6E6E6;
   border-color: #E6E6E6;
   border-radius: 5px !important;
+  padding: 7px;
 }
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
@@ -61,6 +62,7 @@
   line-height: 22px !important;
   padding: 10px 20px;
   text-decoration: none;
+
 }
 .navbar-wagon-dropdown-menu li > a:hover {
   background: transparent !important;
@@ -77,6 +79,18 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+.ddtext {
+  color: #828080 !important;
+  font-size: 15px !important;
+  line-height: 22px !important;
+  padding: 10px 7px;
+  font-family: 'Tenor Sans', sans-serif;
+
+  .fa {
+    margin-left: 20px;
+  }
 }
 
 
