@@ -18,10 +18,10 @@ class Registry < ApplicationRecord
   private
 
   def set_user_id
-    user = User.find_by_email(email.downcase)
+    @user = User.find_by_email(email.downcase)
 
-    if user.present?
-      self.user_id = user.id
+    if @user.present?
+      self.user_id = @user.id
     end
   end
 

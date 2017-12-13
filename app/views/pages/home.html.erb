@@ -1,29 +1,11 @@
 <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,700" rel="stylesheet">
 
 
-
-<!----------- MARIES / GUEST -------------->
-
-
-<!-- Test de lien direct du marié vers SON mariage -->
-
-
-<% if user_signed_in? %>
-  <% unless current_user.weddings.empty? %>
-    <%= "Hello, #{current_user.first_name.capitalize} :  " %>
-
-    <%= link_to 'Your wedding', wedding_path(current_user.weddings.last) %>
-  <% end %>
-<% end %>
-
-
-
 <!----------- MARIES / GUEST -------------->
 <div class="home-page">
   <div class="parallax">
     <div class="phrase">Your collaborative wedding experience</div>
   </div>
-
   <div class="paddded-tb">
     <div class="container">
       <div class="row">
@@ -58,7 +40,6 @@
       </div>
     </div>
   </div>
-
 
 
   <!----------- Ils nous font confiance -------------->

@@ -12,39 +12,48 @@
       <!-- Links when logged in -->
       <% if current_user.weddings.empty? %>
         <%= link_to "Your wedding",  new_wedding_path , class: "navbar-wagon-item navbar-wagon-link" %>
-        <div class="dropdown">
-          <a href="" class="navbar-wagon-link dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">Invitations</a>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to root_path do %> <i class="fa fa-hourglass-half"> </i>
-              Pending
-              <% end %>
-            </li>
-            <li>
-              <%= link_to root_path do %> <i class="fa fa-check"></i>
-              Confirmed
-                <% end %>
-            </li>
-          </ul>
-        </div>
+
       <% else %>
-        <%= link_to "Your wedding",wedding_path(current_user.weddings.last), class: "navbar-wagon-item navbar-wagon-link" %>
+
         <div class="dropdown">
-          <a href="" class="navbar-wagon-link dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">Invitations</a>
+          <a href="" class="navbar-wagon-link dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">Your wedding</a>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
-              <%= link_to root_path do %> <i class="fa fa-hourglass-half"></i>
-              Pending
+              <%= link_to wedding_path(current_user.weddings.future.last) do %> <i class="fa fa-hourglass-half"></i>
+              My future wedding
               <% end %>
             </li>
-            <li>
-              <%= link_to root_path do %> <i class="fa fa-check"></i>
-              Confirmed
+            <% memories = @user_weddings.passed %>
+            <% memories.each do |memory| %>
+              <li>
+                <%= link_to memories_wedding_path(memory) do %> <i class="fa fa-check"></i>
+              Memories
                 <% end %>
-            </li>
+              </li>
+            <% end %>
           </ul>
         </div>
       <% end %>
+
+
+        <div class="dropdown">
+          <a href="" class="navbar-wagon-link dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">Invitations</a>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <% if current_user.registries.exists? %>
+              <li>
+                <% current_user.registries.each do |reg| %>
+                  <%= link_to wedding_path(reg.wedding) do %> <i class="fa fa-hourglass-half"></i>
+                    <%= reg.wedding.user.first_name %> & <%= reg.wedding.spouse_first_name %>
+                  <% end %>
+                <% end %>
+              </li>
+            <% else %>
+              <li>
+                You don't have any weddings
+              </li>
+              <% end %>
+          </ul>
+        </div>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
@@ -52,7 +61,7 @@
           <%= avatar_for current_user, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
-              <%= link_to edit_user_registration_path do %>
+              <%= link_to users_profile_path do %>
                 <i class="fa fa-user"></i>
                 Profile
               <% end %>
@@ -77,9 +86,10 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+        <li><a href="#">Your wedding</a></li>
+        <li><a href="#">Invitations</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Log out</a></li>
       </ul>
     </div>
   </div>

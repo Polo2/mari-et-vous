@@ -3,6 +3,13 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'registrations' }
 
   resources :weddings do
+
+    member do
+      get 'memories'
+    end
+    # get "/memories", to: 'pages#memories'
+
+
     resources :registries
     resources :reviews
     resources :tasks do
@@ -12,7 +19,8 @@ Rails.application.routes.draw do
   end
   mount Attachinary::Engine => "/attachinary"
 
-  get "users/show", to: 'pages#profile'
+  get "users/profile", to: 'pages#profile'
+
 
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
