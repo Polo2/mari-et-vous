@@ -101,7 +101,8 @@ padding-top: 30px;
   }
 
   .leftblock {
-    border: 2px solid #c5d5cb;
+
+    box-shadow: 2px 2px 12px 2px rgba(0,0,0,0.1);
     border-radius: 5px;
     height: 300px;
     padding: 20px;
@@ -109,7 +110,8 @@ padding-top: 30px;
   }
 
   .rightblock{
-    border: 2px solid #c5d5cb;
+
+    box-shadow: 2px 2px 12px 2px rgba(0,0,0,0.1);
     border-radius: 5px;
     padding: 20px;
     margin-bottom: 15px;
@@ -117,7 +119,6 @@ padding-top: 30px;
   }
 
   .downnblock {
-    border: 2px solid #c5d5cb;
     border-radius: 5px;
     padding: 20px;
   }
@@ -141,6 +142,7 @@ padding-top: 30px;
   .fa {
     font-size: 20px;
   }
+
 }
 
 
