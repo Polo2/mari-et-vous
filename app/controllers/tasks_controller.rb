@@ -43,7 +43,7 @@ class TasksController< ApplicationController
 
   def edit
     @task.update(statut: !@task.statut)
-    redirect_to wedding_task_path(@wedding, @task)
+    redirect_to wedding_path(@wedding)
   end
 
   def update

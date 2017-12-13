@@ -1,6 +1,6 @@
 <%= simple_form_for([@wedding, @task, @message]) do |f| %>
 
-  <%= f.input :content, as: :text %>
-  <%= f.button :submit %>
+  <%= f.input :content, label: 'Add new comment', placeholder: 'Type here', as: :text %>
+  <%= f.button :submit, 'Send' %>
 
 <% end %>

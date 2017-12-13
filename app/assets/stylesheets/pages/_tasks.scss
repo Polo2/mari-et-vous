@@ -77,3 +77,70 @@ padding-top: 30px;
   list-style: none;
   }
 }
+
+.fullblock {
+
+  .task-details {
+      ul {
+        font-size: 15px;
+      }
+    }
+
+  .statut p {
+        font-size: 15px;
+      }
+          a {
+        color: #B5BAB8
+        }
+          a:hover {
+        color: #726e6e;
+          }
+
+  .black-link {
+    padding-top: 4px;
+  }
+
+  .leftblock {
+    border: 2px solid #c5d5cb;
+    border-radius: 5px;
+    height: 300px;
+    padding: 20px;
+    margin-bottom: 15px;
+  }
+
+  .rightblock{
+    border: 2px solid #c5d5cb;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 15px;
+
+  }
+
+  .downnblock {
+    border: 2px solid #c5d5cb;
+    border-radius: 5px;
+    padding: 20px;
+  }
+
+  .btn.btn-default {
+    width: 100%;
+  }
+
+  li {
+    margin-top: 15px;
+  }
+
+  li:hover .fa {
+    visibility: visible;
+  }
+
+  li .fa {
+    visibility: hidden;
+  }
+
+  .fa {
+    font-size: 20px;
+  }
+}
+
+
