@@ -3,7 +3,7 @@
     <div class="col-xs-12 col-sm-6">
 
      <%= simple_form_for([@wedding, @registry]) do |f| %>
-       <h4>Confirm your presence</h4>
+       <h4>Confirm presence</h4>
        <%= f.simple_fields_for :guests do |guest_f|  %>
         <div class="nested-fields">
           <div class="row">
@@ -21,7 +21,7 @@
         </div>
        <% end %>
        <div class="form-actions">
-         <%= f.button :submit, value: "Oui" %>
+         <%= f.button :submit, value: "Yes, I do" %>
        </div>
      <% end %>
     </div>

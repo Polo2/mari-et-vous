@@ -1,5 +1,5 @@
 <div class="wedding-memories">
-  <% if @wedding.passed?(@wedding) %>
+  <% if @wedding.passed? %>
 
     <% if current_user[:id] == @wedding[:user_id] %>
       <div id="photo-memories">
