@@ -1,14 +1,13 @@
 .tabs-wrapper {
   // background: #756A66;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
-
 
 .tabs {
   display: flex;
-  margin: 5px 0;
+  margin: 0px 0px 30px 0px;
   background-color: $green-background;
-  border-radius: 3px;
+  border-radius: 0px 0px 3px 3px;
 }
 .tabs a {
   color: $p-grey;
@@ -28,7 +27,7 @@
 
 .tabs h3 {
   font-size: 30px;
-  font-weight: bold;
+  // font-weight: bold;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -41,6 +40,7 @@
   flex: 0 0 20%;
   text-align: center;
   padding: 10px 0;
+  top: 10px;
 }
 // .tab:first-child {
 //   border-radius: 10px 0 0 0;
@@ -48,7 +48,22 @@
 // .tab:last-child {
 //   border-radius: 0 10px 0 0;
 // }
-.tab.active {
 
+.guest-tab {
+  color: $white;
+  // align-items: center;
+  // justify-content: center;
+  text-align: center;
+  padding: 10px 0;
 }
 
+.guest-tabs {
+  display: flex;
+  justify-content: center;
+  background-color: $green-background;
+  border-radius: 0px 0px 3px 3px;
+}
+.guest-tabs h3 {
+  padding: 10px 0;
+  margin: 0;
+}

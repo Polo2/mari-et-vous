@@ -1,8 +1,8 @@
 <% if policy(@wedding).edit? %>
-  <%= render "tab" %>
+  <%= render "wedder-tab" %>
+<% else %>
+  <%=render "guest-tab" %>
 <% end %>
-
-
 
 <div class="container">
   <div class="row">
@@ -34,7 +34,6 @@
   </div>
   <div class="row">
     <div class="col-xs-12 col-sm-8">
-
       <div class="row">
         <% if policy(@wedding).edit? %>
           <div class="col-xs-6">
@@ -47,13 +46,15 @@
       </div>
 
     </div>
-   </div>
-
-   <% if @wedding.registries.where(user: current_user).present? %>
-   <% @registry = @wedding.registries.find_by(user: current_user) %>
-      <%= render "registries/presence", registry: @registry %>
-   <% end %>
-   <hr>
+  </div>
+  <hr>
+  <div class="presence-block">
+     <% if @wedding.registries.where(user: current_user).present? %>
+     <% @registry = @wedding.registries.find_by(user: current_user) %>
+        <%= render "registries/presence", registry: @registry %>
+     <% end %>
+  </div>
+  <hr>
 
   <% content_for(:after_js) do %>
     <%= javascript_tag do %>

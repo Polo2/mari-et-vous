@@ -1,0 +1,13 @@
+<div class="tabs-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-2 col-sm-offset-5">
+        <div class="guest-tabs">
+            <% if (@wedding.date - Date.current) > 0 %>
+              <h3 class="guest-tab"> J - <%=  (@wedding.date - Date.current).to_i %></h3>
+            <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
