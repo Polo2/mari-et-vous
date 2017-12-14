@@ -1,14 +1,18 @@
-<h2>Choose new task</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+      <h3 class="text-center">
+        <span class="section-title">Choose one new task</span>
+      </h3>
+        <%= simple_form_for([@wedding, @task]) do |f| %>
 
+          <%= f.input :name, label:" ", collection: @tasks_filtered_names_list, as: :radio_buttons %>
 
-<%= simple_form_for([@wedding, @task]) do |f| %>
+          <%= f.submit "Create", class: "button maxwidth" %>
 
-  <%= f.input :name, collection: @tasks_filtered_names_list, as: :radio_buttons %>
-
-  <%= f.submit "Create this new task" %>
-
-<% end %>
-
-
+        <% end %>
+    </div>
+  </div>
+</div>
 <!-- en sortie, j'espère récupérer un tableau @task_list_checked, avec la selection des task.name qui a été choisie avec check-box -->
 

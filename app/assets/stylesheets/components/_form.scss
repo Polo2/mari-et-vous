@@ -41,6 +41,9 @@ button, .button {
   }
 }
 
+.maxwidth {
+  width: 100% !important;
+}
 
 //===== Registry form CSS added by Aurel =====//
 // .registry_guests_presence .checkbox {
@@ -72,4 +75,6 @@ a.add_fields {
 .edit_registry .links a {
   padding-top: 0;
 }
+
+
 
