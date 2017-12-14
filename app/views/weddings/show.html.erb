@@ -2,9 +2,7 @@
   <%= render "tab" %>
 <% end %>
 
-<% if (@wedding.date - Date.current) > 0 %>
-  <p> J - <%=  (@wedding.date - Date.current).to_i %> ! </p>
-<% end %>
+
 
 <div class="container">
   <div class="row">
@@ -23,9 +21,7 @@
       </div>
       <div class="wedding-description">
         <blockquote>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique repudiandae quo aut architecto quos ab, nostrum, corporis corrupti aperiam, tempora cupiditate! Laboriosam voluptates eveniet culpa laborum, iusto soluta error unde.
-
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique repudiandae quo aut architecto quos ab, nostrum, corporis corrupti aperiam, tempora cupiditate! Laboriosam voluptates eveniet culpa laborum, iusto soluta error unde.
+          <%= @wedding.description %>
         </blockquote>
       </div>
     </div>
@@ -38,7 +34,7 @@
   </div>
   <div class="row">
     <div class="col-xs-12 col-sm-8">
-      <p>
+      <p class="">
         <% if policy(@wedding).edit? %>
           <%= link_to 'Guests list', wedding_registries_path(@wedding)%> |
           <%= link_to 'Edit', edit_wedding_path(@wedding) %> |
@@ -48,11 +44,16 @@
         <% end %>
         <%= link_to 'Back', root_path %>
       </p>
-
-      <% if policy(@wedding).edit? %>
-        <%= link_to "New registry", new_wedding_registry_path(@wedding), class: "btn btn-primary"  %>
-        <%= link_to "New task", new_wedding_task_path(@wedding), class: "btn btn-primary"  %>
-      <% end %>
+      <div class="row">
+        <% if policy(@wedding).edit? %>
+          <div class="col-xs-6">
+              <%= link_to "New registry", new_wedding_registry_path(@wedding), class: "button button-show" %>
+          </div>
+          <div class="col-xs-6">
+            <%= link_to "New task", new_wedding_task_path(@wedding), class: "button button-show"  %>
+          </div>
+          <% end %>
+      </div>
     </div>
    </div>
 

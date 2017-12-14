@@ -1,9 +1,6 @@
 <div class="container">
   <% if current_user[:id] == @wedding[:user_id] %>
     <%= render 'registry_table_show' %>
-  <% else %>
-    <h3>You don't organize this wedding, consequently you can't see this part.</h3>
-    <%= link_to "Back", wedding_path(@wedding) %>
   <% end %>
 </div>
 
