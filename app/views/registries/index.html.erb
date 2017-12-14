@@ -1,28 +1,49 @@
 <div class="container">
-  <% if @wedding.user == current_user %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+      <h3 class="text-center">
+        <span class="section-title">Guest list</span>
+      </h3>
 
-  <h1>Hello, <%= @wedding.user.first_name%> <%= @wedding.user.last_name %> </h1>
+      <% if @wedding.user == current_user %>
 
-  <p>Here is the list of the registries for your wedding : </p>
+        <div class="guest-email">
+          <p><%= @wedding.user.first_name%> <%= @wedding.user.last_name %></p>
+        </div>
 
-  <% @registries.each do |reg| %>
-  <div class="links">
-    <li>
-      total guests : <%= reg.guests.length %> persons
-      <%= link_to 'Show', wedding_registry_path(@wedding, reg) %>
-      <%= link_to 'Edit', edit_wedding_registry_path(@wedding, reg) %>
-      <%= link_to 'Destroy', wedding_registry_path(@wedding, reg), method: :delete, data: { confirm: 'Are you sure?' } %>
-    </li>
+      <% end %>
+
+      <div class="guest_details">
+        <table>
+          <% @registries.each do |reg| %>
+
+            <tr>
+              <th>Family</th>
+              <th>Guests</th>
+              <th>Action</th>
+            </tr>
+
+          <tr>
+            <td>Martin</td>
+            <td><%= reg.guests.length %> </td>
+            <td>
+              <div class="links">
+                  <%= link_to 'Show', wedding_registry_path(@wedding, reg) %>
+                  <%= link_to 'Edit', edit_wedding_registry_path(@wedding, reg) %>
+                  <%= link_to 'Destroy', wedding_registry_path(@wedding, reg), method: :delete, data: { confirm: 'Are you sure?' } %>
+              </div>
+            </td>
+          </tr>
+          <% end %>
+        </table>
+      </div>
+      <div class="links">
+        <%= link_to "Back to my wedding", wedding_path(@wedding) %>
+      </div>
+    </div>
   </div>
-  <% end %>
-  </ul>
-  <div class="links">
-    <%= link_to "Back to my wedding", wedding_path(@wedding) %>
-  </div>
-
-  <p> Today,  peoples answered "Yes" for your wedding </p>
-
-  <% end %>
 </div>
+
+
 
 

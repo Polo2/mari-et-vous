@@ -44,7 +44,7 @@
     <div class="row">
       <% if policy(@wedding).edit? %>
         <div class="col-xs-8">
-          <div class="leftblock">
+          <div class="leftblock bloc">
             <div class="row">
               <div class="col-xs-6 task-details">
                 <h4>Private</h4>
@@ -74,26 +74,26 @@
           </div>
         </div>
         <div class="col-xs-4">
-          <div class="rightblock">
+          <div class="rightblock bloc">
             <%= render 'elements/form-new', wedding: @wedding, task: @task, element: @element %>
           </div>
         </div>
         <div class="col-xs-12 discussion">
           <h4>Comments</h4>
-          <div class="downblock invited-height-block">
+          <div class="downblock bloc invited-height-block">
             <%= render 'messages/messages-content' %>
           </div>
         </div>
       <% else %>
         <div class="col-xs-8 discussion">
           <h4>Messages</h4>
-          <div class="leftblock invited-height-block">
+          <div class="leftblock bloc invited-height-block">
             <%= render 'messages/messages-content' %>
           </div>
         </div>
          <div class="col-xs-4 task-details">
           <h4>Needs</h4>
-            <div class="rightblock invited-height-block">
+            <div class="rightblock bloc invited-height-block">
               <ul>
               <% @public_elements.each do |element| %>
                 <li>
