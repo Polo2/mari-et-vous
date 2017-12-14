@@ -37,12 +37,13 @@
 
     <hr>
       <h3 class="text-center">
-        <span class="section-title">Wedding List</span>
+        <span class="section-title">Guest List</span>
       </h3>
   <div class="presence-block">
     <div class="text-center">
       <% if policy(@wedding).edit? %>
         <%= link_to "Add guest", new_wedding_registry_path(@wedding), class: "button button-show" %>
+        <%= link_to "See Guest list", wedding_registries_path(@wedding), class: "button button-show"%>
       <% end %>
     </div>
 
@@ -78,7 +79,6 @@
 <div class= "links">
   <p>
     <% if policy(@wedding).edit? %>
-      <%= link_to 'Guests list', wedding_registries_path(@wedding)%>
       <%= link_to 'Edit', edit_wedding_path(@wedding) %>
     <% end %>
     <% if policy(@wedding).destroy? %>

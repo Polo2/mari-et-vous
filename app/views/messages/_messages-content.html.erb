@@ -1,4 +1,4 @@
-<div class="messages-block">
+<div class="messages-block" id="scrollzone">
 
    <% @messages.each do |m| %>
       <div class="message-wrapper <%=  m.user == m.task.wedding.user ? 'wedder' : 'invited'   %> ">
