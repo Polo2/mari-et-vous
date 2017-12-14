@@ -38,16 +38,18 @@
   </div>
   <div class="row">
     <div class="col-xs-12 col-sm-8">
-      <p>
-        <% if policy(@wedding).edit? %>
-          <%= link_to 'Guests list', wedding_registries_path(@wedding)%> |
-          <%= link_to 'Edit', edit_wedding_path(@wedding) %> |
-        <% end %>
-        <% if policy(@wedding).destroy? %>
-          <%= link_to 'Destroy', @wedding, method: :delete, data: { confirm: 'Are you sure?' } %> |
-        <% end %>
-        <%= link_to 'Back', root_path %>
-      </p>
+      <div class= "links">
+        <p>
+          <% if policy(@wedding).edit? %>
+            <%= link_to 'Guests list', wedding_registries_path(@wedding)%>
+            <%= link_to 'Edit', edit_wedding_path(@wedding) %>
+          <% end %>
+          <% if policy(@wedding).destroy? %>
+            <%= link_to 'Destroy', @wedding, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+          <%= link_to 'Back', root_path %>
+        </p>
+      </div>
 
       <% if policy(@wedding).edit? %>
         <%= link_to "New registry", new_wedding_registry_path(@wedding), class: "btn btn-primary"  %>

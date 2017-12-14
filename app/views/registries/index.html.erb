@@ -6,17 +6,19 @@
   <p>Here is the list of the registries for your wedding : </p>
 
   <% @registries.each do |reg| %>
-
+  <div class="links">
     <li>
       total guests : <%= reg.guests.length %> persons
       <%= link_to 'Show', wedding_registry_path(@wedding, reg) %>
       <%= link_to 'Edit', edit_wedding_registry_path(@wedding, reg) %>
       <%= link_to 'Destroy', wedding_registry_path(@wedding, reg), method: :delete, data: { confirm: 'Are you sure?' } %>
-  </li>
+    </li>
+  </div>
   <% end %>
   </ul>
-  <%= link_to "Back to my wedding", wedding_path(@wedding) %>
-
+  <div class="links">
+    <%= link_to "Back to my wedding", wedding_path(@wedding) %>
+  </div>
 
   <p> Today,  peoples answered "Yes" for your wedding </p>
 
