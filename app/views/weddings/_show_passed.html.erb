@@ -6,7 +6,7 @@
     <div class="form-imputs">
       <%= f.input :album_photos, as: :attachinary, label: false %>
     </div>
-    <div class="form-actions photo_list ">
+    <div class="form-actions">
       <%= f.button :submit, value: "Add memories" %>
     </div>
   <% end %>
@@ -15,4 +15,3 @@
   <h3><%= @wedding.user.first_name %> & <%= @wedding.spouse_first_name %></h3>
     <%= render 'carousel' %>
 </div>
-
