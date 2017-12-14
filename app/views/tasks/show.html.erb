@@ -81,36 +81,14 @@
         <div class="col-xs-12 discussion">
           <h4>Comments</h4>
           <div class="downblock invited-height-block">
-            <div class="messages-block">
-              <ul>
-                <% @messages.each do |m| %>
-                  <li>
-                    <%= m.content %>, written by <%= m.user.first_name %>, <%=m.created_at.strftime('%D at %H:%M.')%>
-                  </li>
-                <% end %>
-              </ul>
-            </div>
-            <div class="messages-form">
-              <%= render 'messages/form-new', wedding: @wedding, task: @task, message: @message %>
-            </div>
+            <%= render 'messages/messages-content' %>
           </div>
         </div>
       <% else %>
         <div class="col-xs-8 discussion">
           <h4>Messages</h4>
           <div class="leftblock invited-height-block">
-            <div class="messages-block">
-              <ul>
-              <% @messages.each do |m| %>
-                <li>
-                  <%= m.content %>, written by <%= m.user.first_name %>, <%=m.created_at.strftime('%D at %H:%M.')%>
-                </li>
-              <% end %>
-              </ul>
-            </div>
-            <div class="messages-form">
-              <%= render 'messages/form-new', wedding: @wedding, task: @task, message: @message %>
-            </div>
+            <%= render 'messages/messages-content' %>
           </div>
         </div>
          <div class="col-xs-4 task-details">
