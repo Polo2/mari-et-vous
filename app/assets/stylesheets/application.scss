@@ -23,3 +23,27 @@ abbr {
       width: 100%;
     }
 
+.links {
+  padding-top: 20px;
+
+}
+
+.links a {
+  color : #726e6e !important;
+  font-size: 15px;
+  padding: 5px;
+  margin: -3px;
+}
+
+.links a:hover {
+  opacity: 1;
+  color: #726e6e !important;
+}
+
+
+.links a:nth-child(n+2){
+  border-left: 1px solid $p-grey;
+    }
+
+
+
