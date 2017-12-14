@@ -31,7 +31,11 @@ class RegistriesController < ApplicationController
   def update
     # current_user.registries.find(params[:registry_id])
     @registry.update(registry_params)
-    redirect_to wedding_registry_path(@wedding, @registry)
+    if current_user == @wedding.user
+      redirect_to wedding_registry_path(@wedding, @registry)
+    else
+      redirect_to wedding_path(@wedding)
+    end
   end
 
   def destroy

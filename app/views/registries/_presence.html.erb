@@ -10,7 +10,7 @@
             <div class="row">
               <div class="col-xs-8">
                 <div class="form-inline">
-                  <%= guest_f.label :name %>
+                  <%= guest_f.input :name, label: false, disabled: true %>
                 </div>
               </div>
               <div class="col-xs-4">
@@ -26,9 +26,9 @@
            <%= f.button :submit %>
          </div>
        <% end %>
-
-          <%= link_to "Back to the wedding", wedding_path(@wedding), class: "back-link"  %>
-
+        <div class="links">
+          <%= link_to "Back to wedding", wedding_path(@wedding) %>
+        </div>
       </div>
     </div>
   </div>
