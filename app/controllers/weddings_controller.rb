@@ -19,10 +19,6 @@ class WeddingsController < ApplicationController
     @messages_count = nb_new_messages
   end
 
-  def memories
-    authorize(@wedding, :edit?)
-  end
-
   # GET /weddings/new
   def new
     @wedding = Wedding.new

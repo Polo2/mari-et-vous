@@ -3,13 +3,6 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'registrations' }
 
   resources :weddings do
-
-    member do
-      get 'memories'
-    end
-    # get "/memories", to: 'pages#memories'
-
-
     resources :registries
     resources :reviews
     resources :tasks do
