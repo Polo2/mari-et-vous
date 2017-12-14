@@ -14,6 +14,12 @@
             <p>Answers</p>
           </a>
 
+          <a class="tab date-tab " href="#">
+            <% if (@wedding.date - Date.current) > 0 %>
+              <h3> J - <%=  (@wedding.date - Date.current).to_i %></h3>
+            <% end %>
+          </a>
+
           <a class="tab" href="#">
             <h3><%= @wedding.tasks.count %></h3>
             <p>Pending tasks</p>
