@@ -11,8 +11,8 @@ class TasksController< ApplicationController
 
 
   def show
-    @private_elements = @task.elements.where('public = ?', false)
-    @public_elements = @task.elements.where('public = ?', true)
+    @private_elements = @task.elements.where(public: false)
+    @public_elements = @task.elements.where(public: true)
     @element = Element.new
 
     @messages = @task.messages.all.order(:created_at)

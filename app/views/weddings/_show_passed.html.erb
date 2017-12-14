@@ -1,59 +1,18 @@
 <div class="container">
+
   <h4>Create your album photo memories</h4>
 
   <%= simple_form_for(@wedding) do |f| %>
-    <%= f.input :album_photos, as: :attachinary, class: "button" %>
-    <%= f.submit %>
-  <% end %>
-
-
-  <% @wedding.album_photos.each do |photo| %>
-    <div class="w3-content w3-display-container">
-
-    <div class="w3-display-container mySlides">
-      <img src="<%= asset_path("couple.jpg") %>" style="width:100%">
-      <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
-        Trolltunga, Norway
-      </div>
+    <div class="form-imputs">
+      <%= f.input :album_photos, as: :attachinary, label: false %>
     </div>
-
-    <div class="w3-display-container mySlides">
-      <img src="<%= asset_path("couple.jpg") %>" style="width:100%">
-      <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
-        Northern Lights, Norway
-      </div>
-    </div>
-
-    <div class="w3-display-container mySlides">
-      <img src="<%= asset_path("couple.jpg") %>" style="width:100%">
-      <div class="w3-display-topleft w3-large w3-container w3-padding-16 w3-black">
-        Beautiful Mountains
-      </div>
-    </div>
-
-    <button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
-    <button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
-
+    <div class="form-actions photo_list ">
+      <%= f.button :submit, value: "Add memories" %>
     </div>
   <% end %>
+
+
+  <h3><%= @wedding.user.first_name %> & <%= @wedding.spouse_first_name %></h3>
+    <%= render 'carousel' %>
 </div>
 
-<script>
-  var slideIndex = 1;
-  showDivs(slideIndex);
-
-  function plusDivs(n) {
-    showDivs(slideIndex += n);
-  }
-
-  function showDivs(n) {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    if (n > x.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = x.length}
-    for (i = 0; i < x.length; i++) {
-       x[i].style.display = "none";
-    }
-    x[slideIndex-1].style.display = "block";
-  }
-</script>

@@ -132,7 +132,7 @@ wedding6_aurel = Wedding.create({
   location: "Los Angeles",
   photo_url: "https://astroglide.media.zestyio.com/keep-relationship-hot.49951c8c20b5646bb5a2b150b922df1f.H1bkMLN50e.jpg",
   spouse_photo_url: "https://avatars0.githubusercontent.com/u/32846131?s=400&v=4",
-  spouse_first_name: "Morgan",
+  spouse_first_name: "Patrick",
   spouse_last_name: "Pouet"
   })
 
