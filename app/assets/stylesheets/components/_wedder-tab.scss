@@ -19,17 +19,21 @@
   opacity: 0.8;
 }
 .tab.date-tab {
-  color: $white;
+
   display: flex;
   align-items: center;
   justify-content: center;
+    h3{
+      color: $white !important;
+  }
 }
 
 .tabs h3 {
-  font-size: 30px;
+  font-size: 20px;
   // font-weight: bold;
   margin-top: 0;
   margin-bottom: 0;
+  color: #828080;
 }
 .tabs p {
   opacity: 0.5;
@@ -55,6 +59,7 @@
   // justify-content: center;
   text-align: center;
   padding: 10px 0;
+
 }
 
 .guest-tabs {
@@ -62,8 +67,11 @@
   justify-content: center;
   background-color: $green-background;
   border-radius: 0px 0px 3px 3px;
+  width: 100px;
+  margin-top: 15px;
 }
 .guest-tabs h3 {
   padding: 10px 0;
   margin: 0;
+  font-size: 20px;
 }
