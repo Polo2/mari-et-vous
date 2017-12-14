@@ -18,10 +18,10 @@
           <% end %>
         </table>
       </div>
-      <div class="guest-link">
-        <%= link_to "Registries", wedding_registries_path(@wedding) %>
-        <%= link_to "Edit", edit_wedding_registry_path(@wedding, @registry) %>
+      <div class="links">
         <%= link_to "Back to my wedding", wedding_path(@wedding) %>
+        <%= link_to "Edit", edit_wedding_registry_path(@wedding, @registry) %>
+        <%= link_to "Registries", wedding_registries_path(@wedding) %>
       </div>
     </div>
   </div>

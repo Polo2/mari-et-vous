@@ -34,15 +34,6 @@
   </div>
   <div class="row">
     <div class="col-xs-12 col-sm-8">
-      <p class="">
-        <% if policy(@wedding).edit? %>
-          <%= link_to 'Guests list', wedding_registries_path(@wedding)%> |
-          <%= link_to 'Edit', edit_wedding_path(@wedding) %> |
-        <% end %>
-        <% if policy(@wedding).destroy? %>
-          <%= link_to 'Destroy', @wedding, method: :delete, data: { confirm: 'Are you sure?' } %> |
-        <% end %>
-      </p>
       <div class="row">
         <% if policy(@wedding).edit? %>
           <div class="col-xs-6">
@@ -53,6 +44,7 @@
           </div>
           <% end %>
       </div>
+
     </div>
   </div>
   <hr>
@@ -83,4 +75,17 @@
 
 <div class="task-block">
   <%= render 'tasks/tasks', wedding: @wedding %>
+</div>
+
+<div class= "links">
+  <p>
+    <% if policy(@wedding).edit? %>
+      <%= link_to 'Guests list', wedding_registries_path(@wedding)%>
+      <%= link_to 'Edit', edit_wedding_path(@wedding) %>
+    <% end %>
+    <% if policy(@wedding).destroy? %>
+      <%= link_to 'Destroy', @wedding, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+    <%= link_to 'Back', root_path %>
+  </p>
 </div>

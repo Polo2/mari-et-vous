@@ -14,7 +14,7 @@
 
         <%= @task.statut ? "Task done | " : "This task is unfulfilled |" %>
 
-        <% if @wedding.user == current_user %>
+        <% if policy(@wedding).edit? %>
           <% if @task.statut %>
             <%= link_to "Unmark as done", edit_wedding_task_path(@wedding, @task) %>
           <% else %>
@@ -24,7 +24,11 @@
       </p>
     </div>
 
-    <% if @wedding.user == current_user %>
+    <div class=links>
+      <%= link_to "Back to Wedding", wedding_path(@wedding), class: "back-link" %>
+    </div>
+
+    <% if policy(@wedding).edit? %>
       <div class="row">
         <div class="col-xs-8">
           <h4>Review list</h4>
@@ -36,11 +40,12 @@
       </div>
     <% end %>
 
+
     <div class="row">
-      <div class="col-xs-8">
-        <div class="leftblock">
-          <div class="row">
-            <% if @wedding.user == current_user %>
+      <% if policy(@wedding).edit? %>
+        <div class="col-xs-8">
+          <div class="leftblock">
+            <div class="row">
               <div class="col-xs-6 task-details">
                 <h4>Private</h4>
                 <ul>
@@ -65,50 +70,65 @@
                   <% end %>
                 </ul>
               </div>
-            <% else %>
-              <div class="col-xs-12 task-details">
-                <ul>
-                  <% @public_elements.each do |element| %>
-                    <li><%= element.content %>
-                      <%= link_to edit_wedding_task_element_path(@wedding, @task, element) do %><i class="fa fa-pencil"></i><% end %>
-                      <%= link_to wedding_task_element_path(@wedding, @task, element), method: :delete, data: { confirm: 'Sure?' } do %><i class="fa fa-trash"></i><% end %>
-                    </li>
-                  <% end %>
-                </ul>
-              </div>
-            <% end %>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="col-xs-4">
-        <div class="rightblock">
-          <%= render 'elements/form-new', wedding: @wedding, task: @task, element: @element %>
+        <div class="col-xs-4">
+          <div class="rightblock">
+            <%= render 'elements/form-new', wedding: @wedding, task: @task, element: @element %>
+          </div>
         </div>
-      </div>
+        <div class="col-xs-12 discussion">
+          <h4>Comments</h4>
+          <div class="downblock invited-height-block">
+            <div class="messages-block">
+              <ul>
+                <% @messages.each do |m| %>
+                  <li>
+                    <%= m.content %>, written by <%= m.user.first_name %>, <%=m.created_at.strftime('%D at %H:%M.')%>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+            <div class="messages-form">
+              <%= render 'messages/form-new', wedding: @wedding, task: @task, message: @message %>
+            </div>
+          </div>
+        </div>
+      <% else %>
+        <div class="col-xs-8 discussion">
+          <h4>Messages</h4>
+          <div class="leftblock invited-height-block">
+            <div class="messages-block">
+              <ul>
+              <% @messages.each do |m| %>
+                <li>
+                  <%= m.content %>, written by <%= m.user.first_name %>, <%=m.created_at.strftime('%D at %H:%M.')%>
+                </li>
+              <% end %>
+              </ul>
+            </div>
+            <div class="messages-form">
+              <%= render 'messages/form-new', wedding: @wedding, task: @task, message: @message %>
+            </div>
+          </div>
+        </div>
+         <div class="col-xs-4 task-details">
+          <h4>Needs</h4>
+            <div class="rightblock invited-height-block">
+              <ul>
+              <% @public_elements.each do |element| %>
+                <li>
+                  <%= element.content %>
+                </li>
+              <% end %>
+              </ul>
+            </div>
+          </div>
+      <% end %>
 
-
-
-    <div class="col-xs-12 discussion">
-      <h4>Comments</h4>
-      <div class="downnblock">
-
-        <ul>
-          <% @messages.each do |m| %>
-            <li>
-              <%= m.content %>, written by <%= m.user.first_name %>, <%=m.created_at.strftime('%D at %H:%M.')%>
-            </li>
-          <% end %>
-        </ul>
-        <%= render 'messages/form-new', wedding: @wedding, task: @task, message: @message %>
-      </div>
     </div>
   </div>
-
-<%= render 'messages/message-chat' %>
-
 </div>
-<div class=links>
-  <%= link_to "Back to Wedding", wedding_path(@wedding), class: "back-link" %>
-</div>
+
 
