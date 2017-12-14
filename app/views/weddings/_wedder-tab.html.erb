@@ -1,36 +1,41 @@
-<div class="tabs-wrapper">
-  <div class="container">
+
 
     <div class="row">
       <div class="col-xs-12">
         <div class="tabs">
-          <a class="tab active" href="<%= wedding_registries_path(@wedding) %>">
+          <div class="tab active" href="<%= wedding_registries_path(@wedding) %>">
             <h3><%= @wedding.guests.count %></h3>
-            <p>Guests</p>
-          </a>
+            <p>
+              <%= @wedding.guests.count > 1 ? "Guests" : "Guest" %>
+            </p>
+          </div>
 
-          <a class="tab" href="#">
+          <div class="tab">
             <h3><%= @wedding.guests.where(presence: true).count %></h3>
-            <p>Answers</p>
-          </a>
+            <p>
+              <%= @wedding.guests.where(presence: true).count > 1 ? "Answers" : "Answer" %>
+            </p>
+          </div>
 
-          <a class="tab date-tab " href="#">
+          <div class="tab date-tab">
             <% if (@wedding.date - Date.current) > 0 %>
               <h3> J - <%=  (@wedding.date - Date.current).to_i %></h3>
             <% end %>
-          </a>
+          </div>
 
-          <a class="tab" href="#">
+          <a class="tab">
             <h3><%= @wedding.tasks.where(statut: false).count %></h3>
-            <p>Pending tasks</p>
+            <p><%= @wedding.tasks.count > 1 ? "Pending tasks" : "Pending task" %></p>
           </a>
 
-          <a class="tab" href="#">
+
+          <div class="tab">
             <h3><%= @messages_count %></h3>
-            <p>New messages</p>
-          </a>
+            <p>
+              <%= @messages_count > 1 ? "New Messages" : "New Message" %>
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
+

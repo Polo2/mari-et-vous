@@ -7,7 +7,7 @@
     color: white;
     text-align: center;
     padding: 135px;
-    font-size: 25px;
+    font-size: 30px;
   }
 
   .parallax {
@@ -64,8 +64,8 @@
       margin-bottom: 25px;
       font-size: 15px;
       color: #959A97;
-      text-align: left;
       height: 170px;
+      text-align: justify;
     }
   }
 
@@ -154,6 +154,7 @@
       font-family: 'Chivo', sans-serif;
       font-style: italic;
       font-size: 16.5px;
+      text-align: justify;
     }
   }
 
@@ -175,11 +176,15 @@
       background-color: white !important;
       padding: 74px;
       background-size: auto;
-      padding-top: 60px;
+      padding-top: 23px;
       padding-bottom: 50px !important;
       font-size: 20px !important;
     }
 
+    .addmargin h3 {
+        margin-top: 75px !important;
+        margin-bottom: 30px;
+      }
 
 
 .marged-top {
