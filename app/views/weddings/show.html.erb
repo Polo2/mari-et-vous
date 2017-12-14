@@ -3,3 +3,88 @@
 <% else %>
   <%= render 'show_future'  %>
 <% end %>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8">
+      <div class="wedding-informations">
+        <div class="spouse-photo">
+          <%= cl_image_tag @wedding.spouse_photo.path %>
+        </div>
+        <div class="details">
+          <ul>
+            <li class="primary"><%= icon('paw') %><%= @wedding.user.first_name %> & <%= @wedding.spouse_first_name %></li>
+            <li class="secondary"><%= icon('calendar') %><%= @wedding.date %></li>
+            <li class="secondary"><%= icon('map-marker') %><%= @wedding.location %></li>
+          </ul>
+        </div>
+      </div>
+      <div class="wedding-description">
+        <blockquote>
+          <%= @wedding.description %>
+        </blockquote>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <div class="info-wedding-location">
+        <div id="map" style="height: 400px;"></div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+    <hr>
+      <h3 class="text-center">
+        <span class="section-title">Wedding List</span>
+      </h3>
+    <div class="presence-block">
+        <div class="text-center">
+          <% if policy(@wedding).edit? %>
+            <%= link_to "Add guest", new_wedding_registry_path(@wedding), class: "button button-show" %>
+          <% end %>
+        </div>
+        <% if @wedding.registries.where(user: current_user).present? %>
+          <% @registry = @wedding.registries.find_by(user: current_user) %>
+            <%= render "registries/presence", registry: @registry %>
+        <% end %>
+    <hr>
+  </div>
+
+
+  <% content_for(:after_js) do %>
+    <%= javascript_tag do %>
+      var handler = Gmaps.build('Google');
+      handler.buildMap({ internal: { id: 'map' } }, function() {
+        markers = handler.addMarkers(<%= raw @markers.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        if (markers.length == 0) {
+          handler.getMap().setZoom(2);
+        } else if (markers.length == 1) {
+          handler.getMap().setZoom(10);
+        }
+      });
+    <% end %>
+  <% end %>
+</div>
+
+
+  <%= render 'tasks/tasks', wedding: @wedding %>
+
+
+<div class= "links">
+  <p>
+    <% if policy(@wedding).edit? %>
+      <%= link_to 'Guests list', wedding_registries_path(@wedding)%>
+      <%= link_to 'Edit', edit_wedding_path(@wedding) %>
+    <% end %>
+    <% if policy(@wedding).destroy? %>
+      <%= link_to 'Destroy', @wedding, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+    <%= link_to 'Back', root_path %>
+  </p>
+</div>
+

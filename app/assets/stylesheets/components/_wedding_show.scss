@@ -53,4 +53,21 @@
   text-align: justify;
 }
 
+.presence-block {
+  margin-top: 40px;
 
+  .button-show {
+    width: 50%;
+  }
+}
+
+.task-block {
+  padding: 24px;
+}
+
+.weddings.show {
+  .button {
+    display: inline-block;
+    width: auto;
+  }
+}
