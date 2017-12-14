@@ -20,11 +20,15 @@
                   <strong> <%= task.name %> </strong>
                   <div class="tasknotification">
                     <% if wedding.user == current_user %>
-                      <% unless task.messages.where(read: false).count == 0 %>
-                         <%= task.messages.where(read: false).count %> messages
+                      <% if task.messages.where(read: false).count == 0 %>
+
+                      <% elsif task.messages.where(read: false).count == 1%>
+                        <%= task.messages.where(read: false).count %> message
+                      <% else %>
+                        <%= task.messages.where(read: false).count %> messages
                       <% end %>
                     <% else %>
-                      COME
+
                     <% end %>
                       <div class= statut>
                         <% if task.statut %>
