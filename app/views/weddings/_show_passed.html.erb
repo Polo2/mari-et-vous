@@ -6,13 +6,8 @@
 <% end %>
 
 
-
-
-
-
+<% @wedding.album_photos.each do |photo| %>
 <div class="w3-content w3-display-container">
-
-
 
 <div class="w3-display-container mySlides">
   <img src="<%= asset_path("couple.jpg") %>" style="width:100%">
