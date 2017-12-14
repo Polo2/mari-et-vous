@@ -32,29 +32,26 @@
     </div>
 
   </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-8">
-      <div class="row">
-        <% if policy(@wedding).edit? %>
-          <div class="col-xs-6">
-              <%= link_to "New registry", new_wedding_registry_path(@wedding), class: "button button-show" %>
-          </div>
-          <div class="col-xs-6">
-            <%= link_to "New task", new_wedding_task_path(@wedding), class: "button button-show"  %>
-          </div>
-          <% end %>
-      </div>
 
-    </div>
+
+
+    <hr>
+      <h3 class="text-center">
+        <span class="section-title">Wedding List</span>
+      </h3>
+    <div class="presence-block">
+        <div class="text-center">
+          <% if policy(@wedding).edit? %>
+            <%= link_to "Add guest", new_wedding_registry_path(@wedding), class: "button button-show" %>
+          <% end %>
+        </div>
+        <% if @wedding.registries.where(user: current_user).present? %>
+          <% @registry = @wedding.registries.find_by(user: current_user) %>
+            <%= render "registries/presence", registry: @registry %>
+        <% end %>
+    <hr>
   </div>
-  <hr>
-  <div class="presence-block">
-     <% if @wedding.registries.where(user: current_user).present? %>
-     <% @registry = @wedding.registries.find_by(user: current_user) %>
-        <%= render "registries/presence", registry: @registry %>
-     <% end %>
-  </div>
-  <hr>
+
 
   <% content_for(:after_js) do %>
     <%= javascript_tag do %>
@@ -73,9 +70,9 @@
   <% end %>
 </div>
 
-<div class="task-block">
+
   <%= render 'tasks/tasks', wedding: @wedding %>
-</div>
+
 
 <div class= "links">
   <p>
