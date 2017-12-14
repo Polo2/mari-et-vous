@@ -1,11 +1,12 @@
 <div class="container">
+
   <h4>Create your album photo memories</h4>
 
   <%= simple_form_for(@wedding) do |f| %>
     <div class="form-imputs">
       <%= f.input :album_photos, as: :attachinary, label: false %>
     </div>
-    <div class="form-actions">
+    <div class="form-actions photo_list ">
       <%= f.button :submit, value: "Add memories" %>
     </div>
   <% end %>
@@ -14,3 +15,4 @@
   <h3><%= @wedding.user.first_name %> & <%= @wedding.spouse_first_name %></h3>
     <%= render 'carousel' %>
 </div>
+
