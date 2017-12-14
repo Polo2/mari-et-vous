@@ -89,7 +89,6 @@ class WeddingsController < ApplicationController
 
     def nb_new_messages
       compteur = 0
-      set_wedding
       @wedding.tasks.each { |t|  compteur += t.messages.where(read: false).count  }
       return compteur
     end

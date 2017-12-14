@@ -114,6 +114,7 @@ margin-top: 49px;
     height: 300px;
     padding: 20px;
     margin-bottom: 15px;
+    overflow: auto;
   }
 
   .rightblock{
@@ -135,10 +136,6 @@ margin-top: 49px;
     height: 420px;
   }
 
-  .messages-block {
-    overflow: auto;
-    height: 230px;
-    }
 
   .btn.btn-default {
     width: 100%;

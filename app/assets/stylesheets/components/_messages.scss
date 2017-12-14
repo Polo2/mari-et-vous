@@ -1,6 +1,8 @@
 .messages-block {
   background: #fefefe;
   padding: 15px;
+  overflow: auto;
+  height: 230px;
 
   .message.frame {
     background-color: #c5d5cb;

@@ -10,11 +10,7 @@ module ApplicationHelper
   end
 
   def public_for(bool)
-    if bool
-      "Public"
-    else
-      "Private"
-    end
+    bool ? "Yes" : "No"
   end
 
   def presence_for(presence)

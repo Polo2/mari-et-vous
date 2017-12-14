@@ -21,7 +21,7 @@
           </a>
 
           <a class="tab" href="#">
-            <h3><%= @wedding.tasks.count %></h3>
+            <h3><%= @wedding.tasks.where(statut: false).count %></h3>
             <p>Pending tasks</p>
           </a>
 
