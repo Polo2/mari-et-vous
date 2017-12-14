@@ -21,10 +21,10 @@
                 My wedding
               <% end %>
             </li>
-            <% memories = @user_weddings.passed %>
+            <% memories = current_user.weddings.passed %>
             <% memories.each do |memory| %>
               <li>
-                <%= link_to memories_wedding_path(memory) do %> <i class="fa fa-check"></i>
+                <%= link_to wedding_path(memory) do %> <i class="fa fa-check"></i>
               Memories
                 <% end %>
               </li>

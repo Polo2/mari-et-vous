@@ -7,7 +7,7 @@
 
   <div class="wedding-registry-form">
 
-    <% if @wedding.passed?(@wedding) %>
+    <% if @wedding.passed? %>
       <%= link_to 'Back', weddings_path %>
       <div id="reviews">
         <% if @wedding.reviews.blank? %>
