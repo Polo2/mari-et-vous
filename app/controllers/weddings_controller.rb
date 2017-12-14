@@ -1,5 +1,5 @@
 class WeddingsController < ApplicationController
-  before_action :set_wedding, only: [:show, :edit, :update, :destroy]
+  before_action :set_wedding, only: [:show, :memories, :edit, :update, :destroy]
 
   # GET /weddings
   # GET /weddings.json

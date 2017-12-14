@@ -1,0 +1,44 @@
+.messages-block {
+  background: #fefefe;
+  padding: 15px;
+
+  .message.frame {
+    background-color: #c5d5cb;
+    width: 85%;
+    display: flex;
+    border-radius: 5px;
+  }
+
+  .message-wrapper {
+    display: flex;
+    padding: 25px;
+  }
+
+  .message-body {
+    flex: 0 0 70%;
+    margin-left: 40px;
+    margin-bottom: 10px;
+    justify-content: center;
+  }
+
+  .message-name {
+    justify-content: center;
+    p {
+      margin: 10px;
+      font-size: 10px;
+      font-weight: 300;
+    }
+  }
+
+  .message-wrapper.wedder {
+    justify-content: flex-start;
+  }
+
+  .message-wrapper.invited {
+    justify-content: flex-end;
+  }
+
+  .avatar-smaller{
+    padding: 5px;
+ }
+}

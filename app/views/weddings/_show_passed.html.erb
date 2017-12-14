@@ -1,20 +1,9 @@
 <h4>Create your album photo memories</h4>
 
-<%= simpl_form_for(@wedding) do |f| %>
+<%= simple_form_for(@wedding) do |f| %>
   <%= f.input :album_photos, as: :attachinary %>
+  <%= f.submit %>
 <% end %>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -23,22 +12,24 @@
 
 <div class="w3-content w3-display-container">
 
+
+
 <div class="w3-display-container mySlides">
-  <img src="couple.jpg" style="width:100%">
+  <img src="<%= asset_path("couple.jpg") %>" style="width:100%">
   <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
     Trolltunga, Norway
   </div>
 </div>
 
 <div class="w3-display-container mySlides">
-  <img src="couple.jpg" style="width:100%">
+  <img src="<%= asset_path("couple.jpg") %>" style="width:100%">
   <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
     Northern Lights, Norway
   </div>
 </div>
 
 <div class="w3-display-container mySlides">
-  <img src="couple.jpg" style="width:100%">
+  <img src="<%= asset_path("couple.jpg") %>" style="width:100%">
   <div class="w3-display-topleft w3-large w3-container w3-padding-16 w3-black">
     Beautiful Mountains
   </div>
