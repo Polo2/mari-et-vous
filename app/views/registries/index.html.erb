@@ -15,14 +15,14 @@
 
       <div class="guest_details">
         <table>
-          <% @registries.each do |reg| %>
+
 
             <tr>
               <th>Family</th>
               <th>Guests</th>
               <th>Action</th>
             </tr>
-
+        <% @registries.each do |reg| %>
           <tr>
             <td>Martin</td>
             <td><%= reg.guests.length %> </td>
