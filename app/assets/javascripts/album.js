@@ -23,5 +23,4 @@ $(document).ready(function() {
       $(e.target).parents('.nested-fields').find('.add_plus').hide();
     });
 
-  $(".add_fields").click();
 } );
