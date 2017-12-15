@@ -4,7 +4,6 @@
 
      <%= simple_form_for([@wedding, @registry]) do |f| %>
        <h4>Confirm presence</h4>
-        <p>Invité</p>
        <%= f.simple_fields_for :guests do |guest_f|  %>
         <div class="nested-fields">
           <div class="row">
