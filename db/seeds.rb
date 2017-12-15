@@ -42,8 +42,8 @@ new_user_aurel = User.create({
     })
 
 new_user_horti = User.create({
-    first_name: "Hor",
-    last_name: "Titi",
+    first_name: "Hortense",
+    last_name: "Martin",
     email: "hor@titi.fr",
     password: "111111",
     password_confirmation: "111111",
@@ -54,12 +54,12 @@ puts "id horti : #{new_user_horti.id}"
 puts "id aurelie : #{new_user_aurel.id}"
 puts "id polo : #{new_user_polo.id}"
 
-puts "Créations de 6 mariages maintenant"
+puts "Créations de 2 mariages maintenant"
 
 
-wedding1_polo = Wedding.create({
+wedding_polo = Wedding.create({
   title: "French : collaboratif",
-  description: "Mariage collaboratif en Bourgogne",
+  description: "Mariage collaboratif en Bourgogne, au milieu des vigne de chablis. Venez passer avec nous les 3 jours du week-end de la Pentecôte. Venez vous associer à la joie de note engagement. On compte sur vous!",
   capacity: 51,
   user_id: new_user_polo.id,
   date: Date.new(2018, 5, 19),
@@ -70,46 +70,21 @@ wedding1_polo = Wedding.create({
   spouse_last_name: "Monseu"
   })
 
-wedding2_polo = Wedding.create({
-  title: "Old school",
-  description: "Let's play Gotham'style",
-  capacity: 33,
-  user_id: new_user_polo.id,
-  date: Date.new(2017,1,27),
-  location: "Villeurbanne",
-  photo_url: "http://ekladata.com/iFXMrulEPn1hJsuM-eAZtYl9Mzk.jpg",
-  spouse_photo_url: "https://avatars1.githubusercontent.com/u/32060402?s=400&u=33d0f8f8d6ac9979437727646e169c3173784a42&v=4",
-  spouse_first_name: "Jacqueline",
-  spouse_last_name: "Pouet"
-  })
-
-wedding3_horti = Wedding.create({
+wedding_horti = Wedding.create({
   title: "Lightful",
   description: "Let's get married like Louis XIV",
   capacity: 78,
   user_id: new_user_horti.id,
-  date: Date.new(2018,7,7),
+  date: Date.new(2017,2,14),
   location: "Versailles",
   photo_url: "http://www.chateauversailles-spectacles.fr/sites/default/files/styles/largeur_page/public/en-tete-site-festival2016-nuits-orangerie-version.jpg?itok=Zkq2UlQd",
   spouse_photo_url: "https://avatars0.githubusercontent.com/u/32671308?s=400&v=4",
   spouse_first_name: "Ben",
-  spouse_last_name: "Trobeau"
+  spouse_last_name: "Brion"
   })
 
-wedding4_horti = Wedding.create({
-  title: "Piss'in Champaign",
-  description: "Because bubbles are part of life ...",
-  capacity: 89,
-  user_id: new_user_horti.id,
-  date: Date.new(2017,6,29),
-  location: "Megeve",
-  photo_url: "http://cdn1.greatfon.com/uploads/picture/452/129/129452/sunset-wateksuite-exterior.jpg",
-  spouse_photo_url: "https://avatars0.githubusercontent.com/u/32671308?s=400&v=4",
-  spouse_first_name: "Norbert",
-  spouse_last_name: "Pouet"
-  })
 
-wedding5_aurel = Wedding.create({
+wedding_aurel = Wedding.create({
   title: "Trinquons !",
   description: "Parce que la vie, c'est la joie.",
   capacity: 132,
@@ -120,19 +95,6 @@ wedding5_aurel = Wedding.create({
   spouse_photo_url: "https://avatars0.githubusercontent.com/u/32846131?s=400&v=4",
   spouse_first_name: "Sylvain",
   spouse_last_name: "Chêne"
-  })
-
-wedding6_aurel = Wedding.create({
-  title: "Libertine",
-  description: "50 shades of gray",
-  capacity: 69,
-  user_id: new_user_aurel.id,
-  date: Date.new(2015,2,14),
-  location: "Los Angeles",
-  photo_url: "https://astroglide.media.zestyio.com/keep-relationship-hot.49951c8c20b5646bb5a2b150b922df1f.H1bkMLN50e.jpg",
-  spouse_photo_url: "https://avatars0.githubusercontent.com/u/32846131?s=400&v=4",
-  spouse_first_name: "Patrick",
-  spouse_last_name: "Pouet"
   })
 
 # puts "Création de 6 messages"
