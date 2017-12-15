@@ -8,7 +8,6 @@
         <%= simple_form_for([@wedding, @task]) do |f| %>
 
           <%= f.input :name, label: false, placeholder: "Select a state", collection: @tasks_filtered_names_list, class: "button" %>
-          <%= f.input :name, label: false, placeholder: "Select a state", collection: @tasks_filtered_names_list, class: "button" %>
 
           <%= f.submit "Create", class: "button maxwidth" %>
 
