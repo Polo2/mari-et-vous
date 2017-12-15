@@ -4,13 +4,16 @@
       <h3 class="text-center">
         <span class="section-title">Choose one new task</span>
       </h3>
+      <div class="breath">
         <%= simple_form_for([@wedding, @task]) do |f| %>
 
-          <%= f.input :name, label:" ", collection: @tasks_filtered_names_list, as: :radio_buttons %>
+          <%= f.input :name, label: false, placeholder: "Select a state", collection: @tasks_filtered_names_list, class: "button" %>
+          <%= f.input :name, label: false, placeholder: "Select a state", collection: @tasks_filtered_names_list, class: "button" %>
 
           <%= f.submit "Create", class: "button maxwidth" %>
 
         <% end %>
+      </div>
     </div>
   </div>
 </div>
