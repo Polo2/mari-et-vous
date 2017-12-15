@@ -24,10 +24,6 @@
       </p>
     </div>
 
-    <div class=links>
-      <%= link_to "Back to Wedding", wedding_path(@wedding), class: "back-link" %>
-    </div>
-
     <% if policy(@wedding).edit? %>
       <div class="row">
         <div class="col-xs-8">
@@ -35,7 +31,7 @@
         </div>
 
         <div class="col-xs-4">
-          <h4>Add content</h4>
+          <h4>Add task</h4>
         </div>
       </div>
     <% end %>
@@ -104,7 +100,9 @@
             </div>
           </div>
       <% end %>
-
+    </div>
+    <div class=links>
+      <%= link_to "Back to Wedding", wedding_path(@wedding), class: "back-link" %>
     </div>
   </div>
 </div>

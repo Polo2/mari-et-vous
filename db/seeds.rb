@@ -14,11 +14,10 @@ require 'json'
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-puts "vider la data base des weddings"
+puts "Cleaning data base weddings"
 Wedding.destroy_all
 
-puts "vider la data base des users"
+puts "Cleaning data base users"
 User.destroy_all
 
 puts "Création des 3 users"
@@ -30,7 +29,7 @@ new_user_polo = User.create({
     email: "polo@bodi.fr",
     password: "333333",
     password_confirmation: "333333",
-    avatar_url: "https://icon-icons.com/icons2/582/PNG/512/woman_icon-icons.com_55031.png"
+    avatar_url: "https://avatars3.githubusercontent.com/u/32060402?s=460&v=4"
     })
 
 new_user_aurel = User.create({
@@ -39,7 +38,7 @@ new_user_aurel = User.create({
     email: "aure@lie.fr",
     password: "222222",
     password_confirmation: "222222",
-    avatar_url: "https://icon-icons.com/icons2/582/PNG/512/woman_icon-icons.com_55031.png"
+    avatar_url: "https://avatars0.githubusercontent.com/u/32846131?s=400&v=4"
     })
 
 new_user_horti = User.create({
@@ -48,7 +47,7 @@ new_user_horti = User.create({
     email: "hor@titi.fr",
     password: "111111",
     password_confirmation: "111111",
-    avatar_url: "https://icon-icons.com/icons2/582/PNG/512/woman_icon-icons.com_55031.png"
+    avatar_url: "https://avatars0.githubusercontent.com/u/32671308?s=400&v=4"
     })
 
 puts "id horti : #{new_user_horti.id}"

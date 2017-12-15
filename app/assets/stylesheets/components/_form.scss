@@ -49,8 +49,14 @@ button, .button {
 // .registry_guests_presence .checkbox {
 //   display: none;
 // }
-#new_registry .links {
-  padding: 0 0 10px 0;
+.registries .links  {
+  padding: 0;
+  margin-bottom: 20px;
+
+  i {
+    margin-right: 10px;
+    margin-left: 0;
+  }
 }
 a.back-link {
   color: #726e6e;
@@ -74,6 +80,10 @@ a.add_fields {
 }
 .edit_registry .links a {
   padding-top: 0;
+}
+
+.breath {
+  padding-top: 135px;
 }
 
 

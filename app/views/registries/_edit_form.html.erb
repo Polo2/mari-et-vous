@@ -1,19 +1,38 @@
+<p>Edition as the wedder</p>
+
 <%= simple_form_for([@wedding, @registry]) do |f| %>
   <%= f.input :email, required: true %>
 
   <h4>Add guests to your registry</h4>
-  <%= f.simple_fields_for :guests do |guest_f|  %>
-    <%= render 'guest_fields', f: guest_f %>
+  <% @guests =  @registry.guests %>
+
+  <%= f.simple_fields_for @guests do |guest_f|  %>
+    <div class="nested-fields">
+      <div class="row">
+        <div class="col-xs-8">
+          <div class="form-inline">
+            <%= guest_f.input :name, label: false, disabled: true %>
+          </div>
+        </div>
+        <div class="col-xs-4">
+          <div class="form-inline">
+            <%= guest_f.input :presence %>
+          </div>
+        </div>
+      </div>
+    </div>
   <% end %>
+
   <div class="links">
-  <%= link_to_add_association f, :guests do %>
-    <% icon('plus-circle') %>
-  <% end %>
+    <%= link_to_add_association f, :guests do %>
+      <% icon('plus-circle') %>
+    <% end %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, "Done !" %>
   </div>
+
 <% end %>
 
 
