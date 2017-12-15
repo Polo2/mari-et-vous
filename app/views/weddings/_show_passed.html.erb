@@ -1,6 +1,12 @@
 <div class="container">
 
   <h4>Create your album photo memories</h4>
+  <div class="carousel">
+    <h3><%= @wedding.user.first_name %> & <%= @wedding.spouse_first_name %></h3>
+    <%= render 'carousel' %>
+  </div>
+
+  <hr>
 
   <%= simple_form_for(@wedding) do |f| %>
     <div class="form-imputs">
@@ -11,7 +17,4 @@
     </div>
   <% end %>
 
-
-  <h3><%= @wedding.user.first_name %> & <%= @wedding.spouse_first_name %></h3>
-    <%= render 'carousel' %>
 </div>
