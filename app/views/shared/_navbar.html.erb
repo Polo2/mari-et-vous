@@ -16,11 +16,15 @@
         <div class="dropdown">
           <a href="" class="navbar-wagon-link dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">Your wedding</a>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to wedding_path(current_user.weddings.future.last) do %> <i class="fa fa-hourglass-half"></i>
-                My wedding
-              <% end %>
-            </li>
+            <% wedding_future = current_user.weddings.future.try(:last) %>
+            <% if wedding_future %>
+              <li>
+                <%= link_to wedding_path(current_user.weddings.future.last) do %> <i class="fa fa-hourglass-half"></i>
+                  My wedding
+                <% end %>
+              </li>
+            <% end %>
+
             <% memories = current_user.weddings.passed %>
             <% memories.each do |memory| %>
               <li>
